@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/scala-2.10/classes" path="src/main/scala"/>
+	<classpathentry kind="src" output="target/scala-2.10/classes" path="src/main/java"/>
+	<classpathentry kind="src" output="target/scala-2.10/test-classes" path="src/test/scala"/>
+	<classpathentry kind="src" output="target/scala-2.10/test-classes" path="src/test/java"/>
+	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/com.twitter/finagle-core_2.10/jars/finagle-core_2.10-6.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/io.netty/netty/bundles/netty-3.5.5.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/com.twitter/util-core_2.10/jars/util-core_2.10-6.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/com.twitter/util-collection_2.10/jars/util-collection_2.10-6.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/com.google.guava/guava/bundles/guava-14.0-rc3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/commons-collections/commons-collections/jars/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/com.twitter/util-hashing_2.10/jars/util-hashing_2.10-6.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/com.twitter/util-jvm_2.10/jars/util-jvm_2.10-6.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/com.twitter/util-logging_2.10/jars/util-logging_2.10-6.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/com.twitter/util-app_2.10/jars/util-app_2.10-6.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/com.twitter/finagle-http_2.10/jars/finagle-http_2.10-6.2.0.jar" sourcepath="C:/Users/yank1/.m2/repository/com/twitter/finagle-http_2.10/6.2.0/finagle-http_2.10-6.2.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/com.twitter/util-codec_2.10/jars/util-codec_2.10-6.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/commons-lang/commons-lang/jars/commons-lang-2.6.jar"/>
+	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_COMPILER_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.10.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.scalatest/scalatest/jars/scalatest-1.3.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

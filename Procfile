@@ -1,1 +1,1 @@
-web: target/start Web
+web: target/start com.yankay.scalaTour.Web

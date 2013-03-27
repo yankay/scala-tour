@@ -27,10 +27,12 @@ class Hello extends Service[HttpRequest, HttpResponse] {
     val response = Response()
     response.setStatusCode(200)
     val buffer = new ByteArrayOutputStream();
-    val ScalaScriptCompiler = new ScalaScriptCompiler(buffer);
-    val location = ScalaScriptCompiler.compile("""println("hw")""");
-    print(new String(buffer.toByteArray(), "UTF-8"))
-    response.setContentString(location.toString())
+    val location = ScalaScriptCompiler.compile("""println("hw")""", buffer);
+    println("compiled location:" + location);
+    ScalaScriptProcess.create(location.get, buffer, buffer).get.run().exitValue;
+    location.get.deleteIfExists();
+    println("runed");
+    response.setContentString(buffer.toString())
     Future(response)
   }
 }

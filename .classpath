@@ -1,27 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-  <classpathentry output="target\scala-2.10\classes" path="src\main\scala" kind="src"></classpathentry>
-  <classpathentry output="target\scala-2.10\classes" path="src\main\java" kind="src"></classpathentry>
-  <classpathentry output="target\scala-2.10\test-classes" path="src\test\scala" kind="src"></classpathentry>
-  <classpathentry output="target\scala-2.10\test-classes" path="src\test\java" kind="src"></classpathentry>
-  <classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"></classpathentry>
-  <classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_COMPILER_CONTAINER"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.10.1.jar" kind="lib"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\com.google.guava\guava\bundles\guava-14.0-rc3.jar" kind="lib"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\org.eclipse.jetty\jetty-server\jars\jetty-server-9.0.0.v20130308.jar" kind="lib"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\org.eclipse.jetty.orbit\javax.servlet\orbits\javax.servlet-3.0.0.v201112011016.jar" kind="lib"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\org.eclipse.jetty\jetty-http\jars\jetty-http-9.0.0.v20130308.jar" kind="lib"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\org.eclipse.jetty\jetty-util\jars\jetty-util-9.0.0.v20130308.jar" kind="lib"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\org.eclipse.jetty\jetty-io\jars\jetty-io-9.0.0.v20130308.jar" kind="lib"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\org.eclipse.jetty\jetty-servlet\jars\jetty-servlet-9.0.0.v20130308.jar" kind="lib"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\org.eclipse.jetty\jetty-security\jars\jetty-security-9.0.0.v20130308.jar" kind="lib"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\org.json4s\json4s-jackson_2.10\jars\json4s-jackson_2.10-3.2.2.jar" kind="lib"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\org.json4s\json4s-core_2.10\jars\json4s-core_2.10-3.2.2.jar" kind="lib"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\org.json4s\json4s-ast_2.10\jars\json4s-ast_2.10-3.2.2.jar" kind="lib"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\com.thoughtworks.paranamer\paranamer\jars\paranamer-2.5.2.jar" kind="lib"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\org.scala-lang\scalap\jars\scalap-2.10.0.jar" kind="lib"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\com.fasterxml.jackson.core\jackson-databind\jars\jackson-databind-2.1.2.jar" kind="lib"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\com.fasterxml.jackson.core\jackson-annotations\jars\jackson-annotations-2.1.1.jar" kind="lib"></classpathentry>
-  <classpathentry path="C:\Users\yank1\.ivy2\cache\com.fasterxml.jackson.core\jackson-core\jars\jackson-core-2.1.1.jar" kind="lib"></classpathentry>
-  <classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con"></classpathentry>
-  <classpathentry path="bin" kind="output"></classpathentry>
+	<classpathentry kind="src" output="target/scala-2.10/classes" path="src/main/scala"/>
+	<classpathentry kind="src" output="target/scala-2.10/classes" path="src/main/java"/>
+	<classpathentry kind="src" output="target/scala-2.10/test-classes" path="src/test/scala"/>
+	<classpathentry kind="src" output="target/scala-2.10/test-classes" path="src/test/java"/>
+	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
+	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_COMPILER_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.10.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/com.google.guava/guava/bundles/guava-14.0-rc3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-server/jars/jetty-server-9.0.0.v20130308.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty.orbit/javax.servlet/orbits/javax.servlet-3.0.0.v201112011016.jar" sourcepath="C:/Users/yank1/.m2/repository/org/eclipse/jetty/orbit/javax.servlet/3.0.0.v201112011016/javax.servlet-3.0.0.v201112011016-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-http/jars/jetty-http-9.0.0.v20130308.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-util/jars/jetty-util-9.0.0.v20130308.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-io/jars/jetty-io-9.0.0.v20130308.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-servlet/jars/jetty-servlet-9.0.0.v20130308.jar" sourcepath="C:/Users/yank1/.m2/repository/org/eclipse/jetty/jetty-servlet/9.0.0.v20130308/jetty-servlet-9.0.0.v20130308-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-security/jars/jetty-security-9.0.0.v20130308.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.json4s/json4s-jackson_2.10/jars/json4s-jackson_2.10-3.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.json4s/json4s-core_2.10/jars/json4s-core_2.10-3.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.json4s/json4s-ast_2.10/jars/json4s-ast_2.10-3.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/com.thoughtworks.paranamer/paranamer/jars/paranamer-2.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.scala-lang/scalap/jars/scalap-2.10.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/jars/jackson-databind-2.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/jars/jackson-annotations-2.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/jars/jackson-core-2.1.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
 </classpath>

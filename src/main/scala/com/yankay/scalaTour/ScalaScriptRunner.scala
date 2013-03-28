@@ -105,8 +105,8 @@ object ScalaScriptProcess {
       val outp = new PrintStream(out, true);
       val errp = new PrintStream(err, true);
       val pl = ProcessLogger(
-       outp println _,
-       errp println _)
+        outp println _,
+        errp println _)
       Some(new ScalaScriptProcess(Process(javaf(), args), pl))
     } else None
 

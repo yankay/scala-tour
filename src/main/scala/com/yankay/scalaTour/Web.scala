@@ -1,28 +1,29 @@
 package com.yankay.scalaTour
 
 import java.io.ByteArrayOutputStream
-
 import scala.actors.Actor
 import scala.actors.TIMEOUT
 import scala.reflect.io.File
 import scala.util.Properties
-
 import org.eclipse.jetty.server.Handler
 import org.eclipse.jetty.server.Server
 import org.eclipse.jetty.servlet.ServletContextHandler
 import org.eclipse.jetty.servlet.ServletHolder
 import org.json4s.jackson.JsonMethods
-
 import javax.servlet.http.HttpServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
+import org.eclipse.jetty.server.handler.ResourceHandler
+import org.eclipse.jetty.servlet.DefaultServlet
 
 object Web {
 
   def handler(): Handler = {
     val context = new ServletContextHandler
     context.setContextPath("/");
+    context.setResourceBase("webapp")
     context.addServlet(new ServletHolder(new RunServlet()), "/run");
+    context.addServlet(new ServletHolder(new DefaultServlet()), "/");
     context
   }
 
@@ -38,16 +39,20 @@ object Web {
 class RunServlet extends HttpServlet {
 
   def compileAndRun(code: String): RunResponse = {
-//    println("code:" + code)
+    //    println("code:" + code)
     val buffer = new ByteArrayOutputStream();
     val file = ScalaScriptCompiler.compile(code, buffer);
     val error = new String(buffer.toByteArray()).lines.toList
-//    println(new String(buffer.toByteArray()))
-//    println(error);
+    //    println(new String(buffer.toByteArray()))
+    //    println(error);
     file match {
       case Some(f) => {
-        val events = run(f)
-        new RunResponse(error.toList, events)
+        try {
+          val events = run(f);
+          new RunResponse(error.toList, events)
+        } finally {
+          f.deleteIfExists();
+        }
       }
       case _ => new RunResponse(error, List())
     }

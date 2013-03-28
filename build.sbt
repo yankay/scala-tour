@@ -16,8 +16,8 @@ libraryDependencies += "org.scala-lang" % "scala-compiler" % "2.10.1"
 
 libraryDependencies += "com.google.guava" % "guava" % "14.0-rc3"
 
-libraryDependencies += "org.eclipse.jetty" % "jetty-server" % "9.0.0.v20130308"
+libraryDependencies += "org.eclipse.jetty" % "jetty-server" % "8.1.10.v20130312"
 
-libraryDependencies += "org.eclipse.jetty" % "jetty-servlet" % "9.0.0.v20130308"
+libraryDependencies += "org.eclipse.jetty" % "jetty-servlet" % "8.1.10.v20130312"
 
 libraryDependencies += "org.json4s" %% "json4s-jackson" % "3.2.2"

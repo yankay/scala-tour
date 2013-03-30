@@ -667,6 +667,7 @@ a:focus {
     -ms-transition:     opacity 1s 5s,     -ms-transform 0.5s 4.5s;
     -o-transition:      opacity 1s 5s,      -o-transform 0.5s 4.5s;
     transition:         opacity 1s 5s,         transform 0.5s 4.5s;
+
 }
 
 /*

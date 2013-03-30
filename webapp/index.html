@@ -10,11 +10,13 @@
     <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
     <meta name="author" content="Bartek Szopka" />
 
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
-
     <link href="css/impress-demo.css" rel="stylesheet" />
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/elegant.css">
+    <link href="css/scala-tour.css" rel="stylesheet">
+
 
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -34,7 +36,6 @@
             <span class="icon-bar"></span>
           </button>
           <a class="brand" href="./">Scala Tour</a>
-          <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="">
                 <a href="./">Home</a>
@@ -46,7 +47,6 @@
                 <a href="./">Scaffolding</a>
               </li>
             </ul>
-          </div>
         </div>
       </div>
     </div>
@@ -58,25 +58,41 @@
 
 
 <div id="impress">
-
-    <div id="introduction" class="step slide" data-x="0" data-y="0" >
-      <div class="row-fluid">
-        <div class="span8">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list"></ul>
-        </div>
-    </div>
-    <div class="span4">
-          <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-</div>
-</div>
-    </div>
-
-    <div class="step" data-x="2000" data-y="0">
+   <div id="introduction" class="step" data-x="0" data-y="0">
         <q>Don't you think that presentations given <strong>in modern browsers</strong> shouldn't <strong>copy the limits</strong> of 'classic' slide decks?</q>
     </div>
+
+    <div  class="step slide" data-x="1500" data-y="0" >
+        <div class="row-fluid">
+            <div class="span8">
+<div  class = "workspace">
+<div class="controls">
+        <div><a class="run" title="Compile and Run">Run</a><a  class="more" title="Options">▼</a></div>
+        <ul class="more">
+   
+        
+        </ul>
+    </div>
+    <div class="workspace-top">
+        <div class="workspace-editor">
+           <form> <textarea class="editor" spellcheck="false">println("hello world")</textarea></form>
+        </div>
+    </div>
+
+    <div class="workspace-bottom">
+        <div class="output"><pre></pre></div>
+    </div>
+</div>
+        </div>
+        <div class="span4">
+              <h2>Hello World</h2>
+                  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                  <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+    </div>
+    </div>
+
+ 
 
     <div id="title" class="step" data-x="2000" data-y="1500" data-scale="4">
         <span class="try">then you should try</span>
@@ -103,17 +119,25 @@ if ("ontouchstart" in document.documentElement) {
     document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
 }
 
+
 </script>
+<script src="js/jquery.js"></script>
 <script src="js/impress.js"></script>
 <script>impress().init();</script>
-<script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
+    <script src="js/codemirror.js"></script>
+
+      <script src="js/matchbrackets.js"></script>
+    <script src="js/go.js"></script>
+    <script src="js/scala-tour.js"></script>
+
 
 <div style="position: fixed; bottom: 0px; left: 10px; pointer-events: auto; width:100%;">
             <div class="container" style="width:900px">
-
+<!--
     <iframe src="http://ghbtns.com/github-btn.html?user=yankay&repo=scala-tour&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
     <iframe src="http://ghbtns.com/github-btn.html?user=yankay&repo=scala-tour&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+-->
 </div>
 </div>
 

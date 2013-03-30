@@ -1,0 +1,264 @@
+
+.workspace {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 350px;
+	background: #E0EBF5;
+	min-height: 200px;
+	margin-top: 50px;
+		text-shadow: 0 0 0 black
+
+}
+
+.workspace-top {
+	position: absolute;
+	top: 0;
+	bottom: 30%;
+	right: 0;
+	left: 0;
+}
+
+.workspace-bottom {
+	position: absolute;
+	top: 70%;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+.workspace-editor {
+	position: absolute;
+	top: .6em;
+	bottom: .3em;
+	right: .6em;
+	left: .6em;
+	border: 1px solid #375EAB;
+	background: #FFFFD8;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.editor {
+	position: absolute;
+	top: 5px;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+	border: none;
+	outline: none;
+	resize: none;
+	background: #FFFFD8;
+	font-size: 16px;
+}
+
+.output {
+	position: absolute;
+	top: .3em;
+	bottom: .6em;
+	right: .6em;
+	left: .6em;
+	border: 1px solid #375EAB;
+	background: #FFFFFF;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-tottomright: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	overflow: auto;
+}
+.output pre {
+	margin: 5px;
+	padding: 0;
+	background: none;
+	font-size: 16px;
+}
+.output .loading {
+	color: #999;
+}
+.output .stdout, .output pre {
+  color: black;
+}
+.output .stderr, .output .error {
+  color: #a11;
+}
+.output .system, .output .exit {
+  color: #375EAB;
+}
+
+.output img {
+	margin: 5px;
+	padding: 0;
+	border: none;
+}
+
+pre, code {
+	font-family: Menlo, monospace;
+	font-size: 14px;
+	border: 0px solid black;
+}
+
+div.source {
+	display: none;
+}
+
+.CodeMirror {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: none;
+	font-family: Menlo, monospace;
+}
+
+.CodeMirror-scroll {
+	height: 100%;
+}
+
+.CodeMirror-gutter {
+	background: inherit;
+	border-right: 1px solid #999;
+}
+
+.CodeMirror-gutter-text {
+	color: #999;
+}
+
+.CodeMirror-matchingbracket {
+	color: #000 !important;
+	text-decoration: underline;
+}
+
+.CodeMirror-focused div.CodeMirror-selected {
+	background: #d0d0d0;
+}
+
+.CodeMirror .errLine {
+	background: #FDD !important;
+}
+
+pre, code {
+	font-family: Menlo, monospace;
+	font-size: 14px;
+}
+
+
+.controls {
+	position: absolute;
+	z-index: 10;
+	top: 1.2em;
+	right: 2em;
+	text-align: right;
+}
+
+.controls.expanded .more {
+	background: #FFF;
+}
+
+.controls.expanded ul.more {
+	display: block;
+}
+
+.run, .more {
+	margin-left: .8em;
+	padding: 2px 12px;
+	margin: 0 0 0 .8em;
+	text-transform: uppercase;
+	letter-spacing: .2em;
+	color: #222;
+	font-size: .9em;
+	font-weight: bold;
+	text-decoration: none;
+
+	background: #E0EBF5;
+
+	border: 2px solid #375EAB;
+	color: #375EAB;
+}
+
+.run {
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-right: none;
+			text-shadow: 0 0 0 black
+
+}
+
+.more {
+	margin-left: 0;
+	padding: 2px 5px;
+	border: 2px solid #375EAB;
+	border-left-width: 1px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+ul.more {
+	display: none;
+	position: relative;
+	list-style: none;
+	margin: 0;
+	top: 2px;
+	padding: 5px 0;
+	float: right;
+	background: #FFF;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+ul.more li {
+	text-align: left;
+	padding: 0;
+}
+
+ul.more li a {
+	padding: 0 1em 0 .5em;
+	text-decoration: none;
+	display: block;
+	color: #222;
+}
+
+ul.more li a:hover {
+	background: #E0EBF5;
+}
+
+ul.more li hr {
+	border: none;
+	border-top: 1px solid #CCC;
+	margin: .2em .5em;
+}
+
+.controls a {
+	border-right: none;
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+	-moz-border-radius-topright: 0;
+	-moz-border-radius-bottomright: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.more:hover, .run:hover {
+	background: #fff;
+}
+.output , .error {
+color: #a11;
+}

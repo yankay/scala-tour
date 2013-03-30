@@ -45,16 +45,18 @@ class RunServlet extends HttpServlet {
     val error = new String(buffer.toByteArray()).lines.toList
     //    println(new String(buffer.toByteArray()))
     //    println(error);
+    val errorMsg = error.map(x => x.replaceAll("/tmp/scala-script.*scala", "main.scala"))
+
     file match {
       case Some(f) => {
         try {
           val events = run(f);
-          new RunResponse(error.toList, events)
+          new RunResponse(errorMsg.toList, events)
         } finally {
           f.deleteIfExists();
         }
       }
-      case _ => new RunResponse(error, List())
+      case _ => new RunResponse(errorMsg, List())
     }
   }
 

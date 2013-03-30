@@ -46,7 +46,7 @@ object ScalaScriptCompiler {
   }
 
   def compile(script: String, err: OutputStream): Option[File] = {
-    val scriptFile = File.makeTemp("scalacmd", ".scala")
+    val scriptFile = File.makeTemp("scala-script", ".scala")
     // save the command to the file
     scriptFile writeAll script
     try compile(scriptFile, err)

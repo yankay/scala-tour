@@ -24,6 +24,33 @@
 
 
 
+
+<div class="navbar navbar-fixed-top" style=" pointer-events: auto;">
+      <div class="navbar-inner">
+        <div class="container" style="width:900px">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">Bootstrap</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="./index.html">Home</a>
+              </li>
+              <li class="">
+                <a href="./getting-started.html">Get started</a>
+              </li>
+              <li class="">
+                <a href="./scaffolding.html">Scaffolding</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
 <div class="fallback-message">
     <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
     <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
@@ -32,8 +59,7 @@
 
 <div id="impress">
 
-    <div id="introduction" class="step" data-x="0" data-y="0" >
-  <div class="container-fluid">
+    <div id="introduction" class="step slide" data-x="0" data-y="0" >
       <div class="row-fluid">
         <div class="span8">
           <div class="well sidebar-nav">
@@ -44,7 +70,6 @@
           <h2>Heading</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
               <p><a class="btn" href="#">View details &raquo;</a></p>
-</div>
 </div>
 </div>
     </div>
@@ -64,6 +89,9 @@
 <div class="hint">
     <p>Use a spacebar or arrow keys to navigate</p>
 </div>
+
+
+
 <script>
 if ("ontouchstart" in document.documentElement) { 
     document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";

@@ -166,7 +166,6 @@ a:focus {
 .step {
     position: relative;
     width: 900px;
-    padding: 40px;
     margin: 20px auto;
 
     -webkit-box-sizing: border-box;
@@ -176,8 +175,11 @@ a:focus {
     box-sizing:         border-box;
 
     font-family: 'PT Serif', georgia, serif;
+ /* 
+    padding: 40px;
     font-size: 48px;
     line-height: 1.5;
+*/
 }
 
 /*

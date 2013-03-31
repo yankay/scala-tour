@@ -1,139 +1,118 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=1024" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>Scala Tour</title>
-    
-    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
-    <meta name="author" content="Bartek Szopka" />
-
-    <link href="css/impress-demo.css" rel="stylesheet" />
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="css/codemirror.css" rel="stylesheet" >
-    <link href="css/elegant.css" rel="stylesheet">
-    <link href="css/scala-tour.css" rel="stylesheet">
-
-
-    <link rel="shortcut icon" href="favicon.png" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-</head>
-
-<body class="impress-not-supported">
-
-
-
-
-<div class="navbar navbar-fixed-top" style="pointer-events: auto;">
-      <div class="navbar-inner">
-        <div class="container" style="width:900px">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="./">Scala Tour</a>
-            <ul class="nav">
-              <li class="">
-                <a href="./">Home</a>
-              </li>
-              <li class="">
-                <a href="./">Get started</a>
-              </li>
-              <li class="">
-                <a href="./">Scaffolding</a>
-              </li>
-            </ul>
+    <head>
+        <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=1024">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <title>
+            Scala Tour
+        </title>
+        <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com.">
+        <meta name="author" content="Bartek Szopka">
+        <link href="css/impress-demo.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="css/codemirror.css" rel="stylesheet">
+        <link href="css/solarized.css" rel="stylesheet">
+        <link href="css/scala-tour.css" rel="stylesheet">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    </head>
+    <body class="impress-not-supported">
+        <div class="navbar navbar-fixed-top" style="pointer-events: auto;">
+            <div class="navbar-inner">
+                <div class="container" style="width:900px">
+                    <a class="brand" href="./">Scala Tour</a>
+                    <ul class="nav">
+                        <li class="">
+                            <a href="./">Home</a>
+                        </li>
+                        <li class="">
+                            <a href="./">Get started</a>
+                        </li>
+                        <li class="">
+                            <a href="./">Scaffolding</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-
-<div class="fallback-message">
-    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
-    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
-</div>
-
-
-<div id="impress">
-   <div id="introduction" class="step" data-x="0" data-y="0">
-        <q>Don't you think that presentations given <strong>in modern browsers</strong> shouldn't <strong>copy the limits</strong> of 'classic' slide decks?</q>
-    </div>
-
-    <div  class="step slide" data-x="1500" data-y="0" >
-        <div class="row-fluid">
-            <div class="span8">
-<div  class = "workspace">
-<div class="controls">
-        <div><a class="run" title="Compile and Run">Run</a><a  class="more" title="Options">▼</a></div>
-        <ul class="more">
-   
-        
-        </ul>
-    </div>
-    <div class="workspace-top">
-        <div class="workspace-editor">
-           <form> <textarea class="editor" spellcheck="false">println("hello world")</textarea></form>
+        <div class="fallback-message">
+            <p>
+                Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.
+            </p>
+            <p>
+                For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.
+            </p>
         </div>
-    </div>
-
-    <div class="workspace-bottom">
-        <div class="output"><pre></pre></div>
-    </div>
-</div>
+        <div id="impress">
+            <div id="introduction" class="step" data-x="0" data-y="0">
+                <q>Don't you think that presentations given <strong>in modern browsers</strong> shouldn't <strong>copy the limits</strong> of 'classic' slide decks?</q>
+            </div>
+            <div class="step slide" data-x="1500" data-y="0">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+println("hello world")
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            Hello World
+                        </h2>
+                        <p>
+                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                        </p>
+                        <p>
+                            <a class="btn" href="#">View details »</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="title" class="step" data-x="2000" data-y="1500" data-scale="4">
+                <span class="try">then you should try</span>
+                <h1>
+                    impress.js<sup>*</sup>
+                </h1><span class="footnote"><sup>*</sup> no rhyme intended</span>
+            </div>
         </div>
-        <div class="span4">
-              <h2>Hello World</h2>
-                  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                  <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-    </div>
-    </div>
-
- 
-
-    <div id="title" class="step" data-x="2000" data-y="1500" data-scale="4">
-        <span class="try">then you should try</span>
-        <h1>impress.js<sup>*</sup></h1>
-        <span class="footnote"><sup>*</sup> no rhyme intended</span>
-    </div>
-</div>
-
-
-<div class="hint">
-    <p>Use a spacebar or arrow keys to navigate</p>
-</div>
-
-
-
-<script>
+        <div class="hint">
+            <p>
+                Use a spacebar or arrow keys to navigate
+            </p>
+        </div><script>
 if ("ontouchstart" in document.documentElement) { 
-    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
-}
+        document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate<\/p>";
+        }
+        </script> <script src="js/jquery.js">
+</script> <script src="js/impress.js">
+</script> <script src="js/bootstrap.js">
+</script> <script>
+impress().init();
+        </script> <script src="js/codemirror.js">
+</script> <script src="js/matchbrackets.js">
+</script> <script src="js/clike.js">
+</script> <script src="js/scala-tour.js">
 </script>
-
-<script src="js/jquery.js"></script>
-<script src="js/impress.js"></script>
-<script src="js/bootstrap.js"></script>
-<script>impress().init();</script>
-
-<script src="js/codemirror.js"></script>
-<script src="js/matchbrackets.js"></script>
-<script src="js/clike.js"></script>
-<script src="js/scala-tour.js"></script>
-
-
-<div style="position: fixed; bottom: 0px; left: 10px; pointer-events: auto; width:100%;">
+        <div style="position: fixed; bottom: 0px; left: 10px; pointer-events: auto; width:100%;">
             <div class="container" style="width:900px">
-<!--
-    <iframe src="http://ghbtns.com/github-btn.html?user=yankay&repo=scala-tour&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
-    <iframe src="http://ghbtns.com/github-btn.html?user=yankay&repo=scala-tour&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
--->
-</div>
-</div>
-
-</body>
+                <iframe src="http://ghbtns.com/github-btn.html?user=yankay&amp;repo=scala-tour&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe> <iframe src="http://ghbtns.com/github-btn.html?user=yankay&amp;repo=scala-tour&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+            </div>
+        </div>
+    </body>
 </html>
-

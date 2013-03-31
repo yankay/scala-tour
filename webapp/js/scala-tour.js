@@ -84,7 +84,7 @@ $(window).load(function() {
   for (var i = 0; i < textareas.length; i++) {
     var textarea = textareas[i]
     var editor = CodeMirror.fromTextArea(textarea, {
-      theme: "elegant",
+      theme: "solarized light",
       matchBrackets: true,
       indentUnit: 4,
       tabSize: 4,

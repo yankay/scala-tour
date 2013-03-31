@@ -152,9 +152,8 @@
         var h=window.innerHeight
         var w=window.innerWidth 
         var hScale = window.innerHeight / config.height,
-            wScale = window.innerWidth / config.width,
+            wScale = (window.innerWidth - 41) / config.width,
             scale = hScale > wScale ? wScale : hScale;
-        
         if (config.maxScale && scale > config.maxScale) {
             scale = config.maxScale;
         }

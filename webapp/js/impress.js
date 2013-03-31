@@ -801,12 +801,13 @@
         document.addEventListener("touchstart", function ( event ) {
             if (event.touches.length === 1) {
                 var x = event.touches[0].clientX,
-                    width = window.innerWidth * 0.3,
+                    y = event.touches[0].clientY,
+                    width = window.innerWidth * 0.1,
                     result = null;
                     
-                if ( x < width ) {
+                if ( x < width && y>42) {
                     result = api.prev();
-                } else if ( x > window.innerWidth - width ) {
+                } else if ( x > window.innerWidth - width && y>42) {
                     result = api.next();
                 }
                 

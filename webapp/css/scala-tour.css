@@ -169,3 +169,33 @@ pre, code {
 	margin-top: 100px;
 	font-size: 200%;
 }
+
+#welcome h1 {
+	font-size: 96px;
+}
+
+
+#welcome p {
+	font-size: 48px;
+	line-height:3;
+}
+
+.scala-red {
+	color:rgb(192, 32, 0);
+}
+
+#logo img{
+    margin-right: 4px;
+}
+
+.navbar a {
+background: rgba(255,255,255,0);
+}
+
+.navbar .lang {
+display: block;
+float: right;
+padding: 10px 10px 10px;
+color: #777777;
+text-shadow: 0 1px 0 #ffffff;
+}

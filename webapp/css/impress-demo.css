@@ -213,7 +213,6 @@ a:focus {
 
     width: 900px;
     height: 700px;
-    padding: 40px 60px;
 
     color: rgb(102, 102, 102);
     text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
@@ -221,6 +220,8 @@ a:focus {
     font-family: 'Open Sans', Arial, sans-serif;
 
 /*
+    padding: 40px 60px;
+
     font-size: 30px;
     line-height: 36px;
     letter-spacing: -1px;*/

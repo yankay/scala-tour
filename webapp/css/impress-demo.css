@@ -157,6 +157,14 @@ a:focus {
     display: none;
 }
 
+.impress-not-supported #impress {
+    display: none;
+}
+.impress-not-supported .hint {
+    display: none;
+}
+
+
 /*
     Now let's style the presentation steps.
 

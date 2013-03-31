@@ -165,3 +165,7 @@ pre, code {
 	color: #a11;
 }
 
+#brower-not-support{
+	margin-top: 100px;
+	font-size: 200%;
+}

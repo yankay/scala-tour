@@ -38,14 +38,15 @@
                 </div>
             </div>
         </div>
-        <div class="fallback-message">
-            <p>
-                Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.
+
+        <div id="brower-not-support" class="alert fallback-message">
+           <p> <strong>Warning!</strong> 
+                Your browser <b>doesn't support the features required</b>. 
             </p>
             <p>
                 For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.
-            </p>
-        </div>
+        </p></div>
+        
         <div id="impress">
             <div id="introduction" class="step" data-x="0" data-y="0">
                 <q>Don't you think that presentations given <strong>in modern browsers</strong> shouldn't <strong>copy the limits</strong> of 'classic' slide decks?</q>
@@ -103,6 +104,8 @@ if ("ontouchstart" in document.documentElement) {
 </script> <script src="js/impress.js">
 </script> <script src="js/bootstrap.js">
 </script> <script>
+
+
 impress().init();
         </script> <script src="js/codemirror.js">
 </script> <script src="js/matchbrackets.js">

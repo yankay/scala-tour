@@ -31,7 +31,7 @@ object Web {
     context.addServlet(new ServletHolder(new DefaultServlet()), "/");
     val fh = new FilterHolder(new GzipFilter())
     fh.setInitParameter("mimeTypes", "text/html,text/css,application/x-javascript,imgage/png")
-    context.addFilter(fh, "/", EnumSet.of(DispatcherType.FORWARD,
+    context.addFilter(fh, "/*", EnumSet.of(DispatcherType.FORWARD,
       DispatcherType.INCLUDE,
       DispatcherType.REQUEST,
       DispatcherType.ASYNC,

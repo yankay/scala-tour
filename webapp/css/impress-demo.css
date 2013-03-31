@@ -83,7 +83,7 @@ table {
 */
 body {
     font-family: 'PT Sans', sans-serif;
-    min-height: 740px;
+    min-height: 640px;
 
     background: rgb(215, 215, 215);
     background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
@@ -165,7 +165,7 @@ a:focus {
 
 .step {
     position: relative;
-    width: 900px;
+    width: 1024px;
     margin: 20px auto;
 
     -webkit-box-sizing: border-box;
@@ -188,7 +188,7 @@ a:focus {
     Basically we remove the margin and make inactive steps a little bit transparent.
 */
 .impress-enabled .step {
-    margin: 0;
+    margin: 20px 0 0 0;
     opacity: 0.3;
 
     -webkit-transition: opacity 1s;
@@ -211,9 +211,8 @@ a:focus {
 .slide {
     display: block;
 
-    width: 900px;
-    height: 700px;
-
+    width: 1024px;
+    height: 600px;
     color: rgb(102, 102, 102);
     text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
 

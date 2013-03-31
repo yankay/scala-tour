@@ -151,9 +151,12 @@
     var computeWindowScale = function ( config ) {
         var h=window.innerHeight
         var w=window.innerWidth 
+        console.log("H:"+h);
+        console.log("W:"+w);
         var hScale = window.innerHeight / config.height,
             wScale = (window.innerWidth - 41) / config.width,
             scale = hScale > wScale ? wScale : hScale;
+        console.log("s:"+scale);
         if (config.maxScale && scale > config.maxScale) {
             scale = config.maxScale;
         }
@@ -200,7 +203,7 @@
     // some default config values.
     var defaults = {
         width: 1024,
-        height: 768,
+        height: 640,
         maxScale: 1,
         minScale: 0,
         

@@ -5,16 +5,20 @@
 	<classpathentry kind="src" output="target/scala-2.10/test-classes" path="src/test/scala"/>
 	<classpathentry kind="src" output="target/scala-2.10/test-classes" path="src/test/java"/>
 	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.scala-lang/scala-actors/jars/scala-actors-2.10.1.jar"/>
 	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_COMPILER_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.10.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/com.google.guava/guava/bundles/guava-14.0-rc3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-server/jars/jetty-server-9.0.0.v20130308.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-server/jars/jetty-server-8.1.10.v20130312.jar" sourcepath="C:/Users/yank1/.m2/repository/org/eclipse/jetty/jetty-server/8.1.10.v20130312/jetty-server-8.1.10.v20130312-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty.orbit/javax.servlet/orbits/javax.servlet-3.0.0.v201112011016.jar" sourcepath="C:/Users/yank1/.m2/repository/org/eclipse/jetty/orbit/javax.servlet/3.0.0.v201112011016/javax.servlet-3.0.0.v201112011016-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-http/jars/jetty-http-9.0.0.v20130308.jar"/>
-	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-util/jars/jetty-util-9.0.0.v20130308.jar"/>
-	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-io/jars/jetty-io-9.0.0.v20130308.jar"/>
-	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-servlet/jars/jetty-servlet-9.0.0.v20130308.jar" sourcepath="C:/Users/yank1/.m2/repository/org/eclipse/jetty/jetty-servlet/9.0.0.v20130308/jetty-servlet-9.0.0.v20130308-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-security/jars/jetty-security-9.0.0.v20130308.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-continuation/jars/jetty-continuation-8.1.10.v20130312.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-http/jars/jetty-http-8.1.10.v20130312.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-io/jars/jetty-io-8.1.10.v20130312.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-util/jars/jetty-util-8.1.10.v20130312.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-servlet/jars/jetty-servlet-8.1.10.v20130312.jar" sourcepath="C:/Users/yank1/.m2/repository/org/eclipse/jetty/jetty-servlet/8.1.10.v20130312/jetty-servlet-8.1.10.v20130312-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-security/jars/jetty-security-8.1.10.v20130312.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-servlets/jars/jetty-servlets-8.1.10.v20130312.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.eclipse.jetty/jetty-client/jars/jetty-client-8.1.10.v20130312.jar"/>
 	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.json4s/json4s-jackson_2.10/jars/json4s-jackson_2.10-3.2.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.json4s/json4s-core_2.10/jars/json4s-core_2.10-3.2.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/yank1/.ivy2/cache/org.json4s/json4s-ast_2.10/jars/json4s-ast_2.10-3.2.2.jar"/>

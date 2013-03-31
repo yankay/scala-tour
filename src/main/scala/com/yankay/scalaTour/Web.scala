@@ -16,6 +16,10 @@ import javax.servlet.http.HttpServletResponse
 import org.eclipse.jetty.server.handler.ResourceHandler
 import org.eclipse.jetty.servlet.DefaultServlet
 import org.eclipse.jetty.servlet.FilterHolder
+import org.eclipse.jetty.server.handler.GzipHandler
+import org.eclipse.jetty.servlets.GzipFilter
+import java.util.EnumSet
+import javax.servlet.DispatcherType
 
 object Web {
 
@@ -25,6 +29,13 @@ object Web {
     context.setResourceBase("webapp")
     context.addServlet(new ServletHolder(new RunServlet()), "/run");
     context.addServlet(new ServletHolder(new DefaultServlet()), "/");
+    val fh = new FilterHolder(new GzipFilter())
+    fh.setInitParameter("mimeTypes", "text/html,text/css,application/x-javascript,imgage/png")
+    context.addFilter(fh, "/", EnumSet.of(DispatcherType.FORWARD,
+      DispatcherType.INCLUDE,
+      DispatcherType.REQUEST,
+      DispatcherType.ASYNC,
+      DispatcherType.ERROR))
     context
   }
 

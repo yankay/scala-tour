@@ -458,7 +458,8 @@
                  // console.log("block")
                  for(var i=0;i<deeps.length;i++){
                     css(deeps[i],{
-                        opacity:"1"
+                        opacity:"1",
+                        transition:"opacity 1s"
                     });
                  }
                 // $(".deeply").css("display","block")

@@ -207,6 +207,14 @@ line-height: 1.6em;
 color: #222;
 }
 
-.deeply{
-     opacity:"0"
+
+.impress-enabled  .deeply{
+    -webkit-transition: opacity 0s;
+    -moz-transition:    opacity 0s;
+    -ms-transition:     opacity 0s;
+    -o-transition:      opacity 0s;
+    transition:         opacity 0s;
+}
+.onload{
+     opacity:0;
 }

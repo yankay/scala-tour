@@ -19,7 +19,7 @@
         <link rel="shortcut icon" href="favicon.png">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
     </head>
-    <body class="impress-not-supported">
+    <body class="impress-not-supported onload">
         <div class="navbar navbar-fixed-top" style="pointer-events: auto;">
             <div class="navbar-inner">
                 <div class="container" style="width:1020px">
@@ -172,8 +172,7 @@ if ("ontouchstart" in document.documentElement) {
 </script> <script src="js/impress.js">
 </script> <script src="js/bootstrap.js">
 </script> <script>
-
-
+$('body').removeClass('onload')
 impress().init();
         </script> <script src="js/codemirror.min.js">
 </script> <script src="js/matchbrackets.js">

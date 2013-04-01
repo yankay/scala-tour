@@ -19,7 +19,7 @@
         <link rel="shortcut icon" href="favicon.png">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
     </head>
-    <body class="impress-not-supported onload">
+    <body id="body" class="impress-not-supported onload">
         <div class="navbar navbar-fixed-top" style="pointer-events: auto;">
             <div class="navbar-inner">
                 <div class="container" style="width:1020px">
@@ -50,13 +50,13 @@
         
         <div id="impress">
             
-            <div id="welcome" class="step" data-x="-3750" data-y="-2500">
+            <div id="welcome" class="step" data-x="-3500" data-y="-2000">
               <h1><span class="scala-red">Scala</span> Tour</h1>
                 <p>Welcome to Scala programming lanaguage.</p>
             </div>
 
 
-            <div id="hello-wolrd" class="step slide" data-x="-2250" data-y="-2500">
+            <div id="hello-wolrd" class="step slide" data-x="-2000" data-y="-2000">
                 <div class="row-fluid">
                     <div class="span8">
                         <div class="workspace">
@@ -104,7 +104,7 @@ println("hello world")
                 </h2>
             </div>
 
-            <div class="step slide deeply" data-x="-2250" data-y="-2500" data-z="-3000" >
+            <div class="step slide deeply" data-x="-2000" data-y="-2000" data-z="-3000" >
                 <div class="row-fluid">
                     <div class="span8">
                         <div class="workspace">
@@ -172,7 +172,7 @@ if ("ontouchstart" in document.documentElement) {
 </script> <script src="js/impress.js">
 </script> <script src="js/bootstrap.js">
 </script> <script>
-$('body').removeClass('onload')
+document.getElementById("body").className=document.getElementById("body").className.replace('onload',' ');
 impress().init();
         </script> <script src="js/codemirror.min.js">
 </script> <script src="js/matchbrackets.js">

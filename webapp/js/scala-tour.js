@@ -86,10 +86,11 @@ $(window).load(function() {
     var editor = CodeMirror.fromTextArea(textarea, {
       theme: "solarized light",
       matchBrackets: true,
-      indentUnit: 4,
-      tabSize: 4,
+      indentUnit: 2,
+      tabSize: 2,
       indentWithTabs: false,
-      mode: "text/x-scala"
+      mode: "text/x-scala",
+      smartIndent :false
     });
     editors[i] = editor
   }

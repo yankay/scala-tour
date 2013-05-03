@@ -26,6 +26,7 @@
 	left: 0;
 }
 
+
 .workspace-editor {
 	position: absolute;
 	top: .6em;
@@ -89,7 +90,9 @@
 .output .system, .output .exit {
   color: #375EAB;
 }
-
+.output .stderr, .output .err {
+  color: #a11;
+}
 .output img {
 	margin: 5px;
 	padding: 0;
@@ -200,6 +203,19 @@ color: #777777;
 text-shadow: 0 1px 0 #ffffff;
 }
 
+.navbar .doc {
+display: block;
+float: right;
+padding: 10px 10px 10px;
+
+}
+
+.navbar .doc a{
+	color: #777777;
+	text-shadow: 0 1px 0 #ffffff;
+}
+
+
 .slide p{
 	font-family: Helvetica, Arial, sans-serif;
 font-size: 16px;
@@ -217,4 +233,79 @@ color: #222;
 }
 .onload{
      opacity:0;
+}
+
+.chapter .mouse{
+	cursor: pointer;
+}
+.chapter h2{
+	font-size: 160px;
+}
+
+.chapter .btn{
+	margin-left: 20px;
+	margin-top: 150px;
+}
+
+.step-nav{
+	position: absolute;
+	top: 90%;
+	bottom: 0;
+	right: 0;
+}
+
+#designed-by {
+	position: absolute;
+	top: 0;
+}
+
+#designed-by a {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+#compass {
+    position: absolute;
+	width: 300px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+#about {
+font-size: 24px;
+line-height: 3;
+}
+#about li{
+line-height: 2;
+}
+#about a{
+background: rgba(255,255,255,0);
+}
+
+.contents h2{
+	font-size: 36px;
+	line-height: 2;
+}
+
+.contents li{
+list-style-image:url('../img/glyphicons_065_tag.png');
+}
+.contents .overview-li{
+list-style-image:url('../img/glyphicons_221_unshare.png');
+}
+
+.contents li{
+line-height: 2;
+}
+
+.contents li a {
+	text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+		font-size: 24px;
+	color: inherit;
+	background: rgba(255,255,255,0);
+}
+
+.important{
+	 font-weight:bold;
 }

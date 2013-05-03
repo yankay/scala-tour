@@ -446,10 +446,11 @@
             if ( activeStep ) {
                 activeStep.classList.remove("active");
                 body.classList.remove("impress-on-" + activeStep.id);
+                triggerEvent(activeStep, "impress:remove-active");
             }
             el.classList.add("active");
-            
             body.classList.add("impress-on-" + el.id);
+            triggerEvent(el, "impress:add-active");
             
 
             var deeps=document.getElementsByClassName("deeply")
@@ -779,21 +780,38 @@
             if ( api.goto(target) ) {
                 event.stopImmediatePropagation();
                 event.preventDefault();
-            }
+            }            
         }, false);
         
         // delegated handler for clicking on step elements
         document.addEventListener("click", function ( event ) {
             var target = event.target;
             // find closest step element that is not active
+// $(".pre-step").mouseup(function(){
+//    var api = impress();
+//    api.prev();
+// })
+// $(".next-step").mouseup(function(){
+//    var api = impress();
+//    api.next();
+// })
+            if(target.classList.contains("pre-step")){
+                api.prev();
+                return
+            }
+            if(target.classList.contains("next-step")){
+                api.next();
+                return
+            }
+
             while ( !(target.classList.contains("step") && !target.classList.contains("active")) &&
                     (target !== document.documentElement) ) {
                 target = target.parentNode;
             }
-            
+            if(target.classList.contains("direction")){
             if ( api.goto(target) ) {
                 event.preventDefault();
-            }
+            }}
         }, false);
         
         // touch handler to detect taps on the left and right side of the screen

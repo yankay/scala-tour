@@ -20,8 +20,10 @@ import org.eclipse.jetty.server.handler.GzipHandler
 import org.eclipse.jetty.servlets.GzipFilter
 import java.util.EnumSet
 import javax.servlet.DispatcherType
+import scala.collection.mutable.WeakHashMap
 
 object Web {
+  val cache = new WeakHashMap[String, RunResponse]
 
   def handler(): Handler = {
     val context = new ServletContextHandler
@@ -62,37 +64,36 @@ class RunServlet extends HttpServlet {
     file match {
       case Some(f) => {
         try {
-          val events = run(f);
-          new RunResponse(errorMsg.toList, events)
+          val (outEvents, errEvents) = run(f);
+          new RunResponse(errorMsg.toList, outEvents, errEvents)
         } finally {
           f.deleteIfExists();
         }
       }
-      case _ => new RunResponse(errorMsg, List())
+      case _ => new RunResponse(errorMsg, List(), List())
     }
   }
 
-  def run(file: File): List[String] = {
+  def run(file: File): (List[String], List[String]) = {
     val out = new ByteArrayOutputStream();
     val err = new ByteArrayOutputStream();
     val proc = ScalaScriptProcess.create(file, out, err);
     proc match {
       case Some(p) => {
         val pid = p.run();
-        val timeout = new TimeoutActor(pid, 5000)
+        val timeout = new TimeoutActor(pid, 10*1000)
         timeout.start
         val existValue = pid.exitValue()
         timeout ! existValue
         val outEvents = new String(out.toByteArray()).lines.toList
-        val errEvents = new String(err.toByteArray()).lines.toList
-        val events = outEvents ::: errEvents
+        val errEvents = new String(err.toByteArray()).lines.toList.filterNot(_.startsWith("Picked up JAVA_TOOL_OPTIONS"))
         existValue match {
-          case 0 => events.toList
-          case x => events ::: List("exit value is " + x)
+          case 0 => (outEvents, errEvents)
+          case x => (outEvents, errEvents ::: List("exit value is " + x))
         }
 
       }
-      case _ => List()
+      case _ => (List(), List())
     }
   }
 
@@ -108,16 +109,20 @@ class RunServlet extends HttpServlet {
   def json(mode: RunResponse): String = {
     import org.json4s._
     import org.json4s.JsonDSL._
-    val json = ("Errors" -> mode.errors) ~ ("Events" -> mode.events)
+    val json = ("Errors" -> mode.errors) ~ ("Events" -> mode.events) ~ ("ErrEvents" -> mode.errEvents)
     JsonMethods.pretty(JsonMethods.render(json))
   }
 
+  def memo(f: String => RunResponse) = {
+    (x: String) => Web.cache.getOrElseUpdate(x, f(x))
+  }
   override def doGet(req: HttpServletRequest, resp: HttpServletResponse) = {
     val code = req.getParameter("code")
     if (code == null)
       resp.setStatus(404)
     else {
-      val model = compileAndRun(code)
+      var f = memo(compileAndRun)
+      val model = f(code)
       resp.getWriter().print(json(model))
       resp.getWriter().flush()
       resp.setStatus(200)
@@ -129,6 +134,6 @@ class RunServlet extends HttpServlet {
   }
 }
 
-case class RunResponse(errors: List[String], events: List[String]) {
+case class RunResponse(errors: List[String], events: List[String], errEvents: List[String]) {
 
 }

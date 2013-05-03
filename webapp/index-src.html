@@ -1,0 +1,2242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=1024">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <title>
+            Scala Tour
+        </title>
+        <meta name="description" content="Scala指南-开始精彩的Scala旅程。本指南是用来介绍Scala强大的功能。同时你可以亲身实践他们。">
+        <meta name="author" content="Kay Yan">
+        <link href="css/impress-demo.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="css/codemirror.css" rel="stylesheet">
+        <link href="css/solarized.css" rel="stylesheet">
+        <link href="css/scala-tour.css" rel="stylesheet">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    </head>
+    <body id="body" class="impress-not-supported onload">
+        <div class="navbar navbar-fixed-top" style="pointer-events: auto;">
+            <div class="navbar-inner">
+                <div class="container" style="width:1020px">
+                    <a id="logo" class="brand" href="#/welcome"><img src="img/logo.png">Scala 指南</a>
+                    <ul class="nav">
+                        <li class="">
+                            <a href="#/overview">概览</a>
+                        </li>
+                        <li class="">
+                            <a href="#/about">关于</a>
+                        </li>
+                        <li class="">
+                            <a href="#/discus">讨论</a>
+                        </li>
+                    </ul><a class="lang" href="http://zh.scala-tour.com/" title="中文">中文</a> <a class="lang" href="http://www.scala-tour.com/" title="English">English</a> <span class="doc"><i class="icon-list">&nbsp;</i><a href="http://docs.scala-lang.org/" target="_blank">文档</a></span>
+                </div>
+            </div>
+        </div>
+        <div id="brower-not-support" class="alert fallback-message">
+            <p>
+                <strong>Warning!</strong> Your browser <b>doesn't support the features required</b>.
+            </p>
+            <p>
+                For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.
+            </p>
+        </div>
+        <div id="impress">
+            <div id="welcome" class="step" data-x="-3500" data-y="-2000">
+                <h1>
+                    <span class="scala-red">Scala</span> 指南
+                </h1>
+                <p>
+                    开始精彩的Scala旅程
+                </p>
+                <div class="step-nav">
+                    <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                </div>
+            </div>
+            <div id="hello-wolrd" class="step slide" data-x="-2000" data-y="-2000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+println("hello world")
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            Hello World
+                        </h2>
+                        <p>
+                            <b>Scala</b> 是一门 <b>函数式</b>的<b>面向对象</b>语言。他运行在<b>Java虚拟机</b>上.
+                        </p>
+                        <p>
+                            本指南是用来介绍Scala强大的功能。同时你可以亲身实践他们。
+                        </p>
+                        <p>
+                            点击左边的<b>Run</b>按钮试试。左边的运行框可以在远程编译和运行任何Scala代码。运行的结果将展示在下面对文本框中。你也可以试着编辑这些代码，重新运行。(初次运行可能会有些慢，不过第二次就很快了)
+                        </p>
+                        <p>
+                            使用方向键或者空格来翻页
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="overview" class="step" data-x="-500" data-y="500" data-scale="4"></div>
+            <div id="basics" class="step direction" data-x="0" data-y="-500" data-scale="2">
+                <div class="chapter">
+                    <h2>
+                        <span class="mouse">基础</span><a class="btn btn-primary btn-large next-step">开始</a>
+                    </h2>
+                </div>
+            </div>
+            <div id="basics-contents" class="step contents slide deeply" data-x="-3500" data-y="-2000" data-z="-3000" data-scale="1">
+                <div>
+                    <h2>
+                        目录(基础）
+                    </h2>
+                    <ul>
+                        <li>
+                            <a href="#/expression-and-values">表达式和值</a>
+                        </li>
+                        <li>
+                            <a href="#/first-class-function">函数是一等公民</a>
+                        </li>
+                        <li>
+                            <a href="#/loan-pattern">借贷模式</a>
+                        </li>
+                        <li>
+                            <a href="#/pass-by-name">按名称传递参数</a>
+                        </li>
+                        <li>
+                            <a href="#/define-class">定义类</a>
+                        </li>
+                        <li>
+                            <a href="#/duck-type">鸭子类型</a>
+                        </li>
+                        <li>
+                            <a href="#/currying">柯里化</a>
+                        </li>
+                        <li>
+                            <a href="#/generics">范型</a>
+                        </li>
+                        <li>
+                            <a href="#/traits">Traits</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="step-nav">
+                           <a class="btn" type="button" href="#/overview"><i class="icon-arrow-up">&nbsp;</i>概览</a>
+                            <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                 </div>
+            </div>
+            <div id="expression-and-values" class="step slide deeply" data-x="-2000" data-y="-2000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+var helloWorld = "hello" + " world" 
+println(helloWorld)
+
+val again = " again" 
+helloWorld = helloWorld + again
+println(helloWorld)
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            表达式和值
+                        </h2>
+                        <p>
+                            在Scala中，几乎所有的语言元素都是表达式。 </p>
+                            <pre>println("hello wolrd")</pre> <p>是一个表达式， </p><pre>"hello"+" world"</pre> <p>也是一个表达式。</p>
+                        
+                        <p>
+                            可以通过val定义一个常量，亦可以通过var定义一个变量。推荐多使用常量。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="first-class-function" class="step slide deeply" data-x="-500" data-y="-2000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+def square(a: Int) = a * a
+
+def squareWithBlock(a: Int) = {
+    a * a
+}
+
+val squareVal = (a: Int) =&gt; a * a
+
+def addOne(f: Int =&gt; Int, arg: Int) = f(arg) + 1
+
+println("square(2):" + square(2))
+println("squareWithBlock(2):" + squareWithBlock(2))
+println("squareVal(2):" + squareVal(2))
+println("addOne(squareVal,2):" + addOne(squareVal, 2))
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            函数是一等公民
+                        </h2>
+                        <p>
+                            可以使用def来定义一个函数。函数体是一个表达式。
+                        </p>
+                        <p>
+                            使用Block表达式的时候，默认最后一行的返回是返回值，无需显示指定。
+                        </p>
+                        <p>
+                            函数还可以像值一样，赋值给var或val。因此<span class="important">函数也可以作为参数传给另一个函数。</span>
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="loan-pattern" class="step slide deeply" data-x="1000" data-y="-2000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+import scala.reflect.io.File
+import java.util.Scanner
+
+def withScanner(f: File, op: Scanner =&gt; Unit) = {
+    val scanner = new Scanner(f.bufferedReader)
+    try {
+        op(scanner)
+    } finally {
+        scanner.close()
+    }
+}
+
+withScanner(File("/proc/self/stat"),
+    scanner =&gt; println("pid is " + scanner.next()))
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            借贷模式
+                        </h2>
+                        <p>
+                            由于函数可以像值一样作为参数传递，所以可以方便的实现借贷模式。
+                        </p>
+                        <p>
+                            这个例子是从/proc/self/stat文件中读取当前进程的pid。
+                        </p>
+                        <p>
+                            withScanner封装了try-finally块，所以调用者<span class="important">不用再close</span>。
+                        </p>
+                        <p>
+                            注：当表达式没有返回值时，默认返回Unit。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="pass-by-name" class="step slide deeply" data-x="2500" data-y="-2000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+val logEnable = false
+
+def log(msg: String) =
+    if (logEnable) println(msg)
+
+val MSG = "programing is running"
+
+log(MSG + 1 / 0)
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            按名称传递参数
+                        </h2>
+                        <p>
+                            这个例子演示了按名称传递参数，由于有除以0，所以运行该程序会产生异常。
+                        </p>
+                        <p>试着将</p><pre>def log(msg: String)</pre>
+                            <p>修改为 </p><pre>def log(msg: =&gt; String)</pre>
+                            <p>由按值传递修改为按名称传递后将不会产生异常。
+                        </p>
+                        <p>
+                            因为log函数的参数是按名称传递，参数会等到实际使用的时候才会计算，所以被跳过。
+                        </p>
+                        <p>
+                            按名称传递参数可以减少不必要的计算和异常。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="define-class" class="step slide deeply" data-x="4000" data-y="-2000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+class Persion(val firstName: String, val lastName: String) {
+
+    private var _age = 0
+    def age = _age
+    def age_=(newAge: Int) = _age = newAge
+
+    def fullName() = firstName + " " + lastName
+
+    override def toString() = fullName()
+}
+
+val obama: Persion = new Persion("Barack", "Obama")
+
+println("Persion: " + obama)
+println("firstName: " + obama.firstName)
+println("lastName: " + obama.lastName)
+obama.age_=(51)
+println("age: " + obama.age)
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            定义类
+                        </h2>
+                        <p>
+                            可以用<span class="important">class</span>关键字来定义类。并通过<span class="important">new</span>来创建类。
+                        </p>
+                        <p>
+                            在定义类时可以定义字段，如firstName，lastName。这样做还可以自动生成构造函数。
+                        </p>
+                        <p>
+                            可以在类中通过<span class="important">def定义函数</span>。<span class="important">var和val定义字段</span>。
+                        </p>
+                        <p>
+                            函数名是<span class="important">任何字符</span>如+,-,*,/。
+                        </p>
+                         <p>试着将</p><pre>obama.age_=(51)</pre>
+                            <p>简化为</p><pre>obama.age = 51</pre>
+                            <p>这样的简化更像调用一个变量。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="duck-type" class="step slide deeply" data-x="5500" data-y="-2000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+def withClose(closeAble: { def close(): Unit }, 
+    op: { def close(): Unit } =&gt; Unit) {
+    try {
+        op(closeAble)
+    } finally {
+        closeAble.close()
+    }
+}
+
+class Connection {
+    def close() = println("close Connection")
+}
+
+val conn: Connection = new Connection()
+withClose(conn, conn =&gt;
+    println("do something with Connection"))
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            鸭子类型
+                        </h2>
+                        <p>
+                            走起来像鸭子，叫起来像鸭子，就是鸭子。
+                        </p>
+                        <p>
+                            这个例子中使用 </p><pre>{ def close(): Unit }</pre><p>作为参数类型。因此任何含有close()的函数的类都可以作为参数。
+                        </p>
+                        <p>
+                            不必使用继承这种不够灵活的特性。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="currying" class="step slide deeply" data-x="7000" data-y="-2000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+def withClose(closeAble: { def close(): Unit })
+    (op: { def close(): Unit } =&gt; Unit) {
+    try {
+        op(closeAble)
+    } finally {
+        closeAble.close()
+    }
+}
+
+class Connection {
+    def close() = println("close Connection")
+}
+
+val conn: Connection = new Connection()
+withClose(conn)(conn =&gt;
+    println("do something with Connection"))
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            柯里化
+                        </h2>
+                        <p>
+                            这个例子和上面的功能相同。不同的是使用了<span class="important">柯里化(Currying)</span>技术。
+                        </p>
+                        <p>
+                            <pre>def add(x:Int, y:Int) = x + y</pre> <p> 是普通的函数 </p>
+                        </p>
+                        <p>
+                            <pre>def add(x:Int) = (y:Int) =&gt; x + y</pre>  <p>是柯里化后的函数，相当于返回一个匿名函数表达式。 </p>
+                        </p>
+                        <p>
+                           <pre> def add(x:Int)(y:Int) = x + y</pre> <p> 是简化写法</p>
+                        </p>
+                        <p>
+                            柯里化可以让我们构造出更像原生语言提供的功能的代码
+                        </p>
+                        <p>
+                            试着将例子中的withclose(...)(...)换成withclose(...){...}
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="generics" class="step slide deeply" data-x="8500" data-y="-2000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+def withClose[A <: { def close(): Unit }, B](closeAble: A)
+  (f: A => B): B =
+  try {
+    f(closeAble)
+  } finally {
+    closeAble.close()
+  }
+class Connection {
+  def close() = println("close Connection")
+}
+val conn: Connection = new Connection()
+val msg = withClose(conn) { conn =>
+  {
+    println("do something with Connection")
+    "123456"
+  }
+}
+
+println(msg)
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            范型
+                        </h2>
+                        <p>
+                            之前的例子可以使用泛型变得更简洁更灵活。
+                        </p>
+                        <p>
+                            试着将</p>
+                            <pre>"123456"</pre> <p>修改为</p><pre>123456</pre>
+                        </p>
+                        <p>
+                            虽然msg由String类型变为Int类型，但是由于使用了泛型，代码依旧可以正常运行。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="traits" class="step slide deeply" data-x="10000" data-y="-2000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+trait ForEachAble[A] {
+  def iterator: java.util.Iterator[A]
+  def foreach(f: A => Unit) = {
+    val iter = iterator
+    while (iter.hasNext)
+      f(iter.next)
+  }
+}
+
+trait JsonAble {
+  def toJson() =
+    scala.util.parsing.json.JSONFormat.defaultFormatter(this)
+}
+
+val list = new java.util.ArrayList[Int]() with ForEachAble[Int] 
+list.add(1); list.add(2)
+
+println("For each: "); list.foreach(x => println(x))
+//println("Json: " + list.toJson())
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            Traits
+                        </h2>
+                        <p>
+                            Traits就像是有函数体的Interface。使用<span class="important">with</span>关键字来混入。
+                        </p>
+                        <p>
+                            这个例子是给java.util.ArrayList添加了foreach的功能。
+                        </p>
+                        <p>
+                            试着再在with ForEachAble[Int]后面加上</p>
+                            <pre>with JsonAble</pre><p>给list添加toJson的能力
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a><a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="funtional" class="step direction" data-x="-1500" data-y="500" data-scale="2">
+                <div class="chapter">
+                    <h2>
+                       <span class="mouse">函数式</span><a class="btn btn-info btn-large next-step">开始</a>
+                    </h2>
+
+
+                    
+                </div>
+            </div>
+            <div id="funtional-contents" class="step contents slide deeply" data-x="-3500" data-y="-500" data-z="-3000" data-scale="1">
+                <div>
+                    <h2>
+                        目录(函数式）
+                    </h2>
+                    <ul>
+                        <li>
+                            <a href="#/pattern-match">模式匹配</a>
+                        </li>
+                        <li>
+                            <a href="#/case-class">Case Class</a>
+                        </li>
+                        <li>
+                            <a href="#/function-prower">函数式的威力</a>
+                        </li>
+                        <li>
+                            <a href="#/function-true-prower">函数式真正的威力</a>
+                        </li>
+                        <li>
+                            <a href="#/word-count">Word Count</a>
+                        </li>
+                        <li>
+                            <a href="#/tail-recursion">尾递归</a>
+                        </li>
+                        <li>
+                            <a href="#/prowerful-for-loop">更强大的For循环</a>
+                        </li>
+                        <li>
+                            <a href="#/option">Option</a>
+                        </li>
+                        <li>
+                            <a href="#/lazy-initialization">Lazy初始化</a>
+                        </li>
+                   
+                    </ul>
+                </div><div class="step-nav">
+                           <a class="btn" type="button" href="#/overview"><i class="icon-arrow-up">&nbsp;</i>概览</a>
+                            <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                 </div>
+            </div>
+            <div id="pattern-match" class="step slide deeply" data-x="-2000" data-y="-500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+def fibonacci(in: Any): Int = in match {
+    case 0 =&gt; 0
+    case 1 =&gt; 1
+    case n: Int =&gt; fibonacci(n - 1) + fibonacci(n - 2)
+    case _ =&gt; 0
+}
+
+println(fibonacci(3))
+//println(fibonacci(-3))
+//println(fibonacci("3"))
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            模式匹配
+                        </h2>
+                        <p>
+                            模式匹配是类似switch-case特性，但更加灵活；也类似if-else，但更加简约。
+                        </p>
+                        <p>
+                            这个例子展示的使用用模式匹配实现斐波那契。
+                            使用case来匹配参数，如果case _，则可以匹配任何参数。
+                        </p>
+                        <p>
+                            试着将</p><pre>case n: Int</pre>
+                             <p>修改为 </p>
+                            <pre>case n: Int if (n &gt; 1)</pre><p>case后添加if语句判断,这样修改当输入负数时，就不会无限循环。
+                        </p>
+                         <p>
+                            模式匹配也可以匹配类型，在case _ 前加上</p>
+                            <pre>case n: String =&gt; fibonacci(n.toInt)</pre><p>这样就可以匹配String类型
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="case-class" class="step slide deeply" data-x="-500" data-y="-500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+abstract class Expr
+
+case class FibonacciExpr(n: Int) extends Expr {
+  require(n &gt;= 0)
+}
+
+case class SumExpr(a: Expr, b: Expr) extends Expr
+
+def value(in: Expr): Int = in match {
+  case FibonacciExpr(0) =&gt; 0
+  case FibonacciExpr(1) =&gt; 1
+  case FibonacciExpr(n) =&gt; 
+    value(SumExpr(FibonacciExpr(n - 1), FibonacciExpr(n - 2)))
+  case SumExpr(a, b) =&gt; value(a) + value(b)
+  case _ =&gt; 0
+}
+println(value(FibonacciExpr(3)))
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            Case Class
+                        </h2>
+                        <p>
+                            case class 顾名思义就是为case语句专门设计的类，
+                            在普通类的基础上添加了和类名一直的工厂方法，
+                            还添加了hashcode,equals和toString等方法。
+                        </p>
+                        <p>
+                            由于使用了require(n &gt;= 0)来检验参数，如果使用负数计算，将会抛出异常。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="function-prower" class="step slide deeply" data-x="1000" data-y="-500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+val list = List(1, 2, 3, 4)
+
+def containsOdd(list: List[Int]): Boolean = {
+  for (i &lt;- list) {
+    if (i % 2 == 1)
+      return true;
+  }
+  return false;
+}
+
+println("list contains Odd ? " + containsOdd(list))
+
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            函数式的威力
+                        </h2>
+                        <p>
+                            这个例子是用指令式编程判断一个List中是否含有奇数。
+                        </p>
+
+                        <p> 试着将</p> <pre>containsOdd(list)</pre> <p>替换为 </p><pre>list.exists((x: Int) => x % 2 ==1)</pre> 
+                        <p>
+                            通过将函数作为参数，可以使程序更简洁。还可以再简化为 </p><pre>list.exists(_ % 2 == 1)</pre> 
+                        <p>
+                          可以用_替代参数
+                        </p>
+                        <p>
+                            相比于Ruby等动态语言,这威力来自于科学而不是魔法
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="function-true-prower" class="step slide deeply" data-x="2500" data-y="-500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+val file = List("warn 2013 msg", "warn 2012 msg",
+  "error 2013 msg", "warn 2013 msg")
+
+println("cat file | grep 'warn' | grep '2013' | wc : " 
+    + file.filter(_.contains("warn")).filter(_.contains("2013")).size)
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            函数式真正的威力
+                        </h2>
+                        <p>
+                            函数式除了能简化代码外，更重要的是他关注的是<span class="important">Input</span>和<span class="important">Output</span>，函数本身没有副作用。
+                        </p>
+                        <p>
+                            就是Unix pipeline一样，简单的命令组合在一起威力无穷。
+                        </p>
+                        <p>
+                            如果你喜欢Unix pipeline的方式，你一定也会喜欢函数式编程。
+                        </p>
+                        <p>
+                            这个例子是用函数式的代码模拟<pre></p>cat file | grep 'warn' | grep '2013' | wc</pre>
+                          <p>  List的filter方法接受一个过滤函数，返回一个新的List，作为下一个方法的输入。</p>
+                        
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="word-count" class="step slide deeply" data-x="4000" data-y="-500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+val file = List("warn 2013 msg", "warn 2012 msg",
+  "error 2013 msg", "warn 2013 msg")
+
+def wordcount(str: String): Int = str.split(" ").count("msg" == _)
+  
+val num = file.map(wordcount).reduceLeft(_ + _)
+
+println("wordcount:" + num)
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            Word Count
+                        </h2>
+                        <p>
+                            Word Count是一个MapReduce的一个经典示例。在函数式编程中，Word Count最直观的实现方法也是MapReduce。
+                        </p>
+                        <p>
+                            这个例子介绍了List的两个重要的高阶方法<span class="important">map</span>和<span class="important">reduceLeft</span>。
+                        </p>
+                       <p>
+                            <span class="important">map</span>接受一个转换函数,返回转换结果。
+                        </p>
+                        <p>
+                            <span class="important">reduceLeft</span>接受一个合并函数，依次遍历合并。
+                        </p> 
+                        <p>
+                           <span class="important"> 使用高阶方法可以代替大部分需要循环的操作，使代码更清晰</span>
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tail-recursion" class="step slide deeply" data-x="5500" data-y="-500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+val file = List("warn 2013 msg", "warn 2012 msg",
+  "error 2013 msg", "warn 2013 msg")
+
+def wordcount(str: String): Int = str.split(" ").count("msg" == _)
+
+def foldLeft(list: List[Int])(init: Int)(f: (Int, Int) =&gt; Int): Int = {
+  list match {
+    case List() =&gt; init
+    case head :: tail =&gt; foldLeft(tail)(f(init, head))(f)
+  }
+}
+
+val num = foldLeft(file.map(wordcount))(0)(_ + _)
+
+println("wordcount:" + num)
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            尾递归
+                        </h2>
+                        <p>
+                        尾递归是递归的一种，特点在于会在函数的最末调用自身。尾递归是函数式编程的常见写法。
+                        </p>
+                       <p> 这个例子是foldLeft的尾递归实现。foldLeft和reduceLeft相比更常用，多一个初始参数。 </p>
+                        <p>
+                            当用List做match case时。可以使用 :: 来解构。返回第一个元素head和剩余元素tail。
+                        </p>
+                        <p>
+                            注：尾递归会在编译期优化，因此不用担心递归造成的栈溢出问题。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="prowerful-for-loop" class="step slide deeply" data-x="7000" data-y="-500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+val file = List("warn 2013 msg", "warn 2012 msg",
+  "error 2013 msg", "warn 2013 msg")
+
+def wordcount(str: String): Int = str.split(" ").count("msg" == _)
+
+val counts =
+  for (line &lt;- file)
+    yield wordcount(line)
+
+val num = counts.reduceLeft(_ + _)
+
+println("wordcount:" + num)
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            更强大的For循环
+                        </h2>
+                        <p>
+                            循环语句是指令式编程的常见语句，Scala对其加以改进，成为适应函数式风格的利器。
+                        </p>
+                        <p>
+                            For循环也是有返回值的，返回的是一个List。在每一轮迭代中加入yield，yield后的值可以加入到List中。
+                        </p>
+                        <p>
+                            这个例子是使用for循环代替map函数。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="option" class="step slide deeply" data-x="8500" data-y="-500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+def getProperty(name: String): Option[String] = {
+  val value = System.getProperty(name)
+  if (value != null) Some(value) else None
+}
+
+val osName = getProperty("os.name")
+
+osName match {
+  case Some(value) =&gt; println(value)
+  case _ =&gt; println("none")
+}
+
+println(osName.getOrElse("none"))
+
+osName.foreach(print _)
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            Option
+                        </h2>
+                        <p>
+                           Scala提供了Option机制来解决，代码中不断检查null的问题。
+                        </p>
+                        <p>
+                            这个例子包装了getProperty方法，使其返回一个Option。 这样就可以不再漫无目的地null检查。只要Option类型的值即可。
+                        </p>
+                        <p>
+                            使用pattern match来检查是常见做法。也可以使用getOrElse来提供当为None时的默认值。
+                        </p>
+                        <p>
+                            给力的是Option还可以看作是最大长度为1的List，List的强大功能都可以使用。
+                        </p>
+
+                        <p>再见 NullException </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="lazy-initialization" class="step slide deeply" data-x="10000" data-y="-500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+class ScalaCurrentVersion(val url: String) {
+  lazy val source= {
+    println("fetching from url...")
+    scala.io.Source.fromURL(url).getLines().toList
+  }
+  lazy val majorVersion = source.find(_.contains("version.major"))
+  lazy val minorVersion = source.find(_.contains("version.minor"))
+}
+
+val version = new ScalaCurrentVersion(
+  "https://raw.github.com/scala/scala/master/build.number")
+println("get scala version from " + version.url)
+version.majorVersion.foreach(println _)
+version.minorVersion.foreach(println _)
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            Lazy初始化
+                        </h2>
+                        <p>
+                            Lazy可以延迟初始化字段。加上lazy的字段会在第一次访问的时候初始化，而不是类初始化的时候初始化。
+                        </p>
+                        <p>
+                            这个例子是从github获得Scala的版本号，由于访问网络需要较多时间。可以使用lazy来延迟获取。
+                            防止可能的浪费。
+                        </p>
+                        <p>Lazy非常适合于初始化非常耗时的场景</p>
+                        <p>
+                            
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a><a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="concurrency" class="step direction" data-x="0" data-y="1500" data-scale="2">
+                <div class="chapter">
+                    <h2>
+                        <span class="mouse">并发</span><a class="btn btn-success btn-large next-step">开始</a>
+                    </h2>
+                </div>
+            </div>
+            <div id="concurrency-contents" class="step contents slide deeply" data-x="-3500" data-y="1000" data-z="-3000" data-scale="1">
+                <div>
+                    <h2>
+                        目录(并发）
+                    </h2>
+                    <ul>
+                        <li>
+                            <a href="#/using-actor">使用Actor</a>
+                        </li>
+                        <li>
+                            <a href="#/simplify-actor">Actor更简化的用法</a>
+                        </li>
+                        <li>
+                            <a href="#/actor-principle">Actor原理</a>
+                        </li>
+                        <li>
+                            <a href="#/return-sync">同步返回</a>
+                        </li>
+                        <li>
+                            <a href="#/return-async">异步返回</a>
+                        </li>
+                        <li>
+                            <a href="#/parallel-collection">并行集合</a>
+                        </li>
+                        <li>
+                            <a href="#/parallel-word-count">并行wordcount</a>
+                        </li>
+                        <li>
+                            <a href="#/remote-actor">远程Actor</a>
+                        </li>
+                        
+                    </ul>
+                </div><div class="step-nav">
+                           <a class="btn" type="button" href="#/overview"><i class="icon-arrow-up">&nbsp;</i>概览</a>
+                            <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                 </div>
+            </div>
+            <div id="using-actor" class="step slide deeply" data-x="-2000" data-y="1000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+import scala.actors.Actor
+import scala.actors.Exit
+
+class EchoServer extends Actor {
+  def act = loop {
+    react {
+      case msg:String =&gt; println("echo " + msg)
+      case Exit =&gt; exit()
+    }
+  }
+  start
+}
+
+val echoServer = new EchoServer
+echoServer ! "hi"
+echoServer ! Exit
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            使用Actor
+                        </h2>
+                        <p>
+                            Actor是Scala的并发模型。Actor是类似线程的实体，有一个邮箱。
+                        </p>
+                        <p>
+                            可以通过重载act来执行，<span class="important">react</span>获取邮箱消息，<span class="important">！</span>向邮箱发送消息。
+                        </p>
+                        <p>
+                            这个例子是一个EchoServer，接受信息并打印。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="simplify-actor" class="step slide deeply" data-x="-500" data-y="1000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+import scala.actors.Actor._
+import scala.actors.Exit
+
+val echoServer = actor {
+  loop {
+    react {
+      case msg:String =&gt; println("echo " + msg)
+      case Exit =&gt; exit()
+    }
+  }
+}
+echoServer ! "hi"
+echoServer ! Exit
+
+
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            Actor更简化的用法
+                        </h2>
+                        <p>
+                            可以通过更简化的办法声明Actor。
+                        </p>
+                        <p>
+                            通过
+<pre>import scala.actors.Actor._</pre>
+
+                             <p> 导入scala.actors.Actor.中的actor函数。这个函数可以返回一个Actor。
+                        </p>
+                        <p>
+                            react和一般的函数不同，他不会返回(就像抛出异常一样)。所以需要用loop函数来循环调用它。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="actor-principle" class="step slide deeply" data-x="1000" data-y="1000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+import scala.actors.Actor._
+import scala.actors.Exit
+import scala.util.Random
+
+def echoServer(name: String) = actor {
+  loop {
+    react {
+      case msg:String =&gt; println("server" + name + " echo " + msg +
+        " by " + Thread.currentThread())
+      case Exit =&gt; exit()
+    }
+  }
+}
+
+val echoServers = (1 to 4).map(x =&gt; echoServer(x.toString))
+(1 to 10).foreach(msg =&gt; echoServers(Random.nextInt(4)) ! msg.toString)
+echoServers.foreach(_ ! Exit)
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            Actor原理
+                        </h2>
+                        <p>
+                            Actor比线程轻量。在Scala中可以创建数以百万级的Actor。奥秘在于Actor直接可以<span class="important">复用线程</span>。
+                        </p>
+                        <p>
+                            这个例子创建4个Actor，每次调用的时候打印自身线程名称。
+                        </p>
+                        <p>
+                            可以发现Actor和线程之间没有任何固定的对应关系。
+                        
+                            一个Actor可以使用多个线程，一个线程也会被多个Actor复用。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="return-sync" class="step slide deeply" data-x="2500" data-y="1000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+import scala.actors.Actor._
+import scala.actors.Exit
+
+val versionUrl = "https://raw.github.com/scala/scala/master/starr.number"
+
+val fromURL = actor {
+  loop {
+    react {
+      case url: String =&gt; reply(scala.io.Source.fromURL(url)
+        .getLines().mkString("\n"))
+      case Exit =&gt; exit()
+    }
+  }
+}
+
+val version = fromURL !? versionUrl
+println(version)
+fromURL ! Exit
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            同步返回
+                        </h2>
+                        <p>
+                            Actor非常适合于较耗时的操作。比如获取网络资源。
+                        </p>
+                        <p>
+                            这个例子通过reply返回，通过!?同步发送并获取消息。使用时类似一个函数调用。
+                        </p>
+                        <p>
+                            试着将<span class="important">!?</span>修改为<span class="important">!!</span>，这样可以返回一个future。future是一个函数，可以调用查看结果。需要将
+                        </p>
+                        <pre>println(version)</pre>
+                        <p>
+                            修改为
+                        </p>
+                        <pre>println(version())</pre>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="return-async" class="step slide deeply" data-x="4000" data-y="1000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+import scala.actors.Actor._
+import scala.actors.TIMEOUT
+
+val versionUrl = "https://raw.github.com/scala/scala/master/starr.number"
+val fromURL = actor {
+  react {
+    case (url: String, relayer: scala.actors.Actor) =&gt;
+      relayer ! scala.io.Source.fromURL(url).getLines().mkString("\n")
+  }
+}
+fromURL ! ((versionUrl, actor {
+  reactWithin(5000) {
+    case msg: String =&gt; println(msg)
+    case TIMEOUT =&gt; println("timeout")
+  }
+}))
+
+
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            异步返回
+                        </h2>
+                        <p>
+                            异步操作可以最大发挥效能。使用异步最佳的办法是在消息中包含需要回调Actor。
+                        </p>
+                        <p>
+                            这个例子通过传入一个actor达到异步调用。
+                        </p>
+                        <p>
+                            当react不在loop中时，可以使用reactWithin检测超时。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="parallel-collection" class="step slide deeply" data-x="5500" data-y="1000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+val urls = List("http://scala-lang.org",
+  "https://github.com/yankay/scala-tour")
+
+def fromURL(url: String) = scala.io.Source.fromURL(url)
+  .getLines().mkString("\n")
+
+val t = System.currentTimeMillis()
+urls.map(fromURL(_))
+println("time: " + (System.currentTimeMillis - t) + "ms")
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            并行集合
+                        </h2>
+                        <p>
+                            这个例子是访问若干URL，并记录时间。如果能并行访问，就可以大幅提高性能。
+                        </p>
+                        
+                            
+                        
+                        <p>
+                            尝试将</p><pre>urls.map</pre><p>修改为</p><pre>urls.par.map</pre>
+                        <p>这样每个map中的函数都可以并发执行。
+                        </p>
+                        <p>
+                            当函数式和并发结合，就会这样让人兴奋。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="parallel-word-count" class="step slide deeply" data-x="7000" data-y="1000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+val file = List("warn 2013 msg", "warn 2012 msg",
+  "error 2013 msg", "warn 2013 msg")
+
+def wordcount(str: String): Int = str.split(" ").count("msg" == _)
+
+val num = file.par.map(wordcount).par.reduceLeft(_ + _)
+
+println("wordcount:" + num)
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            并行wordcount
+                        </h2>
+                        <p>
+                            这个例子是访问若干URL，并记录时间。
+                        </p>
+                        <p>
+                            并行集合支持大部分集合的功能。
+                        </p>
+                        <p>
+                            在前面有一个wordcount例子，也可以用并行集合加以实现。
+                        </p>
+                        <p>
+                            不增加程序复杂性，却能大幅提高利用多核的能力。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="remote-actor" class="step slide deeply" data-x="8500" data-y="1000" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+import scala.actors.remote.RemoteActor._
+import scala.actors.Actor._
+import scala.actors.remote.Node
+
+val port = 31241
+
+val echoServer = actor {
+  alive(port)
+  register('echoServer, self)
+  loop {
+    react {
+      case msg => {
+        reply("replay " + msg)
+      }
+    }
+  }
+}
+
+val timeServerClient = select(Node("127.0.0.1", port), 'echoServer)
+
+timeServerClient !? "hi" match {
+  case replay: String => println(replay)
+}
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            远程Actor
+                        </h2>
+                        <p>
+                            Actor是并发模型，也使用于分布式。
+                        </p>
+                        <p>
+                            这个例子创建一个时间服务器，通过alive来监听TCP端口，register来注册自己。
+                        </p>
+                        <p>
+                            调用时通过select创建client。其余使用方式和普通Actor一样。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a><a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="practice" class="step direction" data-x="1500" data-y="500" data-scale="2">
+                <div class="chapter">
+                    <h2>
+                        <span class="mouse">实践</span><a class="btn btn-warning btn-large next-step">开始</a>
+                    </h2>
+                </div>
+            </div>
+            <div id="practice-contents" class="step contents slide deeply" data-x="-3500" data-y="2500" data-z="-3000" data-scale="1">
+                <div>
+                    <h2>
+                        目录(实践)
+                    </h2>
+                    <ul>
+                        <li>
+                            <a href="#/using-java">使用Java</a>
+                        </li>
+                        <li>
+                            <a href="#/equality">相等性</a>
+                        </li>
+                        <li>
+                            <a href="#/extractor">抽取器</a>
+                        </li>
+                        <li>
+                            <a href="#/memory-pattern">记忆模式</a>
+                        </li>
+                        <li>
+                            <a href="#/implicit-conversion">隐式转换</a>
+                        </li>
+                        <li>
+                            <a href="#/dsl">DSL</a>
+                        </li>
+                        <li>
+                            <a href="#/test">测试</a>
+                        </li>
+                        <li>
+                            <a href="#/simple-build-tool">Simple Build Tool</a>
+                        </li>
+                      
+                    </ul>
+                </div><div class="step-nav">
+                           <a class="btn" type="button" href="#/overview"><i class="icon-arrow-up">&nbsp;</i>概览</a>
+                            <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                 </div>
+            </div>
+            <div id="using-java" class="step slide deeply" data-x="-2000" data-y="2500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+import org.apache.commons.beanutils.BeanUtils
+import scala.beans.BeanProperty
+
+class SimpleBean(var name: String) {
+}
+
+val bean = new SimpleBean("foo")
+
+println(BeanUtils.describe(bean))
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            使用Java
+                        </h2>
+                        <p>
+                            Scala和Java可以非常方便的互操作，前面已经有大量Scala直接使用Java的例子。
+                        </p>
+                        <p>
+                            同样Java也可以使用Scala。这个例子演示使用@BeanProperty注解来生成Java Style的Bean。
+                        </p>
+                        
+                            <p>尝试将</p>
+                            <pre>var name: String</pre>
+                              <p>修改为</p>
+                            <pre>@BeanProperty var name: String</pre>
+
+                             <p>这样就给bean添加了getter/setter。                 
+                            Apache BeanUtils就可以正常工作。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn" type="button"  href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="equality" class="step slide deeply" data-x="-500" data-y="2500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+class Person(val name: String) {
+  override def equals(other: Any) = other match {
+    case that: Person =&gt; name.equals(that.name)
+    case _ =&gt; false
+  }
+}
+
+println(new Person("Black") == new Person("Black"))
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            相等性
+                        </h2>
+                        <p>
+                            在Scala中<span class="important">==等效于equals</span>，这一点和Java不同。更自然一些。
+                        </p>
+                        <p>
+                            写一个完全正确的equal函数并不容易，这个例子也有子类会不对称的Bug。
+                        </p>
+                        <p>
+                            尝试将class修改为case class,并删除equals函数。
+                        </p>
+                        <p>
+                            case类会自动生成正确的equals函数。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="extractor" class="step slide deeply" data-x="1000" data-y="2500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+import scala.util.matching.Regex
+
+object Email {
+  def unapply(str: String) = new Regex("""(.*)@(.*)""")
+    .unapplySeq(str).get match {
+    case user :: domain :: Nil =&gt; Some(user, domain)
+    case _ =&gt; None
+  }
+}
+
+"user@domain.com" match {
+  case Email(user, domain) =&gt; println(user + "@" + domain)
+}
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            抽取器
+                        </h2>
+                        <p>
+                            抽取器可以帮助模式匹配进行解构。
+                        </p>
+                        <p>
+                            这个例子是构建一个Email抽取器，只要实现unapply函数就可以了。
+                        </p>
+                        <p>
+                            Scala的正则表达式会自带抽取器，可以抽取出一个List。List里的元素是匹配()里的表达式。
+                        </p>
+                        <p>
+                            抽取器很有用，短短的例子里就有两处使用抽取器：
+                        </p>
+                        
+                           <pre>case user :: domain :: Nil</pre><p>解构List </p>
+                            <pre>case Email(user, domain)</pre><p>解构Email。</p>
+                        
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="memory-pattern" class="step slide deeply" data-x="2500" data-y="2500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+import scala.collection.mutable.WeakHashMap
+
+def memo[X, R](f: X =&gt; R) = {
+  val cache = new WeakHashMap[X, R]
+  (x: X) =&gt; cache.getOrElseUpdate(x, f(x))
+}
+def fibonacci_(in: Int): Int = in match {
+  case 0 =&gt; 0;
+  case 1 =&gt; 1;
+  case n: Int =&gt; fibonacci_(n - 1) + fibonacci_(n - 2)
+}
+val fibonacci: Int =&gt; Int = memo(fibonacci_)
+
+val t1 = System.currentTimeMillis()
+println(fibonacci(40))
+println("it takes " + (System.currentTimeMillis() - t1) + "ms")
+
+val t2 = System.currentTimeMillis()
+println(fibonacci(40))
+println("it takes " + (System.currentTimeMillis() - t2) + "ms")
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            记忆模式
+                        </h2>
+                        <p>
+                            记忆模式可以解决手动编写存取cache代码的麻烦。
+                        </p>
+                        <p>
+                            这个例子中，memo可以将一个不含cache函数，包装成一个含有cache功能的。
+                        </p>
+                        <p>
+                            还是斐波那契的例子，通过cache可以使性能提高。
+                        </p>
+                        <p>
+                            尝试将  </p>
+                            <pre>fibonacci_(n - 1) + fibonacci_(n - 2)</pre>
+                                 <p>修改为  </p>
+                                <pre>fibonacci(n - 1) + fibonacci(n - 2)</pre>
+                                 <p>可以提高更多性能。</p>
+                      
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button"  href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="implicit-conversion" class="step slide deeply" data-x="4000" data-y="2500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+import java.text.SimpleDateFormat
+
+implicit def strToDate(str: String) = 
+  new SimpleDateFormat("yyyy-MM-dd").parse(str)
+
+println("2013-01-01 unix time: " + "2013-01-01".getTime()/1000l)
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            隐式转换
+                        </h2>
+                        <p>
+                            implicit可以定义一个转换函数，可以在使用相应类型的时候自动转换。
+                        </p>
+                        <p>
+                            这个例子可以将String自动转换为Date类型。隐式转换时实现DSL的重要工具。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button"  href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="dsl" class="step slide deeply" data-x="5500" data-y="2500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+import org.json4s._
+import org.json4s.JsonDSL._
+import org.json4s.jackson.JsonMethods._
+import java.util.Date
+
+case class Twitter(id: Long, text: String, publishedAt: Option[java.util.Date])
+
+var twitters = Twitter(1, "hello scala", Some(new Date())) ::
+  Twitter(2, "I like scala tour", None) :: Nil
+
+var json = ("twitters"
+  -&gt; twitters.map(
+    t =&gt; ("id" -&gt; t.id)
+      ~ ("text" -&gt; t.text)
+      ~ ("published_at" -&gt; t.publishedAt.toString())))
+
+println(pretty(render(json)))
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            DSL
+                        </h2>
+                        <p>
+                            DSL是Scala最强大武器，可以使一些描述性代码变得极为简单。
+                        </p>
+                        <p>
+                            这个例子是使用DSL生成JSON。Scala很多看似是语言级的特性也是用DSL做到的。
+                        </p>
+                        <p>
+                            自己编写DSL有点复杂，但使用起来非常方便。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button"  href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="test" class="step slide deeply" data-x="7000" data-y="2500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+                            <div class="controls">
+                                <button type="button" class="run btn btn-primary" title="Compile and Run">Run</button>
+                            </div>
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+import org.specs2.mutable._
+
+class FactorialSpec extends Specification {
+  args.report(color = false)
+
+  def factorial(n: Int) = (1 to n).reduce(_ * _)
+
+  "The 'Hello world' string" should {
+    "factorial 3 must be 6" in {
+      factorial(3) mustEqual 6
+    }
+    "factorial 4 must greaterThan 6" in {
+      factorial(4) must greaterThan(6)
+    } 
+  }
+}
+specs2.run(new FactorialSpec)
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            测试
+                        </h2>
+                        <p>
+                            Scala可以使用Spec2，ScalaTest来测试， DSL可以使测试更方便。
+                        </p>
+                        <p>
+                            这个例子是测试一个阶乘函数。使用should/in来建立测试用例。
+                        </p>
+                        <p>
+                            测试是默认并发执行的。
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button"  href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="simple-build-tool" class="step slide deeply" data-x="8500" data-y="2500" data-z="-3000">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <div class="workspace">
+
+                            <div class="workspace-top">
+                                <div class="workspace-editor">
+                                    <form>
+                                        <textarea class="editor" spellcheck="false">
+#Linux/Mac(compile &amp; run):
+git clone https://github.com/yankay/scala-tour-zh.git
+cd scala-tour-zh
+./sbt/sbt stage
+./target/start
+
+#Windows(can only compile):
+git clone https://github.com/yankay/scala-tour-zh.git
+cd scala-tour-zh
+sbt\sbt stage
+</textarea>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="workspace-bottom">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <h2>
+                            Simple Build Tool
+                        </h2>
+                        <p>
+                            SBT是Scala的最佳编译工具，在他的帮助下，
+                        </p>
+                        <p>
+                            你甚至<span class="important">不需要安装</span>除JRE外的任何东西，来开发Scala。
+                        </p>
+                        <p>
+                            例如你想在自己的机器上执行这个Scala-Tour,可以执行左边的命令
+                        </p>
+                        <div class="step-nav">
+                            <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button"  href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a><a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="about" class="step" data-x="3000" data-y="3000" data-scale="1">
+                <h2>
+                    关于
+                </h2>
+                <p>
+                    这个指南源自于作者对Scala的热爱和对传播Scala的愿望
+                </p>
+                <h3>
+                    其他资料:
+                </h3>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="http://twitter.github.com/scala_school/" target="_blank">Scala School!</a>: Twitter的Scala教学
+                        </li>
+                        <li>
+                            <a href="http://docs.scala-lang.org/tutorials/tour/tour-of-scala.html" target="_blank">A Tour of Scala</a>:官方Scala Tour
+                        </li>
+                        <li>
+                            <a href="http://www.scala-lang.org/docu/files/ScalaByExample.pdf" target="_blank">Scala By Example</a>:更多的Scala例程
+                        </li>
+                        <li>
+                            <a href="http://docs.scala-lang.org/cheatsheets/" target="_blank">Scala Cheatsheet</a>:一眼望穿Scala基本语法
+                        </li>
+                        <li>
+                            <a href="https://class.coursera.org/progfun-2012-001/class/index" target="_blank">Functional Programming Principles in Scala</a>:Coursera 的Scala课程
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="discus" class="step" data-x="4500" data-y="3000" data-scale="1">
+                <div>
+                    <div id="disqus_thread"></div><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="hint">
+            <p>
+                Use a spacebar or arrow keys to navigate
+            </p>
+        </div>
+        <div style="position: fixed; bottom: 0px; left: 10px; pointer-events: auto; width:100%;">
+            <div class="container" style="width:1024px">
+                <iframe src="http://ghbtns.com/github-btn.html?user=yankay&amp;repo=scala-tour&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe> <span id="designed-by">Designed by <a href="http://www.yankay.com">颜开</a></span>
+            </div>
+        </div><script>
+if ("ontouchstart" in document.documentElement) { 
+        document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate<\/p>";
+        }
+        </script> <script src="js/jquery.min.js">
+</script> <script src="js/bootstrap.js">
+</script> <script src="js/impress.js">
+</script>  <script src="js/codemirror.min.js">
+</script> <script src="js/matchbrackets.js">
+</script> <script src="js/clike.js">
+</script> <script src="js/scala-tour.js">
+</script> 
+ <script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = 'scala-tour'; // required: replace example with your forum shortname
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                    </script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40580124-2', 'scala-tour.com');
+  ga('send', 'pageview');
+
+</script>
+    </body>
+</html>

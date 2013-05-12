@@ -235,9 +235,6 @@ color: #222;
      opacity:0;
 }
 
-.chapter .mouse{
-	cursor: pointer;
-}
 .chapter h2{
 	font-size: 160px;
 }
@@ -246,6 +243,10 @@ color: #222;
 	margin-left: 20px;
 	margin-top: 150px;
 }
+
+.active .chapter .btn{
+}
+
 
 .step-nav{
 	position: absolute;
@@ -283,6 +284,10 @@ line-height: 2;
 background: rgba(255,255,255,0);
 }
 
+#using-actor p a{
+background: rgba(255,255,255,0);
+}
+
 .contents h2{
 	font-size: 36px;
 	line-height: 2;
@@ -308,4 +313,9 @@ line-height: 2;
 
 .important{
 	 font-weight:bold;
+}
+
+#disqus_thread {
+	height:600px;
+	overflow: auto;
 }

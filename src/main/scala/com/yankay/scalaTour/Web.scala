@@ -21,6 +21,7 @@ import org.eclipse.jetty.servlets.GzipFilter
 import java.util.EnumSet
 import javax.servlet.DispatcherType
 import scala.collection.mutable.WeakHashMap
+import scala.util.matching.Regex
 
 object Web {
   val cache = new WeakHashMap[String, RunResponse]
@@ -59,41 +60,48 @@ class RunServlet extends HttpServlet {
     val error = new String(buffer.toByteArray()).lines.toList
     //    println(new String(buffer.toByteArray()))
     //    println(error);
-    val errorMsg = error.map(x => x.replaceAll("/tmp/scala-script.*scala", "main.scala"))
+    def replaceErrorCodeNum(src: String): String = {
+      val reg = new Regex("""main\.scala:([0-9]*): error:.*""")
+      reg.unapplySeq(src).getOrElse(src) match {
+        case l :: Nil => "main.scala:" + (l.toString.toInt - 8).toString + src.substring("main.scala:".length() + l.toString.length())
+        case _ => src
+      }
+    }
+    val errorMsg = error.map(x => x.replaceAll("/tmp/scala-script.*scala", "main.scala")).map(replaceErrorCodeNum)
 
     file match {
       case Some(f) => {
         try {
-          val (outEvents, errEvents) = run(f);
-          new RunResponse(errorMsg.toList, outEvents, errEvents)
+          val (outEvents, errEvents, exitValue) = run(f);
+          new RunResponse(errorMsg.toList, outEvents, errEvents, exitValue)
         } finally {
           f.deleteIfExists();
         }
       }
-      case _ => new RunResponse(errorMsg, List(), List())
+      case _ => new RunResponse(errorMsg, List(), List(), -1)
     }
   }
 
-  def run(file: File): (List[String], List[String]) = {
+  def run(file: File): (List[String], List[String], Int) = {
     val out = new ByteArrayOutputStream();
     val err = new ByteArrayOutputStream();
     val proc = ScalaScriptProcess.create(file, out, err);
     proc match {
       case Some(p) => {
         val pid = p.run();
-        val timeout = new TimeoutActor(pid, 10*1000)
+        val timeout = new TimeoutActor(pid, 10 * 1000)
         timeout.start
         val existValue = pid.exitValue()
         timeout ! existValue
         val outEvents = new String(out.toByteArray()).lines.toList
         val errEvents = new String(err.toByteArray()).lines.toList.filterNot(_.startsWith("Picked up JAVA_TOOL_OPTIONS"))
         existValue match {
-          case 0 => (outEvents, errEvents)
-          case x => (outEvents, errEvents ::: List("exit value is " + x))
+          case 0 => (outEvents, errEvents, 0)
+          case x => (outEvents, errEvents ::: List("exit value is " + x), x)
         }
 
       }
-      case _ => (List(), List())
+      case _ => (List(), List(), -1)
     }
   }
 
@@ -114,7 +122,21 @@ class RunServlet extends HttpServlet {
   }
 
   def memo(f: String => RunResponse) = {
-    (x: String) => Web.cache.getOrElseUpdate(x, f(x))
+    (x: String) =>
+      {
+        val response = Web.cache.get(x)
+        response match {
+          case Some(resp) => resp
+          case None => {
+            val resp = f(x)
+            resp.exitValue match {
+              case 0 => Web.cache.getOrElseUpdate(x, resp)
+              case _ => resp
+            }
+          }
+
+        }
+      }
   }
   override def doGet(req: HttpServletRequest, resp: HttpServletResponse) = {
     val code = req.getParameter("code")
@@ -134,6 +156,6 @@ class RunServlet extends HttpServlet {
   }
 }
 
-case class RunResponse(errors: List[String], events: List[String], errEvents: List[String]) {
+case class RunResponse(errors: List[String], events: List[String], errEvents: List[String], exitValue: Int) {
 
 }

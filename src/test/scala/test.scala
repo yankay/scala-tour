@@ -1,22 +1,32 @@
 
-import java.util.Date
-import scala.runtime.RichInt
-import scala.runtime.RichInt
 
+import scala.util.matching.Regex
 
 object test {
   def main(args: Array[String]) {
+    import scala.collection.mutable.WeakHashMap
 
-    import scala.actors.remote.RemoteActor._
-    import scala.actors.Actor._
-    import scala.actors.remote.Node
+    val cache = new WeakHashMap[Int, Int]
+    def memo(f: Int => Int) = (x: Int) => cache.getOrElseUpdate(x, f(x))
 
-    implicit def strToDate(str: String) =
-      new SimpleDateFormat("yyyy-MM-dd").parse(str)
+    def fibonacci_(in: Int): Int = in match {
+      case 0 => 0;
+      case 1 => 1;
+      case n: Int => memo(fibonacci_)(n - 1) + memo(fibonacci_)(n - 2)
+    }
 
-    println("2013-01-01 unix time: " + "2013-01-01".getTime() / 1000l)
+    val fibonacci: Int => Int = memo(fibonacci_)
+
+    val t1 = System.currentTimeMillis()
+    println(fibonacci(40))
+    println("it takes " + (System.currentTimeMillis() - t1) + "ms")
+
+    val t2 = System.currentTimeMillis()
+    println(fibonacci(40))
+    println("it takes " + (System.currentTimeMillis() - t2) + "ms")
 
   }
+
 }
 
 

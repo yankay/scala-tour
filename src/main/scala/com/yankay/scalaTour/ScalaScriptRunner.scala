@@ -24,14 +24,14 @@ import scala.util.Properties
 import scala.tools.nsc.io.Jar
 
 object ScalaScriptCompiler {
-  /** Default name to use for the wrapped script */
+//  /** Default name to use for the wrapped script */
   val defaultScriptMain = "Main"
-
-  /** Pick a main object name from the specified settings */
-  def scriptMain(settings: Settings) = settings.script.value match {
-    case "" => defaultScriptMain
-    case x => x
-  }
+//
+//  /** Pick a main object name from the specified settings */
+//  def scriptMain(settings: Settings) = settings.script.value match {
+//    case "" => defaultScriptMain
+//    case x => x
+//  }
 
   val settings: GenericRunnerSettings = {
     val command = new GenericRunnerCommand(List(), Console.err println _)
@@ -51,21 +51,26 @@ object ScalaScriptCompiler {
   def compile(script: String, err: OutputStream): Option[File] = {
     val scriptFile = File.makeTemp("scala-script", ".scala")
     // save the command to the file
-    val scriptheader =  """import scala.io.Codec
+    val scriptAll =  """
+    import scala.io.Codec
     import java.nio.charset.CodingErrorAction
-
-    implicit val codec = Codec("UTF-8")
-    codec.onMalformedInput(CodingErrorAction.REPLACE)
-    codec.onUnmappableCharacter(CodingErrorAction.REPLACE)
+    object Main {
+    	def main(args: Array[String]) {
+		    implicit val codec = Codec("UTF-8")
+		    codec.onMalformedInput(CodingErrorAction.REPLACE)
+		    codec.onUnmappableCharacter(CodingErrorAction.REPLACE)
+    """ + script+ """
+    	}
+    }
     """
-    scriptFile.writeAll(scriptheader+script)
+    scriptFile.writeAll(scriptAll)
     try compile(scriptFile, err)
     finally scriptFile.delete() // in case there was a compilation error
   }
 
   def compile(
     scriptFile: File, err: OutputStream): Option[File] = {
-    def mainClass = scriptMain(settings)
+//    def mainClass = scriptMain(settings)
     val compiledPath = Directory makeTemp "scalascript"
 
     // delete the directory after the user code has finished
@@ -77,7 +82,7 @@ object ScalaScriptCompiler {
      * Setting settings.script.value informs the compiler this is not a
      *  self contained compilation unit.
      */
-    settings.script.value = mainClass
+//    settings.script.value = mainClass
     val reporter = new ConsoleReporter(settings, Console.in, new PrintWriter(err, true))
     val compiler = Global(settings, reporter)
 

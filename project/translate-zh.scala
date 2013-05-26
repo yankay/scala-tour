@@ -233,74 +233,161 @@ object translate {
   translate += ("" -> 
                 "可以使用lazy来延迟获取。")
   translate += ("" -> 
-                "")
+                "## 并发")
   translate += ("" -> 
-                "")
+                "### 使用Actor")
   translate += ("" -> 
-                "")
+                "Actor是Scala的并发模型。")
   translate += ("" -> 
-                "")
-
-## 并发
-
-### 使用Actor
-
-Actor是Scala的并发模型。在2.10之后的版本中，使用[http://akka.io/](Akka)作为其推荐Actor实现。
-Actor是类似线程的实体，有一个邮箱。
-可以通过system.actorOf来创建,receive获取邮箱消息，！向邮箱发送消息。
-这个例子是一个EchoServer，接受信息并打印。
-
-### Actor更简化的用法
-
-可以通过更简化的办法声明Actor。
-导入akka.actor.ActorDSL中的actor函数。
-这个函数可以接受一个Actor的构造器Act，启动并返回Actor。
-### Actor原理
-Actor比线程轻量。在Scala中可以创建数以百万级的Actor。奥秘在于Actor可以复用线程。
-Actor和线程是不同的抽象，他们的对应关系是由Dispatcher决定的。
-这个例子创建4个Actor，每次调用的时候打印自身线程。
-可以发现Actor和线程之间没有一对一的对应关系。
-一个Actor可以使用多个线程，一个线程也会被多个Actor复用。
-### 同步返回
-
-Actor非常适合于较耗时的操作。比如获取网络资源。
-这个例子通过调用ask函数来获取一个Future。
-在Actor内部通过 sender ! 传递结果。
-Future像Option一样有很多高阶方法，可以使用foreach查看结果。
-
-### 异步返回 
-
-异步操作可以最大发挥效能。Scala的Futrue很强大，可以异步返回。
-可以实现Futrue的onComplete方法。当Futrue结束的时候就会回调。
-在调用ask的时候，可以设定超时。
-### 并发集合
-
-这个例子是访问若干URL，并记录时间。
-如果能并发访问，就可以大幅提高性能。
-尝试将urls.map修改为urls.par.map。这样每个map中的函数都可以并发执行。
-当函数式和并发结合，就会这样让人兴奋。
-
-
-### 并发wordcount
-并发集合支持大部分集合的功能。
-在前面有一个wordcount例子，也可以用并发集合加以实现。
-不增加程序复杂性，却能大幅提高程序利用多核的能力。
-
-### 远程Actor
-Actor是并发模型，也使用于分布式。
-这个例子创建一个Echo服务器，通过actorOf来注册自己。
-然后在创建一个client，通过akka url来寻址。
-除了是通过url创建的，其他使用的方法和普通Actor一样。
-
-## 实践
-
-### 使用Java
-
-Scala可以非常方便的互操作，前面已经有大量Scala直接使用Java的例子。
-同样Java也可以使用Scala。这个例子演示使用@BeanProperty注解来生成Java Style的Bean。
-尝试将在var name前加上@BeanProperty。这样就给bean添加了getter/setter
-Apache BeanUtils就可以正常工作。
-
+                "在2.10之后的版本中，使用[http://akka.io/](Akka)作为其推荐Actor实现。")
+  translate += ("" -> 
+                "Actor是类似线程的实体，有一个邮箱。")
+  translate += ("" -> 
+                "可以通过system.actorOf来创建,receive获取邮箱消息，！向邮箱发送消息。")
+  translate += ("" -> 
+                "这个例子是一个EchoServer，接受信息并打印。")
+  translate += ("" -> 
+                "### Actor更简化的用法")
+  translate += ("" -> 
+                "可以通过更简化的办法声明Actor。")
+  translate += ("" -> 
+                "导入akka.actor.ActorDSL中的actor函数。")
+  translate += ("" -> 
+                "这个函数可以接受一个Actor的构造器Act，启动并返回Actor。")
+  translate += ("" -> 
+                "### Actor原理")
+  translate += ("" -> 
+                "Actor比线程轻量。")
+  translate += ("" -> 
+                "在Scala中可以创建数以百万级的Actor。奥秘在于Actor可以复用线程。")
+  translate += ("" -> 
+                "Actor和线程是不同的抽象，他们的对应关系是由Dispatcher决定的。")
+  translate += ("" -> 
+                "这个例子创建4个Actor，每次调用的时候打印自身线程。")
+  translate += ("" -> 
+                "可以发现Actor和线程之间没有一对一的对应关系。")
+  translate += ("" -> 
+                "一个Actor可以使用多个线程，一个线程也会被多个Actor复用。")
+  translate += ("" -> 
+                "### 同步返回")
+  translate += ("" -> 
+                "Actor非常适合于较耗时的操作。比如获取网络资源。")
+  translate += ("" -> 
+                "这个例子通过调用ask函数来获取一个Future。")
+  translate += ("" -> 
+                "在Actor内部通过 sender ! 传递结果。")
+  translate += ("" -> 
+                "Future像Option一样有很多高阶方法，可以使用foreach查看结果。")
+  translate += ("" -> 
+                "### 异步返回 ")
+  translate += ("" -> 
+                "异步操作可以最大发挥效能。Scala的Futrue很强大，可以异步返回。")
+  translate += ("" -> 
+                "可以实现Futrue的onComplete方法。当Futrue结束的时候就会回调。")
+  translate += ("" -> 
+                "在调用ask的时候，可以设定超时。")
+  translate += ("" -> 
+                "### 并发集合")
+  translate += ("" -> 
+                "这个例子是访问若干URL，并记录时间。")
+  translate += ("" -> 
+                "如果能并发访问，就可以大幅提高性能。")
+  translate += ("" -> 
+                "尝试将urls.map修改为urls.par.map。这样每个map中的函数都可以并发执行。")
+  translate += ("" -> 
+                "当函数式和并发结合，就会这样让人兴奋。")
+  translate += ("" -> 
+                "### 并发wordcount")
+  translate += ("" -> 
+                "并发集合支持大部分集合的功能。")
+  translate += ("" -> 
+                "在前面有一个wordcount例子，也可以用并发集合加以实现。")
+  translate += ("" -> 
+                "不增加程序复杂性，却能大幅提高程序利用多核的能力。")
+  translate += ("" -> 
+                "### 远程Actor")
+  translate += ("" -> 
+                "Actor是并发模型，也使用于分布式。这个例子创建一个Echo服务器，通过actorOf来注册自己。")
+  translate += ("" -> 
+                "然后在创建一个client，通过akka url来寻址。")
+  translate += ("" -> 
+                "除了是通过url创建的，其他使用的方法和普通Actor一样。")
+  translate += ("" -> 
+                "## 实践")
+  translate += ("" -> 
+                "### 使用Java")
+  translate += ("" -> 
+                "Scala可以非常方便的互操作，前面已经有大量Scala直接使用Java的例子。")
+  translate += ("" -> 
+                "同样Java也可以使用Scala。")
+  translate += ("" -> 
+                "这个例子演示使用@BeanProperty注解来生成Java Style的Bean。")
+  translate += ("" -> 
+                "尝试将在var name前加上@BeanProperty。这样就给bean添加了getter/setter")
+  translate += ("" -> 
+                "Apache BeanUtils就可以正常工作。")
+  translate += ("" -> 
+                "### 相等性")
+  translate += ("" -> 
+                "在Scala中==操作等效于equals，这一点和Java不同。更自然一些。")
+  translate += ("" -> 
+                "这个例子定义了一个equals函数，并验证。")
+  translate += ("" -> 
+                "写一个完全正确的equal函数并不容易，这个例子也有子类会不对称的Bug。")
+  translate += ("" -> 
+                "尝试将class修改为case class并删除equals函数。")
+  translate += ("" -> 
+                "case类会自动生成正确的equals函数。")
+  translate += ("" -> 
+                "### 抽取器")
+  translate += ("" -> 
+                "抽取器可以帮助pattern match进行解构。")
+  translate += ("" -> 
+                "这个例子是构建一个Email抽取器，只要实现unapply函数就可以了。")
+  translate += ("" -> 
+                "Scala的正则表达式会自带抽取器，可以抽取出一个List。")
+  translate += ("" -> 
+                "List的元素是匹配()里的表达式。")
+  translate += ("" -> 
+                "抽取器很有用，短短的例子里就有两处使用抽取器：")
+  translate += ("" -> 
+                "case user :: domain :: Nil解构List；case Email(user, domain) 解构Email。")
+  translate += ("" -> 
+                "### 记忆模式")
+  translate += ("" -> 
+                "记忆模式可以解决手动编写存取cache代码的麻烦。")
+  translate += ("" -> 
+                "这个例子中，memo可以将一个不含cache函数，包装成一个含有cache功能的。")
+  translate += ("" -> 
+                "还是斐波那契的例子，通过cache可以使性能提高。")
+  translate += ("" -> 
+                "尝试将fibonacci_(n - 1) + fibonacci_(n - 2)修改memo(fibonacci_)(n - 1) + memo(fibonacci_)(n - 2)，可以提高更多。")
+  translate += ("" -> 
+                "### 隐式转换")
+  translate += ("" -> 
+                "implicit可以定义一个转换函数，可以在下面的使用到的时候自动转换。")
+  translate += ("" -> 
+                "这个例子可以将String自动转换为Date类型。隐式转换时实现DSL的重要工具。")
+  translate += ("" -> 
+                "DSL是Scala最强大武器，Scala可以使一些描述性代码变得极为简单。")
+  translate += ("" -> 
+                "这个例子是使用DSL生成JSON。Scala很多看似是语言级的特性也是用DSL做到的。")
+  translate += ("" -> 
+                "自己编写DSL有点复杂，但使用方便灵活的。")
+  translate += ("" -> 
+                "### 测试")
+  translate += ("" -> 
+                "Scala DSL可以使测试更方便。")
+  translate += ("" -> 
+                "这个例子是测试一个阶乘函数。使用should/in来建立测试用例。")
+  translate += ("" -> 
+                "测试是默认并发执行的。")
+  translate += ("" -> 
+                "SBT是Scala的最佳编译工具，在他的帮助下，")
+  translate += ("" -> 
+                "你甚至不需要安装除JRE外的任何东西，来开发Scala。")
+  translate += ("" -> 
+                "例如你想在自己的机器上执行这个Scala-Tour")
 
 
   def main(args: Array[String]) {

@@ -244,7 +244,7 @@ println("addOne(squareVal,2):" + addOne(squareVal, 2))
                             可以使用def来定义一个函数。函数体是一个表达式。
                         </p>
                         <p>
-                            使用Block表达式的时候，默认最后一行的返回是返回值，无需显示指定。
+                            使用Block表达式的时候，默认最后一行的返回是返回值，无需显式指定。
                         </p>
                         <p>
                             函数还可以像值一样，赋值给var或val。因此<span class="important">函数也可以作为参数传给另一个函数。</span>
@@ -1103,7 +1103,7 @@ println("wordcount:" + num)
                             这个例子是foldLeft的尾递归实现。foldLeft和reduceLeft相比更常用，多一个初始参数。
                         </p>
                         <p>
-                            当用List做match case时。可以使用 :: 来解构。返回第一个元素head和剩余元素tail。
+                            当用List做match case时，可以使用 :: 来解构。返回第一个元素head和剩余元素tail。
                         </p>
                         <p>
                             注：尾递归会在编译期优化，因此不用担心递归造成的栈溢出问题。

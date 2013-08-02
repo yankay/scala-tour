@@ -84,7 +84,7 @@ println("hello world")
                             Hello World
                         </h2>
                         <p>
-                            <b>Scala</b> 是一门 <b>函数式</b>的<b>面向对象</b>语言。他运行在<b>Java虚拟机</b>上.
+                            <b>Scala</b> is a popular <b>functional</b>/<b>object-oriented</b> programming language built on top of the <b>Java virtual machine (JVM)</b>.
                         </p>
                         <p>
                             本指南是用来介绍Scala强大的功能。同时你可以亲身实践他们。
@@ -290,9 +290,7 @@ withScanner(File("/proc/self/stat"),
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            借贷模式
-                        </h2>
+                        <h2>借贷模式</h2>
                         <p>
                             由于函数可以像值一样作为参数传递，所以可以方便的实现借贷模式。
                         </p>
@@ -340,21 +338,15 @@ log(MSG + 1 / 0)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            按名称传递参数
-                        </h2>
+                        <h2>按名称传递参数</h2>
                         <p>
                             这个例子演示了按名称传递参数，由于有除以0，所以运行该程序会产生异常。
                         </p>
-                        <p>
-                            试着将
-                        </p>
+                        <p>试着将</p>
                         <pre>
 def log(msg: String)
 </pre>
-                        <p>
-                            修改为
-                        </p>
+                        <p>修改为</p>
                         <pre>
 def log(msg: =&gt; String)
 </pre>
@@ -412,9 +404,7 @@ println("age: " + obama.age)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            定义类
-                        </h2>
+                        <h2>定义类</h2>
                         <p>
                             可以用<span class="important">class</span>关键字来定义类。并通过<span class="important">new</span>来创建类。
                         </p>
@@ -427,15 +417,11 @@ println("age: " + obama.age)
                         <p>
                             函数名是<span class="important">任何字符</span>如+,-,*,/。
                         </p>
-                        <p>
-                            试着将
-                        </p>
+                        <p>试着将</p>
                         <pre>
 obama.age_=(51)
 </pre>
-                        <p>
-                            简化为
-                        </p>
+                        <p>简化为</p>
                         <pre>
 obama.age = 51
 </pre>
@@ -485,20 +471,15 @@ withClose(conn, conn =&gt;
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            鸭子类型
-                        </h2>
+                        <h2>鸭子类型</h2>
                         <p>
                             走起来像鸭子，叫起来像鸭子，就是鸭子。
                         </p>
-                        <p>
-                            这个例子中使用
-                        </p>
+                        <p>这个例子中使用</p>
                         <pre>
 { def close(): Unit }
 </pre>
-                        <p>
-                            作为参数类型。因此任何含有close()的函数的类都可以作为参数。
+                        <p>作为参数类型。因此任何含有close()的函数的类都可以作为参数。
                         </p>
                         <p>
                             不必使用继承这种不够灵活的特性。

@@ -271,7 +271,7 @@ println(fibonacci(3))
 ### Case Class
 
 case class 顾名思义就是为case语句专门设计的类。
-在普通类的基础上添加了和类名一直的工厂方法，
+在普通类的基础上添加了和类名一致的工厂方法，
 还添加了hashcode,equals和toString方法。
 试试最后添加  println(Sum(1,2)) 。
 由于使用了require(n >= 0)来检验参数，尝试使用负数，会抛出异常。
@@ -299,8 +299,8 @@ println(value(FibonacciExpr(3)))
 ### 函数式的威力
 
 这个例子是判断一个List中是否含有奇数。
-第一行到倒数第二行是使用for循环的过程式编程解决。最后一行是通过函数式编程解决。
-通过将函数作为参数，可以使程序极为简洁。其中 _ % 2 == 1 是 (x: Int) => x % 2 == 的简化写法。
+第一行到倒数第二行是使用for循环的指令式编程解决。最后一行是通过函数式编程解决。
+通过将函数作为参数，可以使程序极为简洁。其中 _ % 2 == 1 是 (x: Int) => x % 2 == 1 的简化写法。
 相比于Ruby等动态语言,这威力来自于科学而不是魔法
 
 ```
@@ -323,7 +323,7 @@ println("list containsOdd by funtional:" + list.exists(_ % 2 == 1))
 
 函数式除了能简化代码外，更重要的是他关注的是Input和Output，函数本身没有副作用。
 就是Unix pipeline一样，简单的命令可以组合在一起。
-List的filter方法接受一个过滤函数，返回一个新的List
+List的filter方法接受一个过滤函数，返回一个新的List。
 如果你喜欢Unix pipeline的方式，你一定也会喜欢函数式编程。
 这个例子是用函数式的代码模拟“cat file | grep 'warn' | grep '2013' | wc”的行为。
 
@@ -336,7 +336,7 @@ println("cat file | grep 'warn' | grep '2013' | wc : "
 ### Word Count
 Word Count是一个MapReduce的一个经典示例。巧合的是，使用函数式的编程法，用类似MapReduce的方法实现word count也是最直观的。
 这个例子介绍了List的两个重要的高阶方法map和reduceLeft。
-List的map方法接受一个转换函数，返回一个经过转换的List。该例子中会转换为[1,1,1,1]
+List的map方法接受一个转换函数，返回一个经过转换的List。
 List的reduceLeft方法接受一个合并函数，依次遍历合并。第一个参数是合并后的值，第二个参数是下一个需要合并的值。
 将reduceLeft(_ + _)修改为foldLeft(0)(_ + _)。foldLeft比将reduceLeft更常用，因为他可以提供一个初始参数。
 Map和foldLeft可以代替大部分需要for循环的操作，并且使代码更清晰
@@ -405,7 +405,7 @@ NullException是Java中最常见的异常，要想避免他只有不断检查nul
 ```
 
 def getProperty(name: String): Option[String] = {
-  val value = System.getProperty(name)
+  val value  = System.getProperty(name)
   if (value != null) Some(value) else None
 }
 
@@ -623,7 +623,7 @@ println("wordcount:" + num)
 ### 远程Actor
 Actor是并发模型，也使用于分布式。
 这个例子创建一个Echo服务器，通过actorOf来注册自己。
-然后在创建一个client，通过akka url来寻址。
+然后再创建一个client，通过akka url来寻址。
 除了是通过url创建的，其他使用的方法和普通Actor一样。
 
 ```
@@ -652,7 +652,7 @@ system.shutdown
 
 ### 使用Java
 
-Scala可以非常方便的互操作，前面已经有大量Scala直接使用Java的例子。
+Scala和Java可以非常方便的互操作，前面已经有大量Scala直接使用Java的例子。
 同样Java也可以使用Scala。这个例子演示使用@BeanProperty注解来生成Java Style的Bean。
 尝试将在var name前加上@BeanProperty。这样就给bean添加了getter/setter
 Apache BeanUtils就可以正常工作。
@@ -799,9 +799,9 @@ specs2.run(new FactorialSpec)
 
 
 ### Simple Build Tool
-SBT是Scala的最佳编译工具，在他的帮助下，
-你甚至不需要安装除JRE外的任何东西，来开发Scala。
-例如你想在自己的机器上执行这个Scala-Tour
+SBT是Scala的最佳编译工具。
+在他的帮助下，你甚至不需要安装除JRE外的任何东西，来开发Scala。
+例如你想在自己的机器上执行这个Scala-Tour。
 
 ```
 #Linux/Mac(compile & run):

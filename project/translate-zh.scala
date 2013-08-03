@@ -412,7 +412,7 @@ translate += ("to matche String type." ->
                 "Actor可以通过<span class=\"important\">system.actorOf</span>来创建,<span class=\"important\">receive</span>获取邮箱消息，<span class=\"important\">！</span>向邮箱发送消息。")
 
 
-  translate += ("This example is a EchoServer whitch can receive message then print them." -> 
+  translate += ("This example is a EchoServer which can receive message then print them." -> 
                 "这个例子是一个EchoServer，接受信息并打印。")
   translate += ("### Simplify Actor" -> 
                 "### Actor更简化的用法")

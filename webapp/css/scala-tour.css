@@ -319,3 +319,7 @@ line-height: 2;
 	height:600px;
 	overflow: auto;
 }
+
+.deeply h2{
+	font-size: 30px;
+}

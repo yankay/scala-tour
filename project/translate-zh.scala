@@ -10,10 +10,10 @@ object translate {
   translate += ("In Scala, almost everything is expression."-> "在Scala中，几乎所有的语言元素都是表达式。")
   translate += ("is an expression,"-> "是一个表达式，")
   translate += ("is also an expression."-> "也是一个表达式。")
-  translate += ("Constant can be created with val, and variable can be created with var."-> "可以通过val定义一个常量，亦可以通过var定义一个变量。")
+  translate += ("Constant can be created with val, and variable can be created with var. "-> "可以通过val定义一个常量，亦可以通过var定义一个变量。")
   translate += ("More constants are better."-> "推荐多使用常量。")
-  translate += ("First-class Functions"-> "函数是一等公民")
-  translate += ("You can create functions with def."-> "可以使用def来定义一个函数。")
+  translate += ("First class Functions"-> "函数是一等公民")
+  translate += ("You can create functions with def. "-> "可以使用def来定义一个函数。")
   translate += ("And the function body is an expression."-> "函数体是一个表达式。")
   translate += ("When the body is a block expression, it returns the value of the last line. So it's no need to use the return keyword"-> 
                 "使用Block表达式的时候，默认最后一行的返回是返回值，无需显式指定。")
@@ -38,7 +38,7 @@ object translate {
   translate += ("PS: the expression's return type is 'Unit' when it no need to return." -> 
                 "注：当表达式没有返回值时，默认返回Unit。")  
   translate += ("### Call-by-Name" -> "### 按名称传递参数")
-  translate += (">Call-by-Name<" -> ">按名称传递参数<")
+  translate += (">Call by Name<" -> ">按名称传递参数<")
   translate += ("This example shows the call by name," -> 
                 "这个例子演示了按名称传递参数，")  
   translate += ("For the last line try to calculate '1 / 0', the program would throw exception." -> 
@@ -49,7 +49,7 @@ object translate {
                 "试着将def log(msg: String)修改为def log(msg: => String)。")  
   translate += ("The program would not throw expression because it has been change to call-by-name" -> 
                 "由按值传递修改为按名称传递后将不会产生异常。")  
-  translate += ("BCall-by-name means that the argument would be calculate when it be actually called.So the '1 / 0' would be skiped." -> 
+  translate += ("Call-by-name means that the argument would be calculate when it be actually called.So the '1 / 0' would be skiped." -> 
                 "因为log函数的参数是按名称传递，参数会等到实际使用的时候才会计算，所以被跳过。")  
   translate += ("Call-by-name means that the argument would be calculate when it be actually called." -> 
                 "因为log函数的参数是按名称传递，参数会等到真正访问的时候才会计算，")  
@@ -284,7 +284,7 @@ translate += ("to matche String type." ->
                 "<span class=\"important\">reduceLeft</span>接受一个合并函数，依次遍历合并。")
   
 
-  translate += ("<span class=\"important\">Map and FoldLeft can replace the for expression, it make code cleaner.</span>" -> 
+  translate += ("<span class=\"important\">Map and FoldLeft can replace the for-loop expression, it make code cleaner.</span>" -> 
                 "<span class=\"important\">使用高阶方法可以代替大部分需要循环的操作，使代码更清晰。</span>")
 
 
@@ -294,7 +294,7 @@ translate += ("to matche String type." ->
                 "将reduceLeft(_ + _)修改为foldLeft(0)(_ + _)。")
   translate += ("foldLeft is more popular than reduceLeft for it can provide a initial value." -> 
                 "foldLeft比将reduceLeft更常用，因为他可以提供一个初始参数。")
-  translate += ("Map and foldLeft can replace the for expression, it make code cleaner." -> 
+  translate += ("Map and foldLeft can replace the for-loop expression, it make code cleaner." -> 
                 "Map和foldLeft可以代替大部分需要for循环的操作，并且使代码更清晰")
   translate += ("### Tail Recursion" -> 
                 "### 尾递归")
@@ -307,7 +307,7 @@ translate += ("to matche String type." ->
    translate += ("This example shows how to implement foldLeft with Tail Recursion." -> 
                 "这个例子是foldLeft的尾递归实现。foldLeft和reduceLeft相比更常用，多一个初始参数。") 
 
-  translate += ("Tail Recursion is one type of Recursion, it call itself in it's last expression." -> 
+  translate += ("Tail Recursion is one type of Recursion, it call itself in its last expression." -> 
                 "尾递归是递归的一种，特点在于会在函数的最末调用自身。")
   translate += ("List can be pattern match by '::', the first elements returned is head, the others are tails." -> 
                 "当用List做match case时，可以使用 :: 来解构。返回第一个元素head，和剩余元素tail。")
@@ -654,7 +654,7 @@ translate += ("to matche String type." ->
                 ">文档<")
   translate += ("> Tour" -> 
                 "> 指南")
-  translate += ("Start your Wonderful Scala Tour" -> 
+  translate += ("Start your Exciting Scala Tour" -> 
                 "开始精彩的Scala旅程")
   translate += ("Next Page" -> 
                 "下一页")

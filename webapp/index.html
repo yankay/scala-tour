@@ -52,7 +52,7 @@
                     <span class="scala-red">Scala</span> Tour
                 </h1>
                 <p>
-                    Start your Wonderful Scala Tour
+                    Start your Exciting Scala Tour
                 </p>
                 <div class="step-nav">
                     <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -119,13 +119,13 @@ println("hello world")
                             <a href="#/expression-and-values">Expressions and Values</a>
                         </li>
                         <li>
-                            <a href="#/first-class-function">First-class Functions</a>
+                            <a href="#/first-class-function">First class Functions</a>
                         </li>
                         <li>
                             <a href="#/loan-pattern">Loan Pattern</a>
                         </li>
                         <li>
-                            <a href="#/pass-by-name">Call-by-Name</a>
+                            <a href="#/pass-by-name">Call by Name</a>
                         </li>
                         <li>
                             <a href="#/define-class">Define Class</a>
@@ -194,7 +194,7 @@ println("hello wolrd")
                             is also an expression.
                         </p>
                         <p>
-                            Constant can be created with val, and variable can be created with var.More constants are better.
+                            Constant can be created with val, and variable can be created with var. More constants are better.
                         </p>
                         <div class="step-nav">
                             <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -238,10 +238,10 @@ println("addOne(squareVal,2):" + addOne(squareVal, 2))
                     </div>
                     <div class="span4">
                         <h2>
-                            First-class Functions
+                            First class Functions
                         </h2>
                         <p>
-                            You can create functions with def.And the function body is an expression.
+                            You can create functions with def. And the function body is an expression.
                         </p>
                         <p>
                             When the body is a block expression, it returns the value of the last line. So it's no need to use the return keyword
@@ -338,7 +338,7 @@ log(MSG + 1 / 0)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>Call-by-Name</h2>
+                        <h2>Call by Name</h2>
                         <p>
                             This example shows the call by name,For the last line try to calculate '1 / 0', the program would throw exception.
                         </p>
@@ -354,7 +354,7 @@ def log(msg: =&gt; String)
                             The program would not throw expression because it has been change to call-by-name
                         </p>
                         <p>
-                            BCall-by-name means that the argument would be calculate when it be actually called.So the '1 / 0' would be skiped.
+                            Call-by-name means that the argument would be calculate when it be actually called.So the '1 / 0' would be skiped.
                         </p>
                         <p>
                             Call-by-name can reduce the useless calculate and exception.
@@ -905,13 +905,13 @@ containsOdd(list)
 list.exists((x: Int) =&gt; x % 2 ==1)
 </pre>
                         <p>
-                            Through treat function as arguments, programing can be more simple. It can be even changed to 
+                            Through treating function as arguments, programing can be more simple. It can be even changed to 
                         </p>
                         <pre>
 list.exists(_ % 2 == 1)
 </pre>
                         <p>
-                            _ can used to replace arguments
+                            _ can be used to replace arguments
                         </p>
                         <p>
                             Ruby's prower if from magic, but Scala's prower is from science.
@@ -1064,7 +1064,7 @@ println("wordcount:" + num)
                     <div class="span4">
                         <h2>Tail Recursion</h2>
                         <p>
-                            Tail Recursion is one type of Recursion, it call itself in it's last expression.Tail Recursion is very popular in functional programming.
+                            Tail Recursion is one type of Recursion, it call itself in its last expression.Tail Recursion is very popular in functional programming.
                         </p>
                         <p>
                             This example shows how to implement foldLeft with Tail Recursion.
@@ -1325,7 +1325,7 @@ system.shutdown
                             Actor is a like thread instance with a mailbox. It can be created by <span class="important">system.actorOf</span>, and using <span class="important">receive</span> to get message, <span class="important">!</span> to send message.
                         </p>
                         <p>
-                            This example is a EchoServer whitch can receive message then print them.
+                            This example is a EchoServer which can receive message then print them.
                         </p>
                         <div class="step-nav">
                             <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>

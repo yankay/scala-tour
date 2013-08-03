@@ -256,14 +256,38 @@ translate += ("to matche String type." ->
                 "### Word Count")
   translate += ("Word Count is a classics sample for Map Reduce." -> 
                 "Word Count是一个MapReduce的一个经典示例。")
-  translate += ("Map Reduce with functional programming is also a greate way to implement word count." -> 
+  translate += ("Map Reduce with functional programming is also a wonderful way to implement word count." -> 
                 "巧合的是，使用函数式的编程法，用类似MapReduce的方法实现word count也是最直观的。")
+  translate += ("Map Reduce with functional programming is also a greate way to implement word count." -> 
+                "在函数式编程中，Word Count最直观的实现方法也是MapReduce。")
+
+
   translate += ("The example show two important functions 'map' and 'reduceLeft' in List." -> 
                 "这个例子介绍了List的两个重要的高阶方法map和reduceLeft。")
+  translate += ("The example show two important functions <span class=\"important\">'map'</span> and <span class=\"important\">'reduceLeft'</span> in List." -> 
+                "这个例子介绍了List的两个重要的高阶方法<span class=\"important\">map</span>和<span class=\"important\">reduceLeft</span>。")
+
+
   translate += ("The map function accept a translate expression and return the list translated." -> 
                 "List的map方法接受一个转换函数，返回一个经过转换的List。")
+
+  translate += ("The <span class=\"important\">map</span> function accept a translate expression and return the list translated." -> 
+                "<span class=\"important\">map</span>接受一个转换函数,返回转换结果。")
+
+
+
+
   translate += ("The reduceLeft function accept a combine expression and return the combined result." -> 
                 "List的reduceLeft方法接受一个合并函数，依次遍历合并。")
+
+  translate += ("The <span class=\"important\">reduceLeft</span> function accept a combine expression and return the combined result." -> 
+                "<span class=\"important\">reduceLeft</span>接受一个合并函数，依次遍历合并。")
+  
+
+  translate += ("<span class=\"important\">Map and FoldLeft can replace the for expression, it make code cleaner.</span>" -> 
+                "<span class=\"important\">使用高阶方法可以代替大部分需要循环的操作，使代码更清晰。</span>")
+
+
   translate += ("The first argument is the reduced value, and the second argument is the value next." -> 
                 "第一个参数是合并后的值，第二个参数是下一个需要合并的值。")
   translate += ("Try to change reduceLeft(_ + _) into foldLeft(0)(_ + _)." -> 

@@ -1230,7 +1230,7 @@ version.minorVersion.foreach(println _)
                             Lazy可以延迟初始化字段。加上lazy的字段会在第一次访问的时候初始化，而不是类初始化的时候初始化。
                         </p>
                         <p>
-                            这个例子是从github获得Scala的版本号，由于访问网络需要较多时间。可以使用lazy来延迟获取。 防止可能的浪费。
+                            这个例子是从github获得Scala的版本号，由于访问网络需要较多时间。可以使用lazy来延迟获取, 防止可能的浪费。
                         </p>
                         <p>
                             Lazy非常适合于初始化非常耗时的场景
@@ -1317,9 +1317,7 @@ system.shutdown
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            使用Actor
-                        </h2>
+                        <h2>使用Actor</h2>
                         <p>
                             Actor是Scala的并发模型。在2.10之后的版本中，使用<a href="http://akka.io/" target="_blank">Akka</a>作为其推荐Actor实现。
                         </p>
@@ -1368,20 +1366,18 @@ system.shutdown
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            Actor更简化的用法
-                        </h2>
+                        <h2>Actor更简化的用法</h2>
                         <p>
                             可以通过更简化的办法声明Actor。
                         </p>
                         <p>
-                            通过
+                            There is a the actor function in 
                         </p>
                         <pre>
 akka.actor.ActorDSL
 </pre>
                         <p>
-                            中的actor函数。这个函数可以接受一个Actor的构造器Act，启动并返回Actor。
+                            .这个函数可以接受一个Actor的构造器Act，启动并返回Actor。
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
@@ -1429,9 +1425,7 @@ system.shutdown
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            Actor原理
-                        </h2>
+                        <h2>Actor原理</h2>
                         <p>
                             Actor比线程轻量。在Scala中可以创建数以百万级的Actor。奥秘在于Actor直接可以<span class="important">复用线程</span>。
                         </p>
@@ -1490,9 +1484,7 @@ system.shutdown
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            同步返回
-                        </h2>
+                        <h2>同步返回</h2>
                         <p>
                             Actor非常适合于较耗时的操作。比如获取网络资源。
                         </p>
@@ -1551,9 +1543,7 @@ version onComplete {
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            异步返回
-                        </h2>
+                        <h2>异步返回</h2>
                         <p>
                             异步操作可以最大发挥效能。Scala的Futrue很强大，可以异步返回。
                         </p>
@@ -1599,14 +1589,12 @@ println("time: " + (System.currentTimeMillis - t) + "ms")
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            并行集合
-                        </h2>
+                        <h2>并行集合</h2>
                         <p>
                             这个例子是访问若干URL，并记录时间。如果能并行访问，就可以大幅提高性能。
                         </p>
                         <p>
-                            尝试将
+                            试着将
                         </p>
                         <pre>
 urls.map
@@ -1658,9 +1646,7 @@ println("wordcount:" + num)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            并行wordcount
-                        </h2>
+                        <h2>并行wordcount</h2>
                         <p>
                             这个例子是访问若干URL，并记录时间。
                         </p>
@@ -1718,9 +1704,7 @@ system.shutdown
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            远程Actor
-                        </h2>
+                        <h2>远程Actor</h2>
                         <p>
                             Actor是并发模型，也使用于分布式。
                         </p>
@@ -1748,9 +1732,7 @@ system.shutdown
             </div>
             <div id="practice-contents" class="step contents slide deeply" data-x="-3500" data-y="2500" data-z="-3000" data-scale="1">
                 <div>
-                    <h2>
-                        目录(实践)
-                    </h2>
+                    <h2>目录(实践)</h2>
                     <ul>
                         <li>
                             <a href="#/using-java">使用Java</a>
@@ -1812,9 +1794,7 @@ println(BeanUtils.describe(bean))
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            使用Java
-                        </h2>
+                        <h2>使用Java</h2>
                         <p>
                             Scala和Java可以非常方便的互操作，前面已经有大量Scala直接使用Java的例子。
                         </p>
@@ -1822,7 +1802,7 @@ println(BeanUtils.describe(bean))
                             同样Java也可以使用Scala。这个例子演示使用@BeanProperty注解来生成Java Style的Bean。
                         </p>
                         <p>
-                            尝试将
+                            试着将
                         </p>
                         <pre>
 var name: String
@@ -1871,9 +1851,7 @@ println(new Person("Black") == new Person("Black"))
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            相等性
-                        </h2>
+                        <h2>相等性</h2>
                         <p>
                             在Scala中<span class="important">==等效于equals</span>，这一点和Java不同。更自然一些。
                         </p>
@@ -1881,7 +1859,7 @@ println(new Person("Black") == new Person("Black"))
                             写一个完全正确的equal函数并不容易，这个例子也有子类会不对称的Bug。
                         </p>
                         <p>
-                            尝试将class修改为case class,并删除equals函数。
+                            尝试将class修改为case class并删除equals函数。
                         </p>
                         <p>
                             case类会自动生成正确的equals函数。
@@ -1926,17 +1904,15 @@ object Email {
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            抽取器
-                        </h2>
+                        <h2>抽取器</h2>
                         <p>
-                            抽取器可以帮助模式匹配进行解构。
+                            抽取器可以帮助pattern match进行解构。
                         </p>
                         <p>
                             这个例子是构建一个Email抽取器，只要实现unapply函数就可以了。
                         </p>
                         <p>
-                            Scala的正则表达式会自带抽取器，可以抽取出一个List。List里的元素是匹配()里的表达式。
+                            Scala的正则表达式会自带抽取器，可以抽取出一个List。List的元素是匹配()里的表达式。。
                         </p>
                         <p>
                             抽取器很有用，短短的例子里就有两处使用抽取器：
@@ -1945,13 +1921,13 @@ object Email {
 case user :: domain :: Nil
 </pre>
                         <p>
-                            解构List
+                            can extract List.
                         </p>
                         <pre>
 case Email(user, domain)
 </pre>
                         <p>
-                            解构Email。
+                            can extract Email。
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
@@ -1999,9 +1975,7 @@ println("it takes " + (System.currentTimeMillis() - t2) + "ms")
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            记忆模式
-                        </h2>
+                        <h2>记忆模式</h2>
                         <p>
                             记忆模式可以解决手动编写存取cache代码的麻烦。
                         </p>
@@ -2012,7 +1986,7 @@ println("it takes " + (System.currentTimeMillis() - t2) + "ms")
                             还是斐波那契的例子，通过cache可以使性能提高。
                         </p>
                         <p>
-                            尝试将
+                            试着将
                         </p>
                         <pre>
 fibonacci_(n - 1) + fibonacci_(n - 2)
@@ -2024,7 +1998,7 @@ fibonacci_(n - 1) + fibonacci_(n - 2)
 memo(fibonacci_)(n - 1) + memo(fibonacci_)(n - 2)
 </pre>
                         <p>
-                            可以提高更多性能。
+                            It can improve performance more.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
@@ -2059,9 +2033,7 @@ println("2013-01-01 unix time: " + "2013-01-01".getTime()/1000l)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            隐式转换
-                        </h2>
+                        <h2>隐式转换</h2>
                         <p>
                             implicit可以定义一个转换函数，可以在使用相应类型的时候自动转换。
                         </p>
@@ -2168,9 +2140,7 @@ specs2.run(new FactorialSpec)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            测试
-                        </h2>
+                        <h2>测试</h2>
                         <p>
                             Scala可以使用Spec2，ScalaTest来测试， DSL可以使测试更方便。
                         </p>
@@ -2218,7 +2188,7 @@ sbt\sbt stage
                             Simple Build Tool
                         </h2>
                         <p>
-                            SBT是Scala的最佳编译工具，在他的帮助下，
+                            SBT是Scala的最佳编译工具。在他的帮助下，
                         </p>
                         <p>
                             你甚至<span class="important">不需要安装</span>除JRE外的任何东西，来开发Scala。
@@ -2233,9 +2203,7 @@ sbt\sbt stage
                 </div>
             </div>
             <div id="about" class="step" data-x="3000" data-y="3000" data-scale="1">
-                <h2>
-                    关于
-                </h2>
+                <h2>关于</h2>
                 <p>
                     这个指南源自于作者对Scala的热爱和对传播Scala的愿望
                 </p>
@@ -2245,7 +2213,7 @@ sbt\sbt stage
                 <div>
                     <ul>
                         <li>
-                            <a href="http://twitter.github.com/scala_school/" target="_blank">Scala School!</a>: Twitter的Scala教学
+                            <a href="http://twitter.github.com/scala_school/" target="_blank">Scala School!</a>:Twitter的Scala教学
                         </li>
                         <li>
                             <a href="http://docs.scala-lang.org/tutorials/tour/tour-of-scala.html" target="_blank">A Tour of Scala</a>:官方Scala Tour

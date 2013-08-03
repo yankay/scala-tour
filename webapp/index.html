@@ -298,7 +298,7 @@ withScanner(File("/proc/self/stat"),
                             This example is to read the self pid from /proc/self/stat.
                         </p>
                         <p>
-                            Because the 'withScanner' function encapsulates the 'try-finally' block,it no need to <span class="important">call 'close()' any more</span>.?
+                            Because the 'withScanner' function encapsulates the 'try-finally' block,it no need to <span class="important">call 'close()' any more</span>.。
                         </p>
                         <p>
                             PS: the expression's return type is 'Unit' when it no need to return.
@@ -482,7 +482,7 @@ withClose(conn, conn =&gt;
                         <p>as the type of argument.So any class contains methods 'close()' can be passed.
                         </p>
                         <p>
-                            And it no need to use 'inherit'?
+                            And it no need to use 'inherit'。
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -527,11 +527,9 @@ withClose(conn)(conn =&gt;
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ???
-                        </h2>
+                        <h2>Currying</h2>
                         <p>
-                            This example is simliar with before????????<span class="important">???(Currying)</span>???
+                            This example is simliar with before.The difference between them is this one leverage <span class="important">currying<span> technology
                         </p>
                         <pre>
 def add(x:Int, y:Int) = x + y
@@ -549,13 +547,13 @@ def add(x:Int) = (y:Int) =&gt; x + y
  def add(x:Int)(y:Int) = x + y
 </pre>
                         <p>
-                            ?????
+                            is a syntactic sugar
                         </p>
                         <p>
                             Currying can let our codes looks like language's ability.
                         </p>
                         <p>
-                            ???Change the withclose(...)(...) to withclose(...){...}
+                            Try to change the withclose(...)(...) to withclose(...){...}
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -603,14 +601,12 @@ println(msg)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ??
-                        </h2>
+                        <h2>Generic</h2>
                         <p>
-                            ????????????????????
+                            The sample before can be more simplified with generic.
                         </p>
                         <p>
-                            ???
+                            Try to change
                         </p>
                         <pre>
 "123456"
@@ -674,19 +670,19 @@ println("For each: "); list.foreach(x =&gt; println(x))
                             Traits
                         </h2>
                         <p>
-                            Traits looks like Java's interface with function block.??<span class="important">with</span>???????
+                            Traits looks like Java's interface with function block.One class can extend several traits using the <span class="important">with</span> keyword.
                         </p>
                         <p>
                             This example extends java.util.ArrayList the ability of foreach.
                         </p>
                         <p>
-                            ????with ForEachAble[Int]????
+                            Try to append after ForEachAble[Int] with
                         </p>
                         <pre>
 with JsonAble
 </pre>
                         <p>
-                            ?list??toJson???
+                            to extend the ability of toJson
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a><a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -704,35 +700,35 @@ with JsonAble
             <div id="funtional-contents" class="step contents slide deeply" data-x="-3500" data-y="-500" data-z="-3000" data-scale="1">
                 <div>
                     <h2>
-                        ??(????
+                        Content (Functional)
                     </h2>
                     <ul>
                         <li>
-                            <a href="#/pattern-match"### Pattern Matching/a>
+                            <a href="#/pattern-match">Pattern Matching</a>
                         </li>
                         <li>
                             <a href="#/case-class">Case Class</a>
                         </li>
                         <li>
-                            <a href="#/function-prower">The prower of functional programing</a>
+                            <a href="#/function-prower">Function Prower</a>
                         </li>
                         <li>
-                            <a href="#/function-true-prower">????????</a>
+                            <a href="#/function-true-prower">Function True Prower</a>
                         </li>
                         <li>
                             <a href="#/word-count">Word Count</a>
                         </li>
                         <li>
-                            <a href="#/tail-recursion">???</a>
+                            <a href="#/tail-recursion">Tail Recursion</a>
                         </li>
                         <li>
-                            <a href="#/prowerful-for-loop">????For??</a>
+                            <a href="#/prowerful-for-loop">Prowerful For Loop</a>
                         </li>
                         <li>
                             <a href="#/option">Option</a>
                         </li>
                         <li>
-                            <a href="#/lazy-initialization">Lazy???</a>
+                            <a href="#/lazy-initialization">Lazy Initialization</a>
                         </li>
                     </ul>
                 </div>
@@ -771,9 +767,7 @@ println(fibonacci(3))
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ????
-                        </h2>
+                        <h2>Pattern Matching</h2>
                         <p>
                             Pattern Matching is more flexible than switch-case; And it's simpler than if-else.
                         </p>
@@ -781,7 +775,7 @@ println(fibonacci(3))
                             This example shows Fibonacci function with pattern matching. The case keyword is to matching. The case _ means it can match anything.
                         </p>
                         <p>
-                            ???
+                            Try to change
                         </p>
                         <pre>
 case n: Int
@@ -793,16 +787,13 @@ case n: Int
 case n: Int if (n &gt; 1)
 </pre>
                         <p>
-                            case???if????,???????????????????
-                        </p>
-                        <p>
-                            ?????????????case _ ???
+                            Try to add before case _  with 
                         </p>
                         <pre>
 case n: String =&gt; fibonacci(n.toInt)
 </pre>
                         <p>
-                            ???????String??
+                            to matche String type.
                         </p>
                         <div class="step-nav">
                             <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -852,10 +843,11 @@ println(value(FibonacciExpr(3)))
                             Case Class
                         </h2>
                         <p>
-                            case class ???????case????????? You can construct them without using new. ????hashcode,equals?toString????
+                            Case classes are used to conveniently store and match on the contents of a class.
+                            You can construct them without using new. It also have hashcode, equality and nice toString methods.
                         </p>
                         <p>
-                            ?????require(n &gt;= 0)??????????????????????
+                            Because if the require(n &gt;= 0), it would throw exception when input is negative.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -896,32 +888,30 @@ println("list contains Odd ? " + containsOdd(list))
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ??????
-                        </h2>
+                        <h2>Function Prower</h2>
                         <p>
-                            ???????????????List????????
+                            This example shows whether there is a odd in list by imperative programming.
                         </p>
                         <p>
-                            ???
+                            Try to change
                         </p>
                         <pre>
 containsOdd(list)
 </pre>
                         <p>
-                            ???
+                            to
                         </p>
                         <pre>
 list.exists((x: Int) =&gt; x % 2 ==1)
 </pre>
                         <p>
-                            ??????????????????????????
+                            Through treat function as arguments, programing can be more simple. It can be even changed to 
                         </p>
                         <pre>
 list.exists(_ % 2 == 1)
 </pre>
                         <p>
-                            ???_????
+                            _ can used to replace arguments
                         </p>
                         <p>
                             Ruby's prower if from magic, but Scala's prower is from science.
@@ -958,26 +948,24 @@ println("cat file | grep 'warn' | grep '2013' | wc : "
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ????????
-                        </h2>
+                        <h2>Function True Prower</h2>
                         <p>
-                            ??????????????????????<span class="important">Input</span>?<span class="important">Output</span>???????????
+                            Besides simplifying code, the functional programming more take care of <span class="important">Input & Output without side-effect</span>.
                         </p>
                         <p>
-                            ??Unix pipeline??????????????????
+                            Like the Unix pipeline , simple command can be combined together.
                         </p>
                         <p>
                             If you do like the Unix pipeline style, functional programming can be your favorite.
                         </p>
                         <p>
-                            ??????????????
+                            This example is to use scala code to simulate the funcion of 
                         </p>
                         <pre>
 cat file | grep 'warn' | grep '2013' | wc
 </pre>
                         <p>
-                            List?filter?????????????????List????????????
+                            The filter function in List can accept a filter function, return a new List as the input of the next function.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1018,19 +1006,19 @@ println("wordcount:" + num)
                             Word Count
                         </h2>
                         <p>
-                            Word Count is a classics sample for Map Reduce.????????Word Count??????????MapReduce?
+                            Word Count is a classics sample for Map Reduce.Map Reduce with functional programming is also a greate way to implement word count.
                         </p>
                         <p>
-                            ???????List??????????<span class="important">map</span>?<span class="important">reduceLeft</span>?
+                            The example show two important functions <span class="important">'map'</span> and <span class="important">'reduceLeft'</span> in List.
                         </p>
                         <p>
-                            <span class="important">map</span>????????,???????
+                            The <span class="important">map</span> function accept a translate expression and return the list translated.
                         </p>
                         <p>
-                            <span class="important">reduceLeft</span>????????????????
+                            The <span class="important">reduceLeft</span> function accept a combine expression and return the combined result.
                         </p>
                         <p>
-                            <span class="important">???????????????????????????</span>
+                            <span class="important">Map and FoldLeft can replace the for expression, it make code cleaner.</span>
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1074,20 +1062,18 @@ println("wordcount:" + num)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ???
-                        </h2>
+                        <h2>Tail Recursion</h2>
                         <p>
-                            Tail Recursion is one type of Recursion, it call itself in it's last expression.???????????????
+                            Tail Recursion is one type of Recursion, it call itself in it's last expression.Tail Recursion is very popular in functional programming.
                         </p>
                         <p>
-                            ?????foldLeft???????foldLeft?reduceLeft??????????????
+                            This example shows how to implement foldLeft with Tail Recursion.
                         </p>
                         <p>
-                            ??List?match case?????? :: ???????????head?????tail?
+                            List can be pattern match by '::', the first elements returned is head, and the others are tails.
                         </p>
                         <p>
-                            ??????????????????????????????
+                            PS:Tail Recursion can be optimized in compile time. So it not need to worry about stack overflow.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1128,14 +1114,12 @@ println("wordcount:" + num)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ????For??
-                        </h2>
+                        <h2>Prowerful For Loop</h2>
                         <p>
-                            ????????????????Scala????????????????????
+                            For-Loop is common feature of imperative programming. So Scala improved it to fit functional programming.
                         </p>
                         <p>
-                            For????????????????List?With 'yield' in loop, value after yield can append to the List.
+                            For-Loop expression in Scala can also return a List.With 'yield' in loop, value after yield can append to the List.
                         </p>
                         <p>
                             This example replaces the map function with for loop.
@@ -1186,19 +1170,19 @@ osName.foreach(print _)
                             Option
                         </h2>
                         <p>
-                            Scala???Option?????????????null????
+                            Scala provide a Option feature to avoid checking null everywhere.
                         </p>
                         <p>
-                            ???????getProperty?????????Option? So we do not check null everywhere, getting value from Option is enough.
+                            This example has a getProperty function, and it would return Option instead of null. So we do not check null everywhere, getting value from Option is enough.
                         </p>
                         <p>
                             Using pattern match is a common way to get value from Option.    It can also use getOrElse() to set a default value when it's none.
                         </p>
                         <p>
-                            ????Option???????????1?List?List???????????
+                            Another important thing is that Option contains lots of functions in List, So it can work like a list in most of time.
                         </p>
                         <p>
-                            ?? NullException
+                            Goodbye NullException.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1241,17 +1225,15 @@ version.minorVersion.foreach(println _)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            Lazy???
-                        </h2>
+                        <h2>Lazy Initialization</h2>
                         <p>
-                            Lazy????????????lazy???????????????????????????????
+                            Lazy can lazy initial value.The fields with lazy keyword can initial when it first access.
                         </p>
                         <p>
-                            This example is to get the Scala Version Code from Github. It takes time because of network latency.So we can get it with lazy. ????????
+                            This example is to get the Scala Version Code from Github. It takes time because of network latency.So we can get it with lazy to avoid unnecessary IO blocking.
                         </p>
                         <p>
-                            Lazy???????????????
+                            Lazy is very suitable for the value takes lots of resources.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a><a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1268,33 +1250,31 @@ version.minorVersion.foreach(println _)
             </div>
             <div id="concurrency-contents" class="step contents slide deeply" data-x="-3500" data-y="1000" data-z="-3000" data-scale="1">
                 <div>
-                    <h2>
-                        ??(???
-                    </h2>
+                    <h2>Content(Concurrent)</h2>
                     <ul>
                         <li>
-                            <a href="#/using-actor">??Actor</a>
+                            <a href="#/using-actor">Using Actor</a>
                         </li>
                         <li>
-                            <a href="#/simplify-actor">Actor??????</a>
+                            <a href="#/simplify-actor">Simplify Actor</a>
                         </li>
                         <li>
-                            <a href="#/actor-principle">Actor??</a>
+                            <a href="#/actor-principle">Actor Implement</a>
                         </li>
                         <li>
-                            <a href="#/return-sync">????</a>
+                            <a href="#/return-sync">Synchronized Return</a>
                         </li>
                         <li>
-                            <a href="#/return-async">????</a>
+                            <a href="#/return-async">Asynchronized Return</a>
                         </li>
                         <li>
-                            <a href="#/parallel-collection">????</a>
+                            <a href="#/parallel-collection">Parallel Collection</a>
                         </li>
                         <li>
-                            <a href="#/parallel-word-count">??wordcount</a>
+                            <a href="#/parallel-word-count">Parallel Word Count</a>
                         </li>
                         <li>
-                            <a href="#/remote-actor">??Actor</a>
+                            <a href="#/remote-actor">Remote Actor</a>
                         </li>
                     </ul>
                 </div>
@@ -1337,14 +1317,12 @@ system.shutdown
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ??Actor
-                        </h2>
+                        <h2>Using Actor</h2>
                         <p>
-                            Actor is Scala's concurrent model.?2.10?????????<a href="http://akka.io/" target="_blank">Akka</a>?????Actor???
+                            Actor is Scala's concurrent model.After the Version of 2.10, <a href="http://akka.io/" target="_blank">Akka</a> is recommand implement of Actor in Scala.
                         </p>
                         <p>
-                            Actor is a like thread instance with a mailbox. Actor????<span class="important">system.actorOf</span>???,<span class="important">receive</span>???????<span class="important">?</span>????????
+                            Actor is a like thread instance with a mailbox. It can be created by <span class="important">system.actorOf</span>, and using <span class="important">receive</span> to get message, <span class="important">!</span> to send message.
                         </p>
                         <p>
                             This example is a EchoServer whitch can receive message then print them.
@@ -1388,20 +1366,18 @@ system.shutdown
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            Actor??????
-                        </h2>
+                        <h2>Simplify Actor</h2>
                         <p>
                             There is a simpler way to define Actor.
                         </p>
                         <p>
-                            ??
+                            There is a the actor function in 
                         </p>
                         <pre>
 akka.actor.ActorDSL
 </pre>
                         <p>
-                            ??actor???This function can accept a constructer, and return a started Actor.
+                            .This function can accept a constructer, and return a started Actor.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1449,17 +1425,15 @@ system.shutdown
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            Actor??
-                        </h2>
+                        <h2>Actor Implement</h2>
                         <p>
-                            Actor is more light weight than thread.?Scala???????????Actor?????Actor????<span class="important">????</span>?
+                            Actor is more light weight than thread.Millions of actors can be generated in Scala, the secret is that Actor can <span class="important">reuse thread</span>.
                         </p>
                         <p>
                             The mapping relationship between Actor and Thread in decided by Dispatcher.
                         </p>
                         <p>
-                            ??????4?Actor?????????????????
+                            This example create 4 Actors, and it would print it's thread name when it invoked.
                         </p>
                         <p>
                             You can find that there are no fix mapping relationship between Actor and Thread.A Actor can use multi threads. And a thread can be used by multi Actors.
@@ -1510,9 +1484,7 @@ system.shutdown
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ????
-                        </h2>
+                        <h2>Synchronized Return</h2>
                         <p>
                             Actor is very suitable for operation need time, for example getting resource from network.
                         </p>
@@ -1571,9 +1543,7 @@ version onComplete {
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ????
-                        </h2>
+                        <h2>Asynchronized Return</h2>
                         <p>
                             Asynchronization can provide better performance. Future in Scala is very Prowerful, it can be retured asynchronously.
                         </p>
@@ -1619,14 +1589,12 @@ println("time: " + (System.currentTimeMillis - t) + "ms")
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ????
-                        </h2>
+                        <h2>Parallel Collection</h2>
                         <p>
-                            This example is to access serval URLs, can recode the time it needs.??????????????????
+                            This example is to access serval URLs, can recode the time it needs.If we access them parallelly, the performance can be better.
                         </p>
                         <p>
-                            ???
+                            Try to change
                         </p>
                         <pre>
 urls.map
@@ -1638,7 +1606,7 @@ urls.map
 urls.par.map
 </pre>
                         <p>
-                            ????map????????????
+                            So the functions in map can run parallelly.
                         </p>
                         <p>
                             It's exciting to combine functional programming and concurrent. 
@@ -1678,20 +1646,18 @@ println("wordcount:" + num)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ??wordcount
-                        </h2>
+                        <h2>Parallel Word Count</h2>
                         <p>
                             This example is to access serval URLs, can recode the time it needs.
                         </p>
                         <p>
-                            ???????????????
+                            Parallel Collection support most functions in normal collection.
                         </p>
                         <p>
-                            ??????wordcount????????????????
+                            There is word count example before, we can use parallel collection to improve it.
                         </p>
                         <p>
-                            ???????????????????????
+                            It can leverage the prower of multi core without increase the complexty.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1738,9 +1704,7 @@ system.shutdown
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ??Actor
-                        </h2>
+                        <h2>Remote Actor</h2>
                         <p>
                             Actor is concurrent model, it can also used for distribute computing.
                         </p>
@@ -1768,30 +1732,28 @@ system.shutdown
             </div>
             <div id="practice-contents" class="step contents slide deeply" data-x="-3500" data-y="2500" data-z="-3000" data-scale="1">
                 <div>
-                    <h2>
-                        ??(??)
-                    </h2>
+                    <h2>Content(Practice)</h2>
                     <ul>
                         <li>
-                            <a href="#/using-java">??Java</a>
+                            <a href="#/using-java">Using Java</a>
                         </li>
                         <li>
-                            <a href="#/equality">???</a>
+                            <a href="#/equality">Equality</a>
                         </li>
                         <li>
-                            <a href="#/extractor">???</a>
+                            <a href="#/extractor">Extractor</a>
                         </li>
                         <li>
-                            <a href="#/memory-pattern">????</a>
+                            <a href="#/memory-pattern">Memory Pattern</a>
                         </li>
                         <li>
-                            <a href="#/implicit-conversion">????</a>
+                            <a href="#/implicit-conversion">Implicit Conversion</a>
                         </li>
                         <li>
                             <a href="#/dsl">DSL</a>
                         </li>
                         <li>
-                            <a href="#/test">??</a>
+                            <a href="#/test">Testing</a>
                         </li>
                         <li>
                             <a href="#/simple-build-tool">Simple Build Tool</a>
@@ -1832,9 +1794,7 @@ println(BeanUtils.describe(bean))
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ??Java
-                        </h2>
+                        <h2>Using Java</h2>
                         <p>
                             Scala can operate Java very easily. There has been lots of samples before.
                         </p>
@@ -1842,7 +1802,7 @@ println(BeanUtils.describe(bean))
                             Java can also use Scala.This example show how to use @BeanProperty Annotation to create Java Style Bean.
                         </p>
                         <p>
-                            ???
+                            Try to change
                         </p>
                         <pre>
 var name: String
@@ -1854,7 +1814,7 @@ var name: String
 @BeanProperty var name: String
 </pre>
                         <p>
-                            ????bean???getter/setter? So the Apache BeanUtils can work correctly.
+                            So that the bean contains getter/setter. So the Apache BeanUtils can work correctly.
                         </p>
                         <div class="step-nav">
                             <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1891,17 +1851,15 @@ println(new Person("Black") == new Person("Black"))
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ???
-                        </h2>
+                        <h2>Equality</h2>
                         <p>
-                            ?Scala?<span class="important">==???equals</span>?????Java?????????
+                            In Scala <span class="important">== is the same as equals function</span>. It's not the same as Java, but it's more reasonable.
                         </p>
                         <p>
                             Write a correctly equal function is not a easy work. This example also has a issus when it has subclass.
                         </p>
                         <p>
-                            ???classtocase class,???equals???
+                            Try to change 'class' to 'case class', and delete the equals function.
                         </p>
                         <p>
                             Case Class can generate correctly equal function for us.
@@ -1946,17 +1904,15 @@ object Email {
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ???
-                        </h2>
+                        <h2>Extractor</h2>
                         <p>
-                            ????????????????
+                            Extractor can help pattern match to extract.
                         </p>
                         <p>
                             This example is to build a Email Extractor, implement the unapply function is enough.
                         </p>
                         <p>
-                            The regex in Scala contains extractor, it can extract a List.List???????()??????
+                            The regex in Scala contains extractor, it can extract a List.The elements in List is the expression in ().。
                         </p>
                         <p>
                             Extractor is very useful. There are 2 cases in this example.
@@ -1965,13 +1921,13 @@ object Email {
 case user :: domain :: Nil
 </pre>
                         <p>
-                            ??List
+                            can extract List.
                         </p>
                         <pre>
 case Email(user, domain)
 </pre>
                         <p>
-                            ??Email?
+                            can extract Email。
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -2019,11 +1975,9 @@ println("it takes " + (System.currentTimeMillis() - t2) + "ms")
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ????
-                        </h2>
+                        <h2>Memory Pattern</h2>
                         <p>
-                            Memorize Pattern
+                            Memory Pattern
                         </p>
                         <p>
                             In this example, memo can wrapper a function without cache ability to be a function with it.
@@ -2032,7 +1986,7 @@ println("it takes " + (System.currentTimeMillis() - t2) + "ms")
                             It's the example for Fibonacci, cache can improve it's performance.
                         </p>
                         <p>
-                            ???
+                            Try to change
                         </p>
                         <pre>
 fibonacci_(n - 1) + fibonacci_(n - 2)
@@ -2044,7 +1998,7 @@ fibonacci_(n - 1) + fibonacci_(n - 2)
 memo(fibonacci_)(n - 1) + memo(fibonacci_)(n - 2)
 </pre>
                         <p>
-                            ?????????
+                            It can improve performance more.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -2079,11 +2033,9 @@ println("2013-01-01 unix time: " + "2013-01-01".getTime()/1000l)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ????
-                        </h2>
+                        <h2>Implicit Conversion</h2>
                         <p>
-                            implicit????????????????????????????
+                            Implicit can be used to define a Conversion function. Type can be automantical conversioned with it when it needs.
                         </p>
                         <p>
                             This example can translate String to Data automantical. Implicit is the most important to implement DSL.
@@ -2136,13 +2088,13 @@ println(pretty(render(json)))
                             DSL
                         </h2>
                         <p>
-                            DSL?Scala???????????????????????
+                            DSL is most prowerful tool in Scala. With it some code can be more descriptive.
                         </p>
                         <p>
                             This example is to generate Json with DSL. Some of the features looks like native features is created by DSL.
                         </p>
                         <p>
-                            ????DSL???????????????
+                            It's complex to write your own DSL. But it's very to use.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -2188,11 +2140,9 @@ specs2.run(new FactorialSpec)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            ??
-                        </h2>
+                        <h2>Testing</h2>
                         <p>
-                            Scala????Spec2?ScalaTest???? DSL?????????
+                            Scala can use Spec2, ScalaTest to test, and DSL can make testing more easier.
                         </p>
                         <p>
                             This example is to test a Factorial function. It create test case with should/in.
@@ -2238,13 +2188,13 @@ sbt\sbt stage
                             Simple Build Tool
                         </h2>
                         <p>
-                            SBT?Scala???????????????
+                            SBT is more popular build tool for Scala.With its help
                         </p>
                         <p>
-                            ???<span class="important">?????</span>?JRE??????????Scala?
+                            you can develop Scala even <span class="important">without installing anything</span> except JRE.
                         </p>
                         <p>
-                            ???????????????Scala-Tour,?????????
+                            If you want to run this Scala Tour in your computer, follow the code left.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a><a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -2253,31 +2203,29 @@ sbt\sbt stage
                 </div>
             </div>
             <div id="about" class="step" data-x="3000" data-y="3000" data-scale="1">
-                <h2>
-                    ??
-                </h2>
+                <h2>About</h2>
                 <p>
-                    ??????????Scala???????Scala???
+                    The Scala Tour is create by the love of Scala and the desire that more people would love it.
                 </p>
                 <h3>
-                    ????:
+                    Other Resources:
                 </h3>
                 <div>
                     <ul>
                         <li>
-                            <a href="http://twitter.github.com/scala_school/" target="_blank">Scala School!</a>: Twitter?Scala??
+                            <a href="http://twitter.github.com/scala_school/" target="_blank">Scala School!</a>:Twitter's Scala School.
                         </li>
                         <li>
-                            <a href="http://docs.scala-lang.org/tutorials/tour/tour-of-scala.html" target="_blank">A Tour of Scala</a>:??Scala Tour
+                            <a href="http://docs.scala-lang.org/tutorials/tour/tour-of-scala.html" target="_blank">A Tour of Scala</a>:Offical Scala Tour
                         </li>
                         <li>
-                            <a href="http://www.scala-lang.org/docu/files/ScalaByExample.pdf" target="_blank">Scala By Example</a>:???Scala??
+                            <a href="http://www.scala-lang.org/docu/files/ScalaByExample.pdf" target="_blank">Scala By Example</a>:More Scala Samples
                         </li>
                         <li>
-                            <a href="http://docs.scala-lang.org/cheatsheets/" target="_blank">Scala Cheatsheet</a>:????Scala????
+                            <a href="http://docs.scala-lang.org/cheatsheets/" target="_blank">Scala Cheatsheet</a>:Scala Syntax
                         </li>
                         <li>
-                            <a href="https://class.coursera.org/progfun-2012-001/class/index" target="_blank">Functional Programming Principles in Scala</a>:Coursera ?Scala??
+                            <a href="https://class.coursera.org/progfun-2012-001/class/index" target="_blank">Functional Programming Principles in Scala</a>:Coursera's Scala Course
                         </li>
                     </ul>
                 </div>

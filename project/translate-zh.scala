@@ -100,10 +100,12 @@ object translate {
                 "不必使用继承这种不够灵活的特性")   
   translate += ("### Currying" -> "### 柯里化")   
   translate += (">Currying<" -> ">柯里化<")   
-  translate += ("This example is simliar with before" -> 
-                "这个例子和上面的功能相同")   
+  translate += ("This example is simliar with before." -> 
+                "这个例子和上面的功能相同。")   
   translate += ("The difference between them is this one leverage currying technology" -> 
                 "不同的是使用了柯里化（Currying)的技术")   
+  translate += ("The difference between them is this one leverage <span class=\"important\">currying<span> technology" -> 
+                "不同的是使用了<span class=\"important\">柯里化(Currying)</span>技术。")   
   translate += ("is a normal function" -> 
                 "是普通的函数")   
   translate += ("is a curryed function." -> 
@@ -111,9 +113,13 @@ object translate {
   translate += ("The return value is a function expression." -> 
                 "相当于返回一个匿名函数表达式。")   
   translate += ("is a syntactic sugar" -> 
-                "是上面的简化写法")   
+                "是简化写法") 
+  translate += ("is a syntactic sugar" -> 
+                "是上面的简化写法") 
   translate += ("Currying can let our codes looks like language's ability." -> 
                 "柯里化可以让我们构造出更像原生语言提供的功能的代码")   
+  translate += ("Try to change the withclose(...)(...) to withclose(...){...}" -> 
+                "试着将例子中的withclose(...)(...)换成withclose(...){...}")  
   translate += ("Change the withclose(...)(...) to withclose(...){...}" -> 
                 "例子中的withclose(...)(...)换成withclose(...){...}")  
   translate += ("Is it simliar with Java's synchronized block?" -> 
@@ -124,6 +130,8 @@ object translate {
                 ">范型<")  
   translate += ("The sample before can be more simplified with generic." -> 
                 "上面的例子可以使用泛型变得更简洁更灵活。")  
+  translate += ("The sample before can be more simplified with generic." -> 
+                "之前的例子可以使用泛型变得更简洁更灵活。")  
   translate += ("""Try to change val msg = "123456" to val msg = 123456.""" -> 
                 """试着将val msg = "123456"修改为val msg = 123456。""")  
   translate += ("Although the type of msg changed from String to Int, the program can be also correctly processed." -> 
@@ -132,19 +140,27 @@ object translate {
                 "Traits就像是有函数体的Interface。")  
   translate += ("One class can extend several traits using the with keyword." -> 
                 "使用with关键字来混入。")    
+  translate += ("One class can extend several traits using the <span class=\"important\">with</span> keyword." -> 
+                "使用<span class=\"important\">with</span>关键字来混入。")  
   translate += ("This example extends java.util.ArrayList the ability of foreach." -> 
                 "这个例子是给java.util.ArrayList添加了foreach的功能。")  
   translate += ("Try to append with JsonAble to extend the ability of toJson" -> 
                 "试着再在后面加上with JsonAble，给list添加toJson的能力")  
+  translate += ("to extend the ability of toJson" -> 
+                "给list添加toJson的能力")  
+  translate += ("Try to append after ForEachAble[Int] with" -> 
+                "试着再在with ForEachAble[Int]后面加上")    
   translate += ("## Functional Programing" -> 
                 "## 函数式编程") 
   translate += (">Functional Programing<" -> 
                 ">函数式编程<") 
   translate += (">Functional<" -> 
                 ">函数式<") 
+  translate += ("Content (Functional)" -> 
+                "目录(函数式)")
   translate += ("### Pattern Matching" -> 
                 "### 模式匹配")  
-  translate += ("### Pattern Matching" -> 
+  translate += (">Pattern Matching<" -> 
                 ">模式匹配<")  
   translate += ("Pattern Matching is more flexible than switch-case; And it's simpler than if-else." -> 
                 "模式匹配是类似switch-case特性，但更加灵活；也类似if-else，但更加简约。")  
@@ -156,26 +172,43 @@ object translate {
                 "这个例子有所不足，当输入负数时，会无限循环。") 
   translate += ("Try to add if after case. Change case n: Int to case n: Int if (n > 1)." -> 
                 "可以在case后添加if语句判断，将case n: Int 修改为 case n: Int if (n > 1)即可。") 
+translate += ("Try to add before case _  with " -> 
+                "模式匹配也可以匹配类型，在case _ 前加上") 
+translate += ("to matche String type." -> 
+                "这样就可以匹配String类型") 
+
+
+
   translate += ("Try to add case n: String => fibonacci(n.toInt) before case _  to matche String type." -> 
                 "可以在case _ 前加上 case n: String => fibonacci(n.toInt)，使之匹配字符串类型。") 
   translate += ("Try to add println(fibonacci(-3))；println(fibonacci(\"3\")) to test the program. " -> 
                 "在最后添加 println(fibonacci(-3))；println(fibonacci(\"3\"))；来检查刚刚修改的效果。") 
   translate += ("Case classes are used to conveniently store and match on the contents of a class." -> 
                 "case class 顾名思义就是为case语句专门设计的类。") 
+
   translate += ("You can construct them without using new." -> 
                 "在普通类的基础上添加了和类名一致的工厂方法，") 
   translate += ("It also have hashcode, equality and nice toString methods." -> 
                 "还添加了hashcode,equals和toString方法。") 
+  translate += ("It also have hashcode, equality and nice toString methods." -> 
+                "还添加了hashcode,equals和toString等方法。") 
   translate += ("Try to append println(Sum(1,2)) last." -> 
                 "试试最后添加  println(Sum(1,2)) 。") 
   translate += ("Because if the require(n >= 0), it would throw exception when input is negative." -> 
                 "由于使用了require(n >= 0)来检验参数，尝试使用负数，会抛出异常。") 
+  translate += ("Because if the require(n &gt;= 0), it would throw exception when input is negative." -> 
+                "由于使用了require(n &gt;= 0)来检验参数，如果使用负数计算，将会抛出异常。") 
+
+
   translate += ("### The prower of functional programing" -> 
                 "### 函数式的威力") 
-  translate += (">The prower of functional programing<" -> 
+  translate += (">Function Prower<" -> 
                 ">函数式的威力<") 
   translate += ("This example shows whether there is a odd in list." -> 
                 "这个例子是判断一个List中是否含有奇数。") 
+    translate += ("This example shows whether there is a odd in list by imperative programming." -> 
+                "这个例子是用指令式编程判断一个List中是否含有奇数。") 
+  
   translate += ("The code from the 1st line to the last but one is created by imperative programming." -> 
                 "第一行到倒数第二行是使用for循环的指令式编程解决。") 
   translate += ("And the last line is created by functional programming." -> 
@@ -186,18 +219,39 @@ object translate {
                 "其中 _ % 2 == 1 是 (x: Int) => x % 2 == 1 的简化写法。")
   translate += ("Ruby's prower if from magic, but Scala's prower is from science." -> 
                 "相比于Ruby等动态语言,这威力来自于科学而不是魔法")
+
+
+
   translate += ("### The true prower of functional programming" -> 
                 "### 函数式真正的威力")
+  translate += (">Function True Prower<" -> 
+                ">函数式真正的威力<")
   translate += ("Besides simplifying code, the functional programming more take care of Input & Output without side-effect." -> 
                 "函数式除了能简化代码外，更重要的是他关注的是Input和Output，函数本身没有副作用。")
+  translate += ("Besides simplifying code, the functional programming more take care of <span class=\"important\">Input & Output without side-effect</span>." -> 
+                "函数式除了能简化代码外，更重要的是他关注的是<span class=\"important\">Input</span>和<span class=\"important\">Output</span>，函数本身没有副作用。")
+
   translate += ("Like the Unix pipeline , simple command can be combined together." -> 
                 "就是Unix pipeline一样，简单的命令可以组合在一起。")
+  translate += ("Like the Unix pipeline , simple command can be combined together." -> 
+                "就是Unix pipeline一样，简单的命令组合在一起威力无穷。")
+
+
   translate += ("The filter method in List can accept a filter function to return a new List." -> 
                 "List的filter方法接受一个过滤函数，返回一个新的List。")
   translate += ("If you do like the Unix pipeline style, functional programming can be your favorite." -> 
                 "如果你喜欢Unix pipeline的方式，你一定也会喜欢函数式编程。")
   translate += ("This example is to use scala code to simulate the funcion of \"cat file | grep 'warn' | grep '2013' | wc.\"" -> 
                 "这个例子是用函数式的代码模拟“cat file | grep 'warn' | grep '2013' | wc”的行为。")
+ translate += ("This example is to use scala code to simulate the funcion of " -> 
+                "这个例子是用函数式的代码模拟")
+ translate += ("The filter function in List can accept a filter function, return a new List as the input of the next function." -> 
+                "List的filter方法接受一个过滤函数，返回一个新的List，作为下一个方法的输入。")
+
+
+
+ 
+
   translate += ("### Word Count" -> 
                 "### Word Count")
   translate += ("Word Count is a classics sample for Map Reduce." -> 
@@ -220,6 +274,8 @@ object translate {
                 "Map和foldLeft可以代替大部分需要for循环的操作，并且使代码更清晰")
   translate += ("### Tail Recursion" -> 
                 "### 尾递归")
+  translate += (">Tail Recursion<" -> 
+                ">尾递归<")
   translate += ("This example show how to implement foldLeft with Tail Recursion" -> 
                 "这个例子是用尾递归实现foldLeft。")
   translate += ("Tail Recursion is one type of Recursion, it call itself in it's last expression." -> 
@@ -230,6 +286,8 @@ object translate {
                 "尾递归会在编译期优化，因此不用担心一般递归造成的栈溢出问题。")
   translate += ("### Prowerful For Expression" -> 
                 "### 更强大的For")
+  translate += (">Prowerful For Loop<" -> 
+                ">更强大的For循环<")
   translate += ("Loop expression is feature of imperative programming.So Scala improved it to suit functional programming." -> 
                 "循环语句是指令式编程的特产，Scala对其加以改进，成为适应函数式风格的利器。")
   translate += ("For expression in Scala can also return a List." -> 
@@ -256,8 +314,8 @@ object translate {
                 "给力的是Option还可以看作是最大长度为1的List，其的强大功能都可以使用。")
   translate += ("Try to add 'osName.foreach(print _)' at last." -> 
                 "尝试在最后添加  osName.foreach(print _) 。")
-  translate += ("### Lazy" -> 
-                "### Lazy")
+  translate += (">Lazy Initialization<" -> 
+                ">Lazy初始化<")
   translate += ("Lazy is lazy initial value." -> 
                 "Lazy可以延迟初始化。")
   translate += ("The fields with lazy key word can initial when it first access." -> 
@@ -270,6 +328,8 @@ object translate {
                 "可以使用lazy来延迟获取。")
   translate += ("### Using Actor" -> 
                 "### 使用Actor")
+  translate += (">Using Actor<" -> 
+                ">使用Actor<")
   translate += ("Actor is Scala's concurrent model." -> 
                 "Actor是Scala的并发模型。")
   translate += ("After the Version of 2.10, [http://akka.io/](Akka) is recommand implement of Actor in Scala." -> 
@@ -472,6 +532,8 @@ object translate {
                 ">颜开<")
   translate += (">Try to change<" -> 
                 ">试着将<")
+  translate += ("Try to change" -> 
+                "试着将")
   translate += (">to<" -> 
                 ">简化为<")  
   translate += ("to" -> 

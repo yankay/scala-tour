@@ -527,9 +527,7 @@ withClose(conn)(conn =&gt;
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            柯里化
-                        </h2>
+                        <h2>柯里化</h2>
                         <p>
                             这个例子和上面的功能相同。不同的是使用了<span class="important">柯里化(Currying)</span>技术。
                         </p>
@@ -549,7 +547,7 @@ def add(x:Int) = (y:Int) =&gt; x + y
  def add(x:Int)(y:Int) = x + y
 </pre>
                         <p>
-                            是简化写法
+                            is a syntactic sugar
                         </p>
                         <p>
                             柯里化可以让我们构造出更像原生语言提供的功能的代码
@@ -603,9 +601,7 @@ println(msg)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            范型
-                        </h2>
+                        <h2>范型</h2>
                         <p>
                             之前的例子可以使用泛型变得更简洁更灵活。
                         </p>
@@ -704,7 +700,7 @@ with JsonAble
             <div id="funtional-contents" class="step contents slide deeply" data-x="-3500" data-y="-500" data-z="-3000" data-scale="1">
                 <div>
                     <h2>
-                        目录(函数式）
+                        目录(函数式)
                     </h2>
                     <ul>
                         <li>
@@ -771,9 +767,7 @@ println(fibonacci(3))
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            模式匹配
-                        </h2>
+                        <h2>模式匹配</h2>
                         <p>
                             模式匹配是类似switch-case特性，但更加灵活；也类似if-else，但更加简约。
                         </p>
@@ -792,9 +786,6 @@ case n: Int
                         <pre>
 case n: Int if (n &gt; 1)
 </pre>
-                        <p>
-                            case后添加if语句判断,这样修改当输入负数时，就不会无限循环。
-                        </p>
                         <p>
                             模式匹配也可以匹配类型，在case _ 前加上
                         </p>
@@ -852,7 +843,8 @@ println(value(FibonacciExpr(3)))
                             Case Class
                         </h2>
                         <p>
-                            case class 顾名思义就是为case语句专门设计的类， 在普通类的基础上添加了和类名一致的工厂方法， 还添加了hashcode,equals和toString等方法。
+                            Case classes are used to conveniently store and match on the contents of a class.
+                            在普通类的基础上添加了和类名一致的工厂方法， 还添加了hashcode,equals和toString等方法。
                         </p>
                         <p>
                             由于使用了require(n &gt;= 0)来检验参数，如果使用负数计算，将会抛出异常。
@@ -896,9 +888,7 @@ println("list contains Odd ? " + containsOdd(list))
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            函数式的威力
-                        </h2>
+                        <h2>函数式的威力</h2>
                         <p>
                             这个例子是用指令式编程判断一个List中是否含有奇数。
                         </p>
@@ -909,19 +899,19 @@ println("list contains Odd ? " + containsOdd(list))
 containsOdd(list)
 </pre>
                         <p>
-                            替换为
+                            to
                         </p>
                         <pre>
 list.exists((x: Int) =&gt; x % 2 ==1)
 </pre>
                         <p>
-                            通过将函数作为参数，可以使程序更简洁。还可以再简化为
+                            Through treat function as arguments, programing can be more simple. It can be even changed to 
                         </p>
                         <pre>
 list.exists(_ % 2 == 1)
 </pre>
                         <p>
-                            可以用_替代参数
+                            _ can used to replace arguments
                         </p>
                         <p>
                             相比于Ruby等动态语言,这威力来自于科学而不是魔法
@@ -958,9 +948,7 @@ println("cat file | grep 'warn' | grep '2013' | wc : "
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            函数式真正的威力
-                        </h2>
+                        <h2>函数式真正的威力</h2>
                         <p>
                             函数式除了能简化代码外，更重要的是他关注的是<span class="important">Input</span>和<span class="important">Output</span>，函数本身没有副作用。
                         </p>
@@ -1074,9 +1062,7 @@ println("wordcount:" + num)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            尾递归
-                        </h2>
+                        <h2>尾递归</h2>
                         <p>
                             尾递归是递归的一种，特点在于会在函数的最末调用自身。尾递归是函数式编程的常见写法。
                         </p>
@@ -1128,9 +1114,7 @@ println("wordcount:" + num)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            更强大的For循环
-                        </h2>
+                        <h2>更强大的For循环</h2>
                         <p>
                             循环语句是指令式编程的常见语句，Scala对其加以改进，成为适应函数式风格的利器。
                         </p>
@@ -1241,9 +1225,7 @@ version.minorVersion.foreach(println _)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>
-                            Lazy初始化
-                        </h2>
+                        <h2>Lazy初始化</h2>
                         <p>
                             Lazy可以延迟初始化字段。加上lazy的字段会在第一次访问的时候初始化，而不是类初始化的时候初始化。
                         </p>
@@ -1268,9 +1250,7 @@ version.minorVersion.foreach(println _)
             </div>
             <div id="concurrency-contents" class="step contents slide deeply" data-x="-3500" data-y="1000" data-z="-3000" data-scale="1">
                 <div>
-                    <h2>
-                        目录(并发）
-                    </h2>
+                    <h2>目录(并发)</h2>
                     <ul>
                         <li>
                             <a href="#/using-actor">使用Actor</a>

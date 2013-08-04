@@ -200,9 +200,9 @@ translate += ("to matche String type." ->
                 "由于使用了require(n &gt;= 0)来检验参数，如果使用负数计算，将会抛出异常。") 
 
 
-  translate += ("### The prower of functional programing" -> 
+  translate += ("### The power of functional programing" -> 
                 "### 函数式的威力") 
-  translate += (">Function Prower<" -> 
+  translate += (">Function Power<" -> 
                 ">函数式的威力<") 
   translate += ("This example shows whether there is a odd in list." -> 
                 "这个例子是判断一个List中是否含有奇数。") 
@@ -217,14 +217,14 @@ translate += ("to matche String type." ->
                 "通过将函数作为参数，可以使程序极为简洁。")
   translate += ("The _ % 2 == 1 is the syntactic sugar of (x: Int) => x % 2 == 1." -> 
                 "其中 _ % 2 == 1 是 (x: Int) => x % 2 == 1 的简化写法。")
-  translate += ("Ruby's prower if from magic, but Scala's prower is from science." -> 
+  translate += ("Ruby's power if from magic, but Scala's power is from science." -> 
                 "相比于Ruby等动态语言,这威力来自于科学而不是魔法")
 
 
 
-  translate += ("### The true prower of functional programming" -> 
+  translate += ("### The true power of functional programming" -> 
                 "### 函数式真正的威力")
-  translate += (">Function True Prower<" -> 
+  translate += (">Function True Power<" -> 
                 ">函数式真正的威力<")
   translate += ("Besides simplifying code, the functional programming more take care of Input & Output without side-effect." -> 
                 "函数式除了能简化代码外，更重要的是他关注的是Input和Output，函数本身没有副作用。")
@@ -317,9 +317,9 @@ translate += ("to matche String type." ->
                 "尾递归会在编译期优化，因此不用担心一般递归造成的栈溢出问题。")
   translate += ("PS:Tail Recursion can be optimized in compile time. So it not need to worry about stack overflow." -> 
                 "注：尾递归会在编译期优化，因此不用担心递归造成的栈溢出问题。")
-  translate += ("### Prowerful For Expression" -> 
+  translate += ("### Powerful For Expression" -> 
                 "### 更强大的For")
-  translate += (">Prowerful For Loop<" -> 
+  translate += (">Powerful For Loop<" -> 
                 ">更强大的For循环<")
   translate += ("Loop expression is feature of imperative programming.So Scala improved it to suit functional programming." -> 
                 "循环语句是指令式编程的特产，Scala对其加以改进，成为适应函数式风格的利器。")
@@ -468,7 +468,7 @@ translate += ("to matche String type." ->
                 "### 异步返回 ")
   translate += (">Asynchronized Return<" -> 
                 ">异步返回<")
-  translate += ("Asynchronization can provide better performance. Future in Scala is very Prowerful, it can be retured asynchronously." -> 
+  translate += ("Asynchronization can provide better performance. Future in Scala is very Powerful, it can be retured asynchronously." -> 
                 "异步操作可以最大发挥效能。Scala的Futrue很强大，可以异步返回。")
   translate += ("Future would call the coComplete function when is finished." -> 
                 "可以实现Futrue的onComplete方法。当Futrue结束的时候就会回调。")
@@ -503,9 +503,9 @@ translate += ("to matche String type." ->
                 "在前面有一个wordcount例子，也可以用并发集合加以实现。")
   translate += ("There is word count example before, we can use parallel collection to improve it." -> 
                 "在前面有一个wordcount例子，也可以用并行集合加以实现。")
-  translate += ("It can use the prower of multi core without increase the complexty." -> 
+  translate += ("It can use the power of multi core without increase the complexty." -> 
                 "不增加程序复杂性，却能大幅提高程序利用多核的能力。")
-  translate += ("It can leverage the prower of multi core without increase the complexty." -> 
+  translate += ("It can leverage the power of multi core without increase the complexty." -> 
                 "不增加程序复杂性，却能大幅提高利用多核的能力。")  
   translate += ("### Remote Actor" -> 
                 "### 远程Actor")
@@ -599,9 +599,9 @@ translate += ("to matche String type." ->
 
   translate += ("This example can translate String to Data automantical. Implicit is the most important to implement DSL." -> 
                 "这个例子可以将String自动转换为Date类型。隐式转换时实现DSL的重要工具。")
-  translate += ("DSL is most prowerful tool in Scala. With it Scala can let some code more-descriptive." -> 
+  translate += ("DSL is most powerful tool in Scala. With it Scala can let some code more-descriptive." -> 
                 "DSL是Scala最强大武器，Scala可以使一些描述性代码变得极为简单。")
-  translate += ("DSL is most prowerful tool in Scala. With it some code can be more descriptive." -> 
+  translate += ("DSL is most powerful tool in Scala. With it some code can be more descriptive." -> 
                 "DSL是Scala最强大武器，可以使一些描述性代码变得极为简单。")
   
 
@@ -668,7 +668,7 @@ translate += ("to matche String type." ->
                 "\"中文\"")
   translate += ("<b>Scala</b> is a popular <b>functional</b>/<b>object-oriented</b> programming language built on top of the <b>Java virtual machine (JVM)</b>." -> 
                 "<b>Scala</b> 是一门 <b>函数式</b>的<b>面向对象</b>语言。他运行在<b>Java虚拟机</b>上.")
-  translate += ("The tour will help you to know the prowerful features about Scala.And you could learn how to use them effectively through experimentation." -> 
+  translate += ("The tour will help you to know the powerful features about Scala.And you could learn how to use them effectively through experimentation." -> 
                 "本指南是用来介绍Scala强大的功能。同时你可以亲身实践他们。")
   translate += ("The tour is interactive. Click the <b>Run</b> button now to compile and run the program on a remote server. The result is displayed below the code. You can edit it and run your own code. (It may be a little slow when you first run, but it would faster next)" -> 
                 "点击左边的<b>Run</b>按钮试试。左边的运行框可以在远程编译和运行任何Scala代码。运行的结果将展示在下面对文本框中。你也可以试着编辑这些代码，重新运行。(初次运行可能会有些慢，不过第二次就很快了)")

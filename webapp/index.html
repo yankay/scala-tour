@@ -93,7 +93,7 @@ println("hello world")
                             The tour is interactive. Click the <b>Run</b> button now to compile and run the program on a remote server. The result is displayed below the code. You can edit it and run your own code. (It may be a little slow when you first run, but it would faster next)
                         </p>
                         <p>
-                            Use a spacebar or arrow keys to navigate
+                            Use a space bar or arrow keys to navigate
                         </p>
                         <div class="step-nav">
                             <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -298,7 +298,7 @@ withScanner(File("/proc/self/stat"),
                             This example is to read the self pid from /proc/self/stat.
                         </p>
                         <p>
-                            Because the 'withScanner' function encapsulates the 'try-finally' block, it no need to <span class="important">call 'close()' any more</span>.。
+                            Because the 'withScanner' function encapsulates the 'try-finally' block,it no need to <span class="important">call 'close()' any more</span>.。
                         </p>
                         <p>
                             PS: the expression's return type is 'Unit' when it no need to return.
@@ -529,7 +529,7 @@ withClose(conn)(conn =&gt;
                     <div class="span4">
                         <h2>Currying</h2>
                         <p>
-                            This example is simliar with before.The difference between them is this one leverage <span class="important">currying<span> technology
+                            This example is similar with before.The difference between them is this one leverage <span class="important">currying<span> technology
                         </p>
                         <pre>
 def add(x:Int, y:Int) = x + y
@@ -541,7 +541,7 @@ def add(x:Int, y:Int) = x + y
 def add(x:Int) = (y:Int) =&gt; x + y
 </pre>
                         <p>
-                            is a curryed function.The return value is a function expression.
+                            is a curried function.The return value is a function expression.
                         </p>
                         <pre>
  def add(x:Int)(y:Int) = x + y
@@ -914,7 +914,7 @@ list.exists(_ % 2 == 1)
                             _ can be used to replace arguments
                         </p>
                         <p>
-                            Ruby's power if from magic, but Scala's power is from science.
+                            Ruby's power is from magic, but Scala's power is from science.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1265,7 +1265,7 @@ version.minorVersion.foreach(println _)
                             <a href="#/return-sync">Synchronized Return</a>
                         </li>
                         <li>
-                            <a href="#/return-async">Asynchronized Return</a>
+                            <a href="#/return-async">Asynchronous Return</a>
                         </li>
                         <li>
                             <a href="#/parallel-collection">Parallel Collection</a>
@@ -1319,7 +1319,7 @@ system.shutdown
                     <div class="span4">
                         <h2>Using Actor</h2>
                         <p>
-                            Actor is Scala's concurrent model. After the Version of 2.10, <a href="http://akka.io/" target="_blank">Akka</a> is recommand implement of Actor in Scala.
+                            Actors are one of Scala's concurrent model.Users of Scala earlier than version 2.10 should use  <a href="http://akka.io/" target="_blank">Akka</a>.
                         </p>
                         <p>
                             Actor is a like thread instance with a mailbox. It can be created by <span class="important">system.actorOf</span>, and using <span class="important">receive</span> to get message, <span class="important">!</span> to send message.
@@ -1377,7 +1377,7 @@ system.shutdown
 akka.actor.ActorDSL
 </pre>
                         <p>
-                            .This function can accept a constructer, and return a started Actor.
+                            .This function can accept a constructor, and return a started Actor.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1543,9 +1543,9 @@ version onComplete {
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>Asynchronized Return</h2>
+                        <h2>Asynchronous Return</h2>
                         <p>
-                            Asynchronization can provide better performance. Future in Scala is very powerful, it can be returned asynchronously.
+                            Asynchronous operation can provide better performance. Future in Scala is very powerful, it can be returned asynchronously.
                         </p>
                         <p>
                             Future would call the 'onComplete' function when is finished.
@@ -1591,7 +1591,7 @@ println("time: " + (System.currentTimeMillis - t) + "ms")
                     <div class="span4">
                         <h2>Parallel Collection</h2>
                         <p>
-                            This example is to access several URLs, can recode the time it needs. If we access them parallelly, the performance can be better.
+                            This example is to access several URLs, can recode the time it needs. If we access them in parallel, the performance can be better.
                         </p>
                         <p>
                             Try to change
@@ -1606,7 +1606,7 @@ urls.map
 urls.par.map
 </pre>
                         <p>
-                            So the functions in map can run parallelly.
+                            So the functions in map can run in parallel.
                         </p>
                         <p>
                             It's exciting to combine functional programming and concurrent. 
@@ -1648,7 +1648,7 @@ println("wordcount:" + num)
                     <div class="span4">
                         <h2>Parallel Word Count</h2>
                         <p>
-                            There is word count example before. we can use parallel collection to improve it.
+                            There is word count example before, we can use parallel collection to improve it.
                         </p>
                         <p>
                             It can leverage the power of multi core without increase the complexity.
@@ -1706,7 +1706,7 @@ system.shutdown
                             This example is to build an EchoServer with Actor.
                         </p>
                         <p>
-                            Then create a client with 'akka url' to route.
+                            Then it creates a client with Akka URL to route.
                         </p>
                         <p>
                             The usage method is the same with normal actor.
@@ -1850,7 +1850,7 @@ println(new Person("Black") == new Person("Black"))
                             In Scala <span class="important">== is the same as equals function</span>. It's not the same as Java, but it's more reasonable.
                         </p>
                         <p>
-                            Write a correctly equal function is not an easy work. This example also has an issus when it has subclass.
+                            Write a correctly equal function is not a easy work. This example also has a issue when it has subclass.
                         </p>
                         <p>
                             Try to change 'class' to 'case class', and delete the equals function.
@@ -2210,7 +2210,7 @@ sbt\sbt stage
                             <a href="http://twitter.github.com/scala_school/" target="_blank">Scala School!</a>:Twitter's Scala School.
                         </li>
                         <li>
-                            <a href="http://docs.scala-lang.org/tutorials/tour/tour-of-scala.html" target="_blank">A Tour of Scala</a>:Offical Scala Tour
+                            <a href="http://docs.scala-lang.org/tutorials/tour/tour-of-scala.html" target="_blank">A Tour of Scala</a>:Official Scala Tour
                         </li>
                         <li>
                             <a href="http://www.scala-lang.org/docu/files/ScalaByExample.pdf" target="_blank">Scala By Example</a>:More Scala Samples

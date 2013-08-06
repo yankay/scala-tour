@@ -109,7 +109,7 @@ log(MSG + 1 / 0)
 obama.age()的函数调用，可以省略小括号，简化为obama.age。
 
 ```
-class Persion(val firstName: String, val lastName: String) {
+class Person(val firstName: String, val lastName: String) {
 
 	private var _age = 0
 	def age = _age
@@ -120,9 +120,9 @@ class Persion(val firstName: String, val lastName: String) {
 	override def toString() = fullName()
 }
 
-val obama: Persion = new Persion("Barack", "Obama")
+val obama: Person = new Person("Barack", "Obama")
 
-println("Persion: " + obama)
+println("Person: " + obama)
 println("firstName: " + obama.firstName)
 println("lastName: " + obama.lastName)
 obama.age_=(51)

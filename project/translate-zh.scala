@@ -43,9 +43,9 @@ object translate {
   translate += ("This example shows the call by name, " -> 
                 "这个例子演示了按名称传递参数，")  
 
-  translate += ("For the last line try to calculate '1 / 0', the program will throw an exception." ->
+  translate += ("When the last line tries to calculate '1 / 0', the program will throw an exception." ->
                 "最末有1/0这个明显会产生异常的计算，运行该程序会产生异常。")
-  translate += ("For the last line try to calculate '1 / 0', the program will throw an exception." ->
+  translate += ("When the last line tries to calculate '1 / 0', the program will throw an exception." ->
                 "由于有除以0，所以运行该程序会产生异常。")
   translate += ("Try to change 'def log(msg: String)' to 'def log(msg: => String)'." -> 
                 "试着将def log(msg: String)修改为def log(msg: => String)。")
@@ -70,7 +70,7 @@ object translate {
 
   translate += ("The fields can be also defined in class, like the 'firstName' and 'lastName'." -> 
                 "在定义类时可以定义字段，如firstName，lastName。")
-  translate += ("It would generate constructor with the arguments." -> 
+  translate += ("These are automatically generated from the constructor's arguments." ->
                 "这样做还可以自动生成构造函数。")
   translate += ("Methods can be defined with def, and fields can be defined with val or var" -> 
                 "可以在类中通过def定义函数。var和val定义字段。")
@@ -93,22 +93,22 @@ object translate {
   translate += (">Duck Typing<" -> ">鸭子类型<")
   translate += ("When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck." -> 
                 "走起来像鸭子，叫起来像鸭子，就是鸭子。")
-  translate += ("This example use '{ def close(): Unit }' as the type of argument. " -> 
+  translate += ("This example uses '{ def close(): Unit }' as the type of argument. " ->
                 "这个例子中使用{ def close(): Unit }作为参数类型。")  
 
-  translate += ("This example use" -> 
+  translate += ("This example uses" ->
                 "这个例子中使用")
   translate += ("as the type of argument." -> 
                 "作为参数类型。")
-  translate += ("And it no need to use 'inherit'" -> 
+  translate += ("And there's no need to use 'inherit'" ->
                 "不必使用继承这种不够灵活的特性") 
   translate += ("### Currying" -> "### 柯里化") 
   translate += (">Currying<" -> ">柯里化<") 
-  translate += ("This example is similar with before." ->
+  translate += ("This example is similar to the previous one." ->
                 "这个例子和上面的功能相同。") 
   translate += ("The difference between them is this one leverage currying technology" -> 
                 "不同的是使用了柯里化（Currying)的技术") 
-  translate += ("The difference between them is this one leverage <span class=\"important\">currying<span> technology" -> 
+  translate += ("The difference between them is this one leverages <span class=\"important\">currying<span> technology" ->
                 "不同的是使用了<span class=\"important\">柯里化(Currying)</span>技术。") 
   translate += ("is a normal function" -> 
                 "是普通的函数") 
@@ -116,38 +116,38 @@ object translate {
                 "是柯里化后的函数，") 
   translate += ("The return value is a function expression." -> 
                 "相当于返回一个匿名函数表达式。")
-  translate += ("is a syntactic sugar" -> 
+  translate += ("is syntactic sugar" ->
                 "是简化写法") 
-  translate += ("is a syntactic sugar" -> 
+  translate += ("is syntactic sugar" ->
                 "是上面的简化写法") 
-  translate += ("Currying can let our codes looks like language's ability." -> 
+  translate += ("Currying can let our code look like it is part of the language." ->
                 "柯里化可以让我们构造出更像原生语言提供的功能的代码") 
   translate += ("Try to change the withclose(...)(...) to withclose(...){...}" -> 
                 "试着将例子中的withclose(...)(...)换成withclose(...){...}")
   translate += ("Change the withclose(...)(...) to withclose(...){...}" -> 
                 "例子中的withclose(...)(...)换成withclose(...){...}")
-  translate += ("Is it simliar with Java's synchronized block?" -> 
+  translate += ("Is it similar with Java's synchronized block?" ->
                 "是否和java中的synchronized关键字用法很像？")
   translate += ("### Generic" -> 
                 "### 范型")
   translate += (">Generic<" -> 
                 ">范型<")
-  translate += ("The sample before can be more simplified with generic." -> 
+  translate += ("The sample before can be more simplified with generics." ->
                 "上面的例子可以使用泛型变得更简洁更灵活。")
-  translate += ("The sample before can be more simplified with generic." -> 
+  translate += ("The sample before can be more simplified with generics." ->
                 "之前的例子可以使用泛型变得更简洁更灵活。")
   translate += ("""Try to change val msg = "123456" to val msg = 123456.""" -> 
                 """试着将val msg = "123456"修改为val msg = 123456。""")
-  translate += ("Although the type of msg changed from String to Int, the program can be also correctly processed." -> 
+  translate += ("Although the type of msg changed from String to Int, the program still compiles." ->
                 "虽然msg由String类型变为Int类型，但是由于使用了泛型，代码依旧可以正常运行。")  
-  translate += ("Traits looks like Java's interface with function block. " -> 
+  translate += ("Traits look like Java's interfaces, but with function blocks. " ->
                 "Traits就像是有函数体的Interface。")  
 
   translate += ("One class can extend several traits using the with keyword." -> 
                 "使用with关键字来混入。")  
   translate += ("One class can extend several traits using the <span class=\"important\">with</span> keyword." -> 
                 "使用<span class=\"important\">with</span>关键字来混入。")  
-  translate += ("This example extends java.util.ArrayList the ability of foreach loop." -> 
+  translate += ("This example extends java.util.ArrayList with a foreach loop." ->
                 "这个例子是给java.util.ArrayList添加了foreach的功能。")  
   translate += ("Try to append with JsonAble to extend the ability of toJson." -> 
                 "试着再在后面加上with JsonAble，给list添加toJson的能力")  

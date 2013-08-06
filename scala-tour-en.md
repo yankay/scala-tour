@@ -53,9 +53,9 @@ For functions can be passed as arguments, the 'Loan' pattern is easy to implemen
 
 This example is to read the self pid from /proc/self/stat.
 
-Because the 'withScanner' function encapsulates the 'try-finally' block,it no need to call 'close()' any more.
+Because the 'withScanner' function encapsulates the 'try-finally' block,there's no need to call 'close()' any more.
 
-PS: the expression's return type is 'Unit' when it no need to return.
+PS: the expression's return type is 'Unit' when it doesn't return a value.
 
 ```
 import scala.reflect.io.File
@@ -77,15 +77,15 @@ withScanner(File("/proc/self/stat"),
 
 ### Call-by-Name
 
-This example shows the call by nameFor the last line try to calculate '1 / 0', the program would throw exception.
+This example shows the call by nameFor the last line try to calculate '1 / 0', the program will throw an exception.
 
-Try to change 'def log(msg: String)' to 'def log(msg: => String)'.The program would not throw expression because it has been change to call-by-name
-
-
-Call-by-name means that the argument would be calculate when it be actually called.Because 'logEnable = false', the '1 / 0' would be skiped.
+Try to change 'def log(msg: String)' to 'def log(msg: => String)'.The program will not throw an exception because it has been changed to call-by-name
 
 
-Call-by-name can reduce the useless calculate and exception.
+Call-by-name means that the argument will be calculated when it be actually called.Because 'logEnable = false', the '1 / 0' would be skiped.
+
+
+Call-by-name can reduce the useless calculation and exception.
 
 
 ```
@@ -101,7 +101,7 @@ log(MSG + 1 / 0)
 
 ### Define Class
 
-The 'class' keyword is to define class, and the 'new' keyword is to create a instance.
+The 'class' keyword defines a class, and the 'new' keyword creates an instance.
 The fields can be also defined in class, like the 'firstName' and 'lastName'.It would generate constructor with the arguments.
 Methods can be defined with def, and fields can be defined with val or var
 The function name can be any characters like +,-,*,/.

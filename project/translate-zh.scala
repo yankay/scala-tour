@@ -7,64 +7,64 @@ object translate {
   translate += ("Content (Basic)" -> 
                 "目录(基础）")
   translate += ("Expressions and Values" -> "表达式和值")
-  translate += ("In Scala, almost everything is expression."-> "在Scala中，几乎所有的语言元素都是表达式。")
+  translate += ("In Scala, almost everything is an expression."-> "在Scala中，几乎所有的语言元素都是表达式。")
   translate += ("is an expression,"-> "是一个表达式，")
   translate += ("is also an expression."-> "也是一个表达式。")
-  translate += ("Constant can be created with val, and variable can be created with var. "-> "可以通过val定义一个常量，亦可以通过var定义一个变量。")
+  translate += ("Constants can be created with val, and variables can be created with var. "-> "可以通过val定义一个常量，亦可以通过var定义一个变量。")
   translate += ("More constants are better."-> "推荐多使用常量。")
   translate += ("First class Functions"-> "函数是一等公民")
   translate += ("You can create functions with def. "-> "可以使用def来定义一个函数。")
   translate += ("And the function body is an expression."-> "函数体是一个表达式。")
-  translate += ("When the body is a block expression, it returns the value of the last line. So it's no need to use the return keyword"-> 
+  translate += ("When the body is a block expression, it returns the value of the last line. So there's no need to use the return keyword"->
                 "使用Block表达式的时候，默认最后一行的返回是返回值，无需显式指定。")
-  translate += ("And like values, functions can also be given name by var or val. "-> "函数还可以像值一样，赋值给var或val。")
+  translate += ("And like values, functions can also be assigned using var or val "-> "函数还可以像值一样，赋值给var或val。")
   translate += ("So it can be passed as an argument to another function."-> "因此他也可以作为参数传给另一个函数。")
   translate += ("So <span class=\"important\"> it can be passed as an argument to another function.</span>"-> "因此<span class=\"important\">函数也可以作为参数传给另一个函数。</span>")
   translate += ("### Loan Pattern" -> "### 借贷模式")
   translate += (">Loan Pattern<" -> ">借贷模式<")
-  translate += ("For functions can be passed as arguments, the 'Loan' pattern is easy to implement." -> 
+  translate += ("For functions which can be passed as arguments, the 'Loan' pattern is easy to implement." ->
                 "由于函数可以像值一样作为参数传递，所以可以方便的实现借贷模式。")
-  translate += ("This example is to read the self pid from /proc/self/stat." -> 
+  translate += ("This example reads the self pid from /proc/self/stat." ->
                 "这个例子是从/proc/self/stat文件中读取当前进程的pid。")
 
-  translate += ("This example is to read the self pid from /proc/self/stat." ->
+  translate += ("This example reads the self pid from /proc/self/stat." ->
                 "这个例子是从/proc/self/stat文件中读取当前进程的pid。")
   translate += ("Because the 'withScanner' function encapsulates the 'try-finally' block," -> 
                 "withScanner封装了try-finally块，")
-  translate += ("it no need to call 'close()' any more." -> 
+  translate += ("there's no need to call 'close()' any more." ->
                 "所以调用者不用再close。")
-  translate += ("it no need to <span class=\"important\">call 'close()' any more</span>." -> 
+  translate += ("there's no need to <span class=\"important\">call 'close()' any more</span>." ->
                 "所以调用者<span class=\"important\">不用再close</span>")
 
-  translate += ("PS: the expression's return type is 'Unit' when it no need to return." -> 
+  translate += ("PS: the expression's return type is 'Unit' when it doesn't return a value." ->
                 "注：当表达式没有返回值时，默认返回Unit。")
   translate += ("### Call-by-Name" -> "### 按名称传递参数")
   translate += (">Call by Name<" -> ">按名称传递参数<")
   translate += ("This example shows the call by name, " -> 
                 "这个例子演示了按名称传递参数，")  
 
-  translate += ("For the last line try to calculate '1 / 0', the program would throw exception." -> 
+  translate += ("For the last line try to calculate '1 / 0', the program will throw an exception." ->
                 "最末有1/0这个明显会产生异常的计算，运行该程序会产生异常。")
-  translate += ("For the last line try to calculate '1 / 0', the program would throw exception." -> 
+  translate += ("For the last line try to calculate '1 / 0', the program will throw an exception." ->
                 "由于有除以0，所以运行该程序会产生异常。")
   translate += ("Try to change 'def log(msg: String)' to 'def log(msg: => String)'." -> 
                 "试着将def log(msg: String)修改为def log(msg: => String)。")
-  translate += ("The program would not throw expression because it has been change to call-by-name" -> 
+  translate += ("The program will not throw an exception because it has been changed to call-by-name" ->
                 "由按值传递修改为按名称传递后将不会产生异常。")  
-  translate += ("Call-by-name means that the argument would be calculate when it be actually called. So the '1 / 0' would be skipped." -> 
+  translate += ("Call-by-name means that the argument will be calculated when it is actually called. So the '1 / 0' will be skipped." ->
                 "因为log函数的参数是按名称传递，参数会等到实际使用的时候才会计算，所以被跳过。")  
-  translate += ("Call-by-name means that the argument would be calculate when it be actually called. " -> 
+  translate += ("Call-by-name means that the argument will be calculated when it be actually called. " ->
                 "因为log函数的参数是按名称传递，参数会等到真正访问的时候才会计算，")  
   translate += ("Because 'logEnable = false', the '1 / 0' would be skipped." -> 
                 "由于logEnable = false，所以被跳过。")  
 
-  translate += ("Call-by-name can reduce the useless calculate and exception." -> 
+  translate += ("Call-by-name can reduce the useless calculation and exception." ->
                 "按名称传递参数可以减少不必要的计算和异常。")
   translate += ("### Define Class" -> "### 类定义")
   translate += (">Define Class<" -> ">定义类<")
-  translate += ("The 'class' keyword is to define class, and the 'new' keyword is to create a instance." -> 
+  translate += ("The 'class' keyword defines a class, and the 'new' keyword creates an instance." ->
                 "可以用class关键字来定义类。并通过new来创建类。")
-  translate += ("The <span class=\"important\">'class'</span> keyword is to define class, and the <span class=\"important\">'new'</span> keyword is to create a instance." -> 
+  translate += ("The <span class=\"important\">'class'</span> keyword defines a class, and the <span class=\"important\">'new'</span> keyword creates an instance." ->
                 "可以用<span class=\"important\">class</span>关键字来定义类。并通过<span class=\"important\">new</span>来创建类。")
 
 

@@ -18,4 +18,11 @@ view
 http://localhost:8080/#/welcome
 
 ## Pure Text
-[Scala指南](https://github.com/yankay/scala-tour-zh/blob/master/scala-tour.md)
+[Scala tour](https://github.com/yankay/scala-tour/blob/master/scala-tour.md)
+
+## Translate
+The tour is written by Chinese firstly. And it can be translate to English by these scripts:
+ ```
+cat webapp/index-cn.html | scala project/translate-zh.scala re > webapp/index.html
+cat scala-tour-cn.md | scala project/translate-zh.scala re > scala-tour.md
+ ```

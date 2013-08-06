@@ -21,8 +21,9 @@ http://localhost:8080/#/welcome
 [Scala tour](https://github.com/yankay/scala-tour/blob/master/scala-tour.md)
 
 ## Translate
-The tour is written by Chinese firstly. And it can be translate to English by these scripts:
+The tour is can be translate to Chinese by these scripts:
  ```
-cat webapp/index-cn.html | scala project/translate-zh.scala re > webapp/index.html
-cat scala-tour-cn.md | scala project/translate-zh.scala re > scala-tour.md
+cat webapp/index.html | scala project/translate-zh.scala  > webapp/index-cn.html
+cat scala-tour.md | scala project/translate-zh.scala  > scala-tour-cn.md
+
  ```

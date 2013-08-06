@@ -77,7 +77,7 @@ withScanner(File("/proc/self/stat"),
 
 ### Call-by-Name
 
-This example shows the call by name, 最末有1/0这个明显会产生异常的计算，运行该程序会产生异常。
+This example shows the call by name, When the last line tries to calculate '1 / 0', the program will throw an exception.
 
 Try to change 'def log(msg: String)' to 'def log(msg: => String)'.The program will not throw an exception because it has been changed to call-by-name
 
@@ -133,7 +133,7 @@ println("age: " + obama.age())
 ### Duck Typing
 
 When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.
-This example uses '{ def close(): Unit }' as the type of argument. 因为任何含有close()的函数的类都可以作为参数。
+This example uses '{ def close(): Unit }' as the type of argument. So any class contains methods 'close()' can be passed.
 And there's no need to use 'inherit'。
 
 ```
@@ -186,7 +186,7 @@ withClose(conn)(conn =>
 
 ### Generic
 
-上面的例子可以使用泛型变得更简洁更灵活。
+The sample before can be more simplified with generics.
 Try to change val msg = "123456" to val msg = 123456.
 Although the type of msg changed from String to Int, the program still compiles.
 
@@ -272,7 +272,7 @@ println(fibonacci(3))
 
 Case classes are used to conveniently store and match on the contents of a class.
 You can construct them without using new.
-还添加了hashcode,equals和toString方法。
+It also has hashcode, equality and nice toString methods.
 Try to append println(Sum(1,2)) last.
 Because of the require(n >= 0), it would throw exception when input is negative.
 
@@ -322,7 +322,7 @@ println("list containsOdd by funtional:" + list.exists(_ % 2 == 1))
 ### The true power of functional programming
 
 Besides simplifying code, the functional programming more take care of Input & Output without side-effect.
-就是Unix pipeline一样，简单的命令可以组合在一起。
+Like the Unix pipeline, simple commands can be combined together.
 The filter method in List can accept a filter function to return a new List.
 If you do like the Unix pipeline style, functional programming can be your favorite.
 This example is to use Scala code to simulate the function of "cat file | grep 'warn' | grep '2013' | wc."
@@ -353,7 +353,7 @@ println("wordcount:" + num)
 ### Tail Recursion
 
 This example show how to implement foldLeft with Tail RecursionTail Recursion is one type of Recursion, it call itself in its last expression. 
-当用List做match case时。可以使用 :: 来解构。返回第一个元素head，和剩余元素tail。
+List can be pattern match by '::', the first elements returned is head, and the others are tails.
 Tail Recursion can be optimized in compile time. So it not need to worry about stack overflow.
 
 ```
@@ -607,7 +607,7 @@ println("time: " + (System.currentTimeMillis - s) + "ms")
 
 ### Concurrentwordcount
 Concurrent Collection support most functions in normal ones.
-在前面有一个wordcount例子，也可以用并发集合加以实现。
+There is word count example before, we can use parallel collection to improve it.
 It can use the power of multi core without increase the complexity.
 
 ```
@@ -623,7 +623,7 @@ println("wordcount:" + num)
 ### Remote Actor
 Actor is concurrent model, it can be also used for distribute computing.
 This example is to build an EchoServer with Actor.
-然后再创建一个client，通过akka url来寻址。
+Then it creates a client with Akka URL to route.
 The usage method is the same with normal actor.
 
 ```
@@ -800,7 +800,7 @@ specs2.run(new FactorialSpec)
 
 ### Simple Build Tool
 SBT is more popular build tool for Scala. 
-With its help, 你甚至不需要安装除JRE外的任何东西，来开发Scala。
+With its help, you can develop Scala even without installing anything except JRE.
 This example is to run this Scala Tour in your computer.
 
 ```

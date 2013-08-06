@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=1024">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <title>
-            Scala Tour
+            Scala 指南
         </title>
-        <meta name="description" content="Scala指南-开始精彩的Scala旅程">
+        <meta name="description" content="Scala 指南-Start your Wonderful Scala 指南">
         <meta name="author" content="Kay Yan">
         <link href="css/impress-demo.css" rel="stylesheet">
         <link href="css/bootstrap.css" rel="stylesheet">
@@ -52,7 +52,7 @@
                     <span class="scala-red">Scala</span> 指南
                 </h1>
                 <p>
-                    开始精彩的Scala旅程
+                    Start your Exciting Scala 指南
                 </p>
                 <div class="step-nav">
                     <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
@@ -84,7 +84,7 @@ println("hello world")
                             Hello World
                         </h2>
                         <p>
-                            <b>Scala</b> is a popular <b>functional</b>/<b>object-oriented</b> programming language built on top of the <b>Java virtual machine (JVM)</b>.
+                            <b>Scala</b> 是一门 <b>函数式</b>的<b>面向对象</b>语言。他运行在<b>Java虚拟机</b>上.
                         </p>
                         <p>
                             本指南是用来介绍Scala强大的功能。同时你可以亲身实践他们。
@@ -346,7 +346,7 @@ log(MSG + 1 / 0)
                         <pre>
 def log(msg: String)
 </pre>
-                        <p>修改为</p>
+                        <p>简化为</p>
                         <pre>
 def log(msg: =&gt; String)
 </pre>
@@ -547,7 +547,7 @@ def add(x:Int) = (y:Int) =&gt; x + y
  def add(x:Int)(y:Int) = x + y
 </pre>
                         <p>
-                            is syntactic sugar
+                            是上面的简化写法
                         </p>
                         <p>
                             柯里化可以让我们构造出更像原生语言提供的功能的代码
@@ -612,7 +612,7 @@ println(msg)
 "123456"
 </pre>
                         <p>
-                            修改为
+                            to
                         </p>
                         <pre>
 123456
@@ -781,7 +781,7 @@ println(fibonacci(3))
 case n: Int
 </pre>
                         <p>
-                            修改为
+                            to
                         </p>
                         <pre>
 case n: Int if (n &gt; 1)
@@ -843,7 +843,7 @@ println(value(FibonacciExpr(3)))
                             Case Class
                         </h2>
                         <p>
-                            Case classes are used to conveniently store and match on the contents of a class.
+                            case class 顾名思义就是为case语句专门设计的类。
                             在普通类的基础上添加了和类名一致的工厂方法， 还添加了hashcode,equals和toString等方法。
                         </p>
                         <p>
@@ -1018,7 +1018,7 @@ println("wordcount:" + num)
                             <span class="important">reduceLeft</span>接受一个合并函数，依次遍历合并。
                         </p>
                         <p>
-                            <span class="important">Map and FoldLeft can replace the for-loop expression, it make code cleaner.</span>
+                            <span class="important">使用高阶方法可以代替大部分需要循环的操作，使代码更清晰。</span>
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
@@ -1073,7 +1073,7 @@ println("wordcount:" + num)
                             当用List做match case时，可以使用 :: 来解构。返回第一个元素head和剩余元素tail。
                         </p>
                         <p>
-                            注：尾递归会在编译期优化，因此不用担心递归造成的栈溢出问题。
+                            PS: 尾递归会在编译期优化，因此不用担心一般递归造成的栈溢出问题。
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
@@ -1600,7 +1600,7 @@ println("time: " + (System.currentTimeMillis - t) + "ms")
 urls.map
 </pre>
                         <p>
-                            修改为
+                            to
                         </p>
                         <pre>
 urls.par.map
@@ -1741,7 +1741,7 @@ system.shutdown
                             <a href="#/memory-pattern">记忆模式</a>
                         </li>
                         <li>
-                            <a href="#/implicit-conversion">隐式转换</a>
+                            <a href="#/implicit-conversion">### 隐式转换</a>
                         </li>
                         <li>
                             <a href="#/dsl">DSL</a>
@@ -1802,7 +1802,7 @@ println(BeanUtils.describe(bean))
 var name: String
 </pre>
                         <p>
-                            修改为
+                            to
                         </p>
                         <pre>
 @BeanProperty var name: String
@@ -1986,7 +1986,7 @@ println("it takes " + (System.currentTimeMillis() - t2) + "ms")
 fibonacci_(n - 1) + fibonacci_(n - 2)
 </pre>
                         <p>
-                            修改为
+                            to
                         </p>
                         <pre>
 memo(fibonacci_)(n - 1) + memo(fibonacci_)(n - 2)
@@ -2027,7 +2027,7 @@ println("2013-01-01 unix time: " + "2013-01-01".getTime()/1000l)
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>隐式转换</h2>
+                        <h2>### 隐式转换</h2>
                         <p>
                             implicit可以定义一个转换函数，可以在使用相应类型的时候自动转换。
                         </p>
@@ -2188,7 +2188,7 @@ sbt\sbt stage
                             在他的帮助下，你甚至<span class="important">不需要安装</span>除JRE外的任何东西，来开发Scala。
                         </p>
                         <p>
-                            例如你想在自己的机器上执行这个Scala-Tour,可以执行左边的命令
+                            If you want to run this Scala 指南 in your computer, follow the code left.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>上一页</a> <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>目录</a><a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>下一页</a>
@@ -2199,7 +2199,7 @@ sbt\sbt stage
             <div id="about" class="step" data-x="3000" data-y="3000" data-scale="1">
                 <h2>关于</h2>
                 <p>
-                    这个指南源自于作者对Scala的热爱和对传播Scala的愿望
+                    The Scala 指南 is create by the love of Scala and the desire that more people would love it.
                 </p>
                 <h3>
                     其他资料:
@@ -2210,7 +2210,7 @@ sbt\sbt stage
                             <a href="http://twitter.github.com/scala_school/" target="_blank">Scala School!</a>:Twitter的Scala教学
                         </li>
                         <li>
-                            <a href="http://docs.scala-lang.org/tutorials/tour/tour-of-scala.html" target="_blank">A Tour of Scala</a>:官方Scala Tour
+                            <a href="http://docs.scala-lang.org/tutorials/tour/tour-of-scala.html" target="_blank">A Tour of Scala</a>:Official Scala 指南
                         </li>
                         <li>
                             <a href="scalatutorials.com" target="_blank">Scala Tutorials</a>:Another Interactive Tour of Scala

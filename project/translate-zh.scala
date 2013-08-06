@@ -7,70 +7,70 @@ object translate {
   translate += ("Content (Basic)" -> 
                 "目录(基础）")
   translate += ("Expressions and Values" -> "表达式和值")
-  translate += ("In Scala, almost everything is expression."-> "在Scala中，几乎所有的语言元素都是表达式。")
+  translate += ("In Scala, almost everything is an expression."-> "在Scala中，几乎所有的语言元素都是表达式。")
   translate += ("is an expression,"-> "是一个表达式，")
   translate += ("is also an expression."-> "也是一个表达式。")
-  translate += ("Constant can be created with val, and variable can be created with var. "-> "可以通过val定义一个常量，亦可以通过var定义一个变量。")
+  translate += ("Constants can be created with val, and variables can be created with var. "-> "可以通过val定义一个常量，亦可以通过var定义一个变量。")
   translate += ("More constants are better."-> "推荐多使用常量。")
   translate += ("First class Functions"-> "函数是一等公民")
   translate += ("You can create functions with def. "-> "可以使用def来定义一个函数。")
   translate += ("And the function body is an expression."-> "函数体是一个表达式。")
-  translate += ("When the body is a block expression, it returns the value of the last line. So it's no need to use the return keyword"-> 
+  translate += ("When the body is a block expression, it returns the value of the last line. So there's no need to use the return keyword"->
                 "使用Block表达式的时候，默认最后一行的返回是返回值，无需显式指定。")
-  translate += ("And like values, functions can also be given name by var or val. "-> "函数还可以像值一样，赋值给var或val。")
+  translate += ("And like values, functions can also be assigned using var or val "-> "函数还可以像值一样，赋值给var或val。")
   translate += ("So it can be passed as an argument to another function."-> "因此他也可以作为参数传给另一个函数。")
   translate += ("So <span class=\"important\"> it can be passed as an argument to another function.</span>"-> "因此<span class=\"important\">函数也可以作为参数传给另一个函数。</span>")
   translate += ("### Loan Pattern" -> "### 借贷模式")
   translate += (">Loan Pattern<" -> ">借贷模式<")
-  translate += ("For functions can be passed as arguments, the 'Loan' pattern is easy to implement." -> 
+  translate += ("For functions which can be passed as arguments, the 'Loan' pattern is easy to implement." ->
                 "由于函数可以像值一样作为参数传递，所以可以方便的实现借贷模式。")
-  translate += ("This example is to read the self pid from /proc/self/stat." -> 
+  translate += ("This example reads the self pid from /proc/self/stat." ->
                 "这个例子是从/proc/self/stat文件中读取当前进程的pid。")
 
-  translate += ("This example is to read the self pid from /proc/self/stat." ->
+  translate += ("This example reads the self pid from /proc/self/stat." ->
                 "这个例子是从/proc/self/stat文件中读取当前进程的pid。")
   translate += ("Because the 'withScanner' function encapsulates the 'try-finally' block," -> 
                 "withScanner封装了try-finally块，")
-  translate += ("it no need to call 'close()' any more." -> 
+  translate += ("there's no need to call 'close()' any more." ->
                 "所以调用者不用再close。")
-  translate += ("it no need to <span class=\"important\">call 'close()' any more</span>." -> 
+  translate += ("there's no need to <span class=\"important\">call 'close()' any more</span>." ->
                 "所以调用者<span class=\"important\">不用再close</span>")
 
-  translate += ("PS: the expression's return type is 'Unit' when it no need to return." -> 
+  translate += ("PS: the expression's return type is 'Unit' when it doesn't return a value." ->
                 "注：当表达式没有返回值时，默认返回Unit。")
   translate += ("### Call-by-Name" -> "### 按名称传递参数")
   translate += (">Call by Name<" -> ">按名称传递参数<")
   translate += ("This example shows the call by name, " -> 
                 "这个例子演示了按名称传递参数，")  
 
-  translate += ("For the last line try to calculate '1 / 0', the program would throw exception." -> 
+  translate += ("When the last line tries to calculate '1 / 0', the program will throw an exception." ->
                 "最末有1/0这个明显会产生异常的计算，运行该程序会产生异常。")
-  translate += ("For the last line try to calculate '1 / 0', the program would throw exception." -> 
+  translate += ("When the last line tries to calculate '1 / 0', the program will throw an exception." ->
                 "由于有除以0，所以运行该程序会产生异常。")
   translate += ("Try to change 'def log(msg: String)' to 'def log(msg: => String)'." -> 
                 "试着将def log(msg: String)修改为def log(msg: => String)。")
-  translate += ("The program would not throw expression because it has been change to call-by-name" -> 
+  translate += ("The program will not throw an exception because it has been changed to call-by-name" ->
                 "由按值传递修改为按名称传递后将不会产生异常。")  
-  translate += ("Call-by-name means that the argument would be calculate when it be actually called. So the '1 / 0' would be skipped." -> 
+  translate += ("Call-by-name means that the argument will be calculated when it is actually called. So the '1 / 0' will be skipped." ->
                 "因为log函数的参数是按名称传递，参数会等到实际使用的时候才会计算，所以被跳过。")  
-  translate += ("Call-by-name means that the argument would be calculate when it be actually called. " -> 
+  translate += ("Call-by-name means that the argument will be calculated when it be actually called. " ->
                 "因为log函数的参数是按名称传递，参数会等到真正访问的时候才会计算，")  
   translate += ("Because 'logEnable = false', the '1 / 0' would be skipped." -> 
                 "由于logEnable = false，所以被跳过。")  
 
-  translate += ("Call-by-name can reduce the useless calculate and exception." -> 
+  translate += ("Call-by-name can reduce the useless calculation and exception." ->
                 "按名称传递参数可以减少不必要的计算和异常。")
   translate += ("### Define Class" -> "### 类定义")
   translate += (">Define Class<" -> ">定义类<")
-  translate += ("The 'class' keyword is to define class, and the 'new' keyword is to create a instance." -> 
+  translate += ("The 'class' keyword defines a class, and the 'new' keyword creates an instance." ->
                 "可以用class关键字来定义类。并通过new来创建类。")
-  translate += ("The <span class=\"important\">'class'</span> keyword is to define class, and the <span class=\"important\">'new'</span> keyword is to create a instance." -> 
+  translate += ("The <span class=\"important\">'class'</span> keyword defines a class, and the <span class=\"important\">'new'</span> keyword creates an instance." ->
                 "可以用<span class=\"important\">class</span>关键字来定义类。并通过<span class=\"important\">new</span>来创建类。")
 
 
   translate += ("The fields can be also defined in class, like the 'firstName' and 'lastName'." -> 
                 "在定义类时可以定义字段，如firstName，lastName。")
-  translate += ("It would generate constructor with the arguments." -> 
+  translate += ("These are automatically generated from the constructor's arguments." ->
                 "这样做还可以自动生成构造函数。")
   translate += ("Methods can be defined with def, and fields can be defined with val or var" -> 
                 "可以在类中通过def定义函数。var和val定义字段。")
@@ -93,22 +93,22 @@ object translate {
   translate += (">Duck Typing<" -> ">鸭子类型<")
   translate += ("When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck." -> 
                 "走起来像鸭子，叫起来像鸭子，就是鸭子。")
-  translate += ("This example use '{ def close(): Unit }' as the type of argument. " -> 
+  translate += ("This example uses '{ def close(): Unit }' as the type of argument. " ->
                 "这个例子中使用{ def close(): Unit }作为参数类型。")  
 
-  translate += ("This example use" -> 
+  translate += ("This example uses" ->
                 "这个例子中使用")
   translate += ("as the type of argument." -> 
                 "作为参数类型。")
-  translate += ("And it no need to use 'inherit'" -> 
+  translate += ("And there's no need to use 'inherit'" ->
                 "不必使用继承这种不够灵活的特性") 
   translate += ("### Currying" -> "### 柯里化") 
   translate += (">Currying<" -> ">柯里化<") 
-  translate += ("This example is similar with before." ->
+  translate += ("This example is similar to the previous one." ->
                 "这个例子和上面的功能相同。") 
   translate += ("The difference between them is this one leverage currying technology" -> 
                 "不同的是使用了柯里化（Currying)的技术") 
-  translate += ("The difference between them is this one leverage <span class=\"important\">currying<span> technology" -> 
+  translate += ("The difference between them is this one leverages <span class=\"important\">currying<span> technology" ->
                 "不同的是使用了<span class=\"important\">柯里化(Currying)</span>技术。") 
   translate += ("is a normal function" -> 
                 "是普通的函数") 
@@ -116,38 +116,38 @@ object translate {
                 "是柯里化后的函数，") 
   translate += ("The return value is a function expression." -> 
                 "相当于返回一个匿名函数表达式。")
-  translate += ("is a syntactic sugar" -> 
+  translate += ("is syntactic sugar" ->
                 "是简化写法") 
-  translate += ("is a syntactic sugar" -> 
+  translate += ("is syntactic sugar" ->
                 "是上面的简化写法") 
-  translate += ("Currying can let our codes looks like language's ability." -> 
+  translate += ("Currying can let our code look like it is part of the language." ->
                 "柯里化可以让我们构造出更像原生语言提供的功能的代码") 
   translate += ("Try to change the withclose(...)(...) to withclose(...){...}" -> 
                 "试着将例子中的withclose(...)(...)换成withclose(...){...}")
   translate += ("Change the withclose(...)(...) to withclose(...){...}" -> 
                 "例子中的withclose(...)(...)换成withclose(...){...}")
-  translate += ("Is it simliar with Java's synchronized block?" -> 
+  translate += ("Is it similar with Java's synchronized block?" ->
                 "是否和java中的synchronized关键字用法很像？")
   translate += ("### Generic" -> 
                 "### 范型")
   translate += (">Generic<" -> 
                 ">范型<")
-  translate += ("The sample before can be more simplified with generic." -> 
+  translate += ("The sample before can be more simplified with generics." ->
                 "上面的例子可以使用泛型变得更简洁更灵活。")
-  translate += ("The sample before can be more simplified with generic." -> 
+  translate += ("The sample before can be more simplified with generics." ->
                 "之前的例子可以使用泛型变得更简洁更灵活。")
   translate += ("""Try to change val msg = "123456" to val msg = 123456.""" -> 
                 """试着将val msg = "123456"修改为val msg = 123456。""")
-  translate += ("Although the type of msg changed from String to Int, the program can be also correctly processed." -> 
+  translate += ("Although the type of msg changed from String to Int, the program still compiles." ->
                 "虽然msg由String类型变为Int类型，但是由于使用了泛型，代码依旧可以正常运行。")  
-  translate += ("Traits looks like Java's interface with function block. " -> 
+  translate += ("Traits look like Java's interfaces, but with function blocks. " ->
                 "Traits就像是有函数体的Interface。")  
 
   translate += ("One class can extend several traits using the with keyword." -> 
                 "使用with关键字来混入。")  
   translate += ("One class can extend several traits using the <span class=\"important\">with</span> keyword." -> 
                 "使用<span class=\"important\">with</span>关键字来混入。")  
-  translate += ("This example extends java.util.ArrayList the ability of foreach loop." -> 
+  translate += ("This example extends java.util.ArrayList with a foreach loop." ->
                 "这个例子是给java.util.ArrayList添加了foreach的功能。")  
   translate += ("Try to append with JsonAble to extend the ability of toJson." -> 
                 "试着再在后面加上with JsonAble，给list添加toJson的能力")  

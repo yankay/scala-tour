@@ -53,9 +53,9 @@ For functions can be passed as arguments, the 'Loan' pattern is easy to implemen
 
 This example is to read the self pid from /proc/self/stat.
 
-Because the 'withScanner' function encapsulates the 'try-finally' block,it no need to call 'close()' any more.
+Because the 'withScanner' function encapsulates the 'try-finally' block,there's no need to call 'close()' any more.
 
-PS: the expression's return type is 'Unit' when it no need to return.
+PS: the expression's return type is 'Unit' when it doesn't return a value.
 
 ```
 import scala.reflect.io.File
@@ -77,15 +77,15 @@ withScanner(File("/proc/self/stat"),
 
 ### Call-by-Name
 
-This example shows the call by nameFor the last line try to calculate '1 / 0', the program would throw exception.
+This example shows the call by nameWhen the last line tries to calculate '1 / 0', the program will throw an exception.
 
-Try to change 'def log(msg: String)' to 'def log(msg: => String)'.The program would not throw expression because it has been change to call-by-name
-
-
-Call-by-name means that the argument would be calculate when it be actually called.Because 'logEnable = false', the '1 / 0' would be skiped.
+Try to change 'def log(msg: String)' to 'def log(msg: => String)'.The program will not throw an exception because it has been changed to call-by-name
 
 
-Call-by-name can reduce the useless calculate and exception.
+Call-by-name means that the argument will be calculated when it be actually called.Because 'logEnable = false', the '1 / 0' would be skiped.
+
+
+Call-by-name can reduce the useless calculation and exception.
 
 
 ```
@@ -101,15 +101,15 @@ log(MSG + 1 / 0)
 
 ### Define Class
 
-The 'class' keyword is to define class, and the 'new' keyword is to create a instance.
-The fields can be also defined in class, like the 'firstName' and 'lastName'.It would generate constructor with the arguments.
+The 'class' keyword defines a class, and the 'new' keyword creates an instance.
+The fields can be also defined in class, like the 'firstName' and 'lastName'.These are automatically generated from the constructor's arguments.
 Methods can be defined with def, and fields can be defined with val or var
 The function name can be any characters like +,-,*,/.
 The 'obama.age_=(51)' can be simplified as 'obama.age = 51'.
 And the 'obama.age()' can be simplified as 'obama.age'.
 
 ```
-class Persion(val firstName: String, val lastName: String) {
+class Person(val firstName: String, val lastName: String) {
 
 	private var _age = 0
 	def age = _age
@@ -120,9 +120,9 @@ class Persion(val firstName: String, val lastName: String) {
 	override def toString() = fullName()
 }
 
-val obama: Persion = new Persion("Barack", "Obama")
+val obama: Person = new Person("Barack", "Obama")
 
-println("Persion: " + obama)
+println("Person: " + obama)
 println("firstName: " + obama.firstName)
 println("lastName: " + obama.lastName)
 obama.age_=(51)
@@ -133,8 +133,8 @@ println("age: " + obama.age())
 ### Duck Typing
 
 When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.
-This example use '{ def close(): Unit }' as the type of argument.So any class contains methods 'close()' can be passed.
-And it no need to use 'inherit'?
+This example uses '{ def close(): Unit }' as the type of argument.So any class contains methods 'close()' can be passed.
+And there's no need to use 'inherit'?
 
 ```
 def withClose(closeAble: { def close(): Unit }, op: { def close(): Unit } => Unit) {
@@ -157,13 +157,13 @@ withClose(conn, conn =>
 
 ### Currying 
 
-This example is simliar with before?The difference between them is this one leverage currying technology?
+This example is similar with before?The difference between them is this one leverage currying technology?
 def add(x:Int, y:Int) = x + y is a normal function
 def add(x:Int) = (y:Int) => x + y is a curryed function.The return value is a function expression.
-def add(x:Int)(y:Int) = x + y is a syntactic sugar
-Currying can let our codes looks like language's ability.
+def add(x:Int)(y:Int) = x + y is syntactic sugar
+Currying can let our code look like it is part of the language.
 Change the withclose(...)(...) to withclose(...){...}
-Is it simliar with Java's synchronized block?
+Is it similar with Java's synchronized block?
 
 ```
 def withClose(closeAble: { def close(): Unit })(op: { def close(): Unit } => Unit) {
@@ -186,9 +186,9 @@ withClose(conn)(conn =>
 
 ### Generic
 
-The sample before can be more simplified with generic.
+The sample before can be more simplified with generics.
 Try to change val msg = "123456" to val msg = 123456.
-Although the type of msg changed from String to Int, the program can be also correctly processed.
+Although the type of msg changed from String to Int, the program still compiles.
 
 ```
 def withClose[A <: { def close(): Unit }, B](closeAble: A)(op: A => B) {
@@ -217,7 +217,7 @@ println(msg)
 
 ### Traits
 
-Traits looks like Java's interface with function block.One class can extend several traits using the with keyword.
+Traits look like Java's interfaces, but with function blocks.One class can extend several traits using the with keyword.
 This example extends java.util.ArrayList the ability of foreach.
 Try to append with JsonAble to extend the ability of toJson
 

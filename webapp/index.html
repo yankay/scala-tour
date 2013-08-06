@@ -179,7 +179,7 @@ println(helloWorld)
                             Expressions and Values
                         </h2>
                         <p>
-                            In Scala, almost everything is expression.
+                            In Scala, almost everything is an expression.
                         </p>
                         <pre>
 println("hello wolrd")
@@ -194,7 +194,7 @@ println("hello wolrd")
                             is also an expression.
                         </p>
                         <p>
-                            Constant can be created with val, and variable can be created with var. More constants are better.
+                            Constants can be created with val, and variables can be created with var. More constants are better.
                         </p>
                         <div class="step-nav">
                             <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -244,10 +244,10 @@ println("addOne(squareVal,2):" + addOne(squareVal, 2))
                             You can create functions with def. And the function body is an expression.
                         </p>
                         <p>
-                            When the body is a block expression, it returns the value of the last line. So it's no need to use the return keyword
+                            When the body is a block expression, it returns the value of the last line. So there's no need to use the return keyword
                         </p>
                         <p>
-                            And like values, functions can also be given name by var or val. So <span class="important"> it can be passed as an argument to another function.</span>
+                            And like values, functions can also be assigned using var or val So <span class="important"> it can be passed as an argument to another function.</span>
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -292,16 +292,16 @@ withScanner(File("/proc/self/stat"),
                     <div class="span4">
                         <h2>Loan Pattern</h2>
                         <p>
-                            For functions can be passed as arguments, the 'Loan' pattern is easy to implement.
+                            For functions which can be passed as arguments, the 'Loan' pattern is easy to implement.
                         </p>
                         <p>
-                            This example is to read the self pid from /proc/self/stat.
+                            This example reads the self pid from /proc/self/stat.
                         </p>
                         <p>
-                            Because the 'withScanner' function encapsulates the 'try-finally' block,it no need to <span class="important">call 'close()' any more</span>.。
+                            Because the 'withScanner' function encapsulates the 'try-finally' block, there's no need to <span class="important">call 'close()' any more</span>.。
                         </p>
                         <p>
-                            PS: the expression's return type is 'Unit' when it no need to return.
+                            PS: the expression's return type is 'Unit' when it doesn't return a value.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -340,7 +340,7 @@ log(MSG + 1 / 0)
                     <div class="span4">
                         <h2>Call by Name</h2>
                         <p>
-                            This example shows the call by name, For the last line try to calculate '1 / 0', the program would throw exception.
+                            This example shows the call by name, When the last line tries to calculate '1 / 0', the program will throw an exception.
                         </p>
                         <p>Try to change</p>
                         <pre>
@@ -351,13 +351,13 @@ def log(msg: String)
 def log(msg: =&gt; String)
 </pre>
                         <p>
-                            The program would not throw expression because it has been change to call-by-name
+                            The program will not throw an exception because it has been changed to call-by-name
                         </p>
                         <p>
-                            Call-by-name means that the argument would be calculate when it be actually called. So the '1 / 0' would be skipped.
+                            Call-by-name means that the argument will be calculated when it is actually called. So the '1 / 0' will be skipped.
                         </p>
                         <p>
-                            Call-by-name can reduce the useless calculate and exception.
+                            Call-by-name can reduce the useless calculation and exception.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -376,7 +376,7 @@ def log(msg: =&gt; String)
                                 <div class="workspace-editor">
                                     <form>
                                         <textarea class="editor" spellcheck="false">
-class Persion(val firstName: String, val lastName: String) {
+class Person(val firstName: String, val lastName: String) {
 
     private var _age = 0
     def age = _age
@@ -387,9 +387,9 @@ class Persion(val firstName: String, val lastName: String) {
     override def toString() = fullName()
 }
 
-val obama: Persion = new Persion("Barack", "Obama")
+val obama: Person = new Person("Barack", "Obama")
 
-println("Persion: " + obama)
+println("Person: " + obama)
 println("firstName: " + obama.firstName)
 println("lastName: " + obama.lastName)
 obama.age_=(51)
@@ -406,10 +406,10 @@ println("age: " + obama.age)
                     <div class="span4">
                         <h2>Define Class</h2>
                         <p>
-                            The <span class="important">'class'</span> keyword is to define class, and the <span class="important">'new'</span> keyword is to create a instance.
+                            The <span class="important">'class'</span> keyword defines a class, and the <span class="important">'new'</span> keyword creates an instance.
                         </p>
                         <p>
-                            The fields can be also defined in class, like the 'firstName' and 'lastName'.It would generate constructor with the arguments.
+                            The fields can be also defined in class, like the 'firstName' and 'lastName'. These are automatically generated from the constructor's arguments.
                         </p>
                         <p>
                             Methods can be defined with <span class="important">def</span>, and fields can be defined with <span class="important">val or var</span>
@@ -475,14 +475,14 @@ withClose(conn, conn =&gt;
                         <p>
                             When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.
                         </p>
-                        <p>This example use</p>
+                        <p>This example uses</p>
                         <pre>
 { def close(): Unit }
 </pre>
                         <p>as the type of argument.So any class contains methods 'close()' can be passed.
                         </p>
                         <p>
-                            And it no need to use 'inherit'。
+                            And there's no need to use 'inherit'。
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -529,7 +529,7 @@ withClose(conn)(conn =&gt;
                     <div class="span4">
                         <h2>Currying</h2>
                         <p>
-                            This example is similar with before.The difference between them is this one leverage <span class="important">currying<span> technology
+                            This example is similar to the previous one.The difference between them is this one leverages <span class="important">currying<span> technology
                         </p>
                         <pre>
 def add(x:Int, y:Int) = x + y
@@ -547,10 +547,10 @@ def add(x:Int) = (y:Int) =&gt; x + y
  def add(x:Int)(y:Int) = x + y
 </pre>
                         <p>
-                            is a syntactic sugar
+                            is syntactic sugar
                         </p>
                         <p>
-                            Currying can let our codes looks like language's ability.
+                            Currying can let our code look like it is part of the language.
                         </p>
                         <p>
                             Try to change the withclose(...)(...) to withclose(...){...}
@@ -603,7 +603,7 @@ println(msg)
                     <div class="span4">
                         <h2>Generic</h2>
                         <p>
-                            The sample before can be more simplified with generic.
+                            The sample before can be more simplified with generics.
                         </p>
                         <p>
                             Try to change
@@ -618,7 +618,7 @@ println(msg)
 123456
 </pre>
                         <p>
-                            Although the type of msg changed from String to Int, the program can be also correctly processed.
+                            Although the type of msg changed from String to Int, the program still compiles.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/basics-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -670,10 +670,10 @@ println("For each: "); list.foreach(x =&gt; println(x))
                             Traits
                         </h2>
                         <p>
-                            Traits looks like Java's interface with function block. One class can extend several traits using the <span class="important">with</span> keyword.
+                            Traits look like Java's interfaces, but with function blocks. One class can extend several traits using the <span class="important">with</span> keyword.
                         </p>
                         <p>
-                            This example extends java.util.ArrayList the ability of foreach loop.
+                            This example extends java.util.ArrayList with a foreach loop.
                         </p>
                         <p>
                             Try to append after ForEachAble[Int] with

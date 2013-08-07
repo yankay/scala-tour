@@ -51,6 +51,14 @@ object ScalaScriptCompiler {
   def compile(script: String, err: OutputStream): Option[File] = {
     val scriptFile = File.makeTemp("scala-script", ".scala")
     // save the command to the file
+   
+    val illegalCodePattern = """.*import .*""".r
+
+    val strippedScript = {
+      if (illegalCodePattern.findAllIn(script).toList.isEmpty) script
+      else """println("No need to import anything")"""
+    }
+    
     val scriptAll =  """
     import scala.io.Codec
     import java.nio.charset.CodingErrorAction
@@ -59,7 +67,7 @@ object ScalaScriptCompiler {
 		    implicit val codec = Codec("UTF-8")
 		    codec.onMalformedInput(CodingErrorAction.REPLACE)
 		    codec.onUnmappableCharacter(CodingErrorAction.REPLACE)
-    """ + script+ """
+    """ + strippedScript + """
     	}
     }
     """

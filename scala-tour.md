@@ -334,12 +334,12 @@ println("cat file | grep 'warn' | grep '2013' | wc : "
     + file.filter(_.contains("warn")).filter(_.contains("2013")).size)
 ```
 ### Word Count
-Word Count is a classics sample for Map Reduce. Map Reduce with functional programming is also a wonderful way to implement word count.
-The example show two important functions 'map' and 'reduceLeft' in List.
-The map function accepts a translate expression and return the list translated.
-The reduceLeft function accepts a combine expression and return the combined result.The first argument is the reduced value, and the second argument is the value next.
+Word Count is a classic use case for Map Reduce. Map Reduce with functional programming is also a wonderful way to implement word count.
+The example shows two important functions 'map' and 'reduceLeft' in List.
+The map function accepts a translation expression and returns the translated list.
+The reduceLeft function accepts a combining expression and returns the combined result.The first argument is the reduced value, and the second argument is the value next.
 Try to change reduceLeft(_ + _) into foldLeft(0)(_ + _).foldLeft is more popular than reduceLeft for it can provide a initial value.
-Map and foldLeft can replace the for-loop expression, it make code cleaner.
+Map and ReduceLeft can replace a for-loop expression, making code cleaner.
 
 ```
 val file = List("warn 2013 msg", "warn 2012 msg", "error 2013 msg", "warn 2013 msg")
@@ -352,9 +352,9 @@ println("wordcount:" + num)
 ```
 ### Tail Recursion
 
-This example show how to implement foldLeft with Tail RecursionTail Recursion is one type of Recursion, it call itself in its last expression. 
-List can be pattern match by '::', the first elements returned is head, and the others are tails.
-Tail Recursion can be optimized in compile time. So it not need to worry about stack overflow.
+This example shows how to implement foldLeft with Tail RecursionTail Recursion is one type of Recursion, in which a function calls itself as its last expression.
+Lists can be pattern matched by '::', the first element returned is head, and the others are the tail.
+Tail Recursion can be optimized at compile time. So there's no need to worry about stack overflow.
 
 ```
 val file = List("warn 2013 msg", "warn 2012 msg", "error 2013 msg", "warn 2013 msg")
@@ -376,7 +376,7 @@ println("wordcount:" + num)
 ### Powerful For Expression
 
 Loop expression is feature of imperative programming.So Scala improved it to suit functional programming.
-For expression in Scala can also return a List. With 'yield' in loop, value after yield can append to the List.
+For expressions in Scala can also return a List. With 'yield' in the loop, the value after yield will be appended to the List.
 This example replaces the map function with for loop.
 
 ```
@@ -394,10 +394,10 @@ println("wordcount:" + num)
 ```
 ### Option
 
-NullException is the most common exception in Java. The only way to avoid it is to check null everywhere.Scala provide a Option feature to solve it.
-This example create a getProperty function, and it would return Option instead of null.
-So we do not check null everywhere, getting value from Option is enough.
-Using pattern match is a common way to get value from Option.    It can also use getOrElse() to set a default value when it's none.
+NullException is the most common exception in Java. The only way to avoid it is to check null everywhere.Scala provides an Option feature to solve it.
+This example creates a getProperty function, which returns Option instead of null.
+We don't need to check null, getting a value from Option is enough.
+Using pattern matching is a common way to get the value of Option.    Use getOrElse() to set a default value when Option is None.
 Another important think is that Option has lots of functions in List, so it can work like a list in most of time.
 Try to add 'osName.foreach(print _)' at last.
 
@@ -425,8 +425,8 @@ println(osName.getOrElse("none"))
 
 ### Lazy
 
-Lazy is lazy initial value. The fields with lazy key word can initial when it first access.
-This example is to get the Scala Version Code from Github. It takes time because of network latency. 
+Lazy is lazy initial value. A field with the lazy keyword is only initialized when it is first accessed.
+This example is to get the Scala Version Code from Github. It takes a little time because of network latency.
 It waste of time that if we get it with latency but we do not use it later.
 So we can get it with lazy.
 
@@ -653,7 +653,7 @@ system.shutdown
 ### Using Java
 
 Scala can operate Java very easily. There have been lots of samples before.
-Java can also use Scala. This example show how to use @BeanProperty Annotation to create Java Style Bean.
+Java can also use Scala. This example shows how to use @BeanProperty Annotation to create Java Style Bean.
 Try to add @BeanProperty before var name. So that the bean contains getter/setter.
 And the Apache BeanUtils can work correctly.
 

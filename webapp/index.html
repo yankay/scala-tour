@@ -1006,19 +1006,19 @@ println("wordcount:" + num)
                             Word Count
                         </h2>
                         <p>
-                            Word Count is a classics sample for Map Reduce. Map Reduce with functional programming is also a great way to implement word count.
+                            Word Count is a classic use case for Map Reduce. Map Reduce with functional programming is an intuitive solution to the Word Count problem.
                         </p>
                         <p>
-                            The example show two important functions <span class="important">'map'</span> and <span class="important">'reduceLeft'</span> in List.
+                            The example shows two important functions <span class="important">'map'</span> and <span class="important">'reduceLeft'</span> in List.
                         </p>
                         <p>
-                            The <span class="important">map</span> function accepts a translate expression and return the list translated.
+                            The <span class="important">map</span> function accepts a translation expression and returns the translated list.
                         </p>
                         <p>
-                            The <span class="important">reduceLeft</span> function accepts a combine expression and return the combined result.
+                            The <span class="important">reduceLeft</span> function accepts a combining expression and returns the combined result.
                         </p>
                         <p>
-                            <span class="important">Map and FoldLeft can replace the for-loop expression, it make code cleaner.</span>
+                            <span class="important">Map and ReduceLeft can replace a for-loop expression, making code cleaner.</span>
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1064,16 +1064,16 @@ println("wordcount:" + num)
                     <div class="span4">
                         <h2>Tail Recursion</h2>
                         <p>
-                            Tail Recursion is one type of Recursion, it call itself in its last expression. Tail Recursion is very popular in functional programming.
+                            Tail Recursion is one type of Recursion, in which a function calls itself as its last expression. Tail Recursion is very popular in functional programming.
                         </p>
                         <p>
                             This example shows how to implement foldLeft with Tail Recursion.
                         </p>
                         <p>
-                            List can be pattern match by '::', the first elements returned is head, and the others are tails.
+                            Lists can be pattern matched by '::', the first element returned is head, and the others are the tail.
                         </p>
                         <p>
-                            PS: Tail Recursion can be optimized in compile time. So it not need to worry about stack overflow.
+                            PS: Tail Recursion can be optimized at compile time. So there's no need to worry about stack overflow.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1116,10 +1116,10 @@ println("wordcount:" + num)
                     <div class="span4">
                         <h2>Powerful For Loop</h2>
                         <p>
-                            For-Loop is common feature of imperative programming. So Scala improved it to fit functional programming.
+                            For-Loop is a common feature in imperative programming. Scala improved it to suit functional programming.
                         </p>
                         <p>
-                            For-Loop expression in Scala can also return a List. With 'yield' in loop, value after yield can append to the List.
+                            For-Loop expressions in Scala can also return a List. With 'yield' in the loop, the value after yield will be appended to the List.
                         </p>
                         <p>
                             This example replaces the map function with for loop.
@@ -1170,16 +1170,16 @@ osName.foreach(print _)
                             Option
                         </h2>
                         <p>
-                            Scala provide a Option feature to avoid checking null everywhere.
+                            Scala provides an Option feature to avoid checking null everywhere.
                         </p>
                         <p>
-                            This example has a getProperty function, and it would return Option instead of null. So we do not check null everywhere, getting value from Option is enough.
+                            This example creates a getProperty function, which returns Option instead of null. We don't need to check null, getting a value from Option is enough.
                         </p>
                         <p>
-                            Using pattern match is a common way to get value from Option.    It can also use getOrElse() to set a default value when it's none.
+                            Using pattern matching is a common way to get the value of Option.    Use getOrElse() to set a default value when Option is None.
                         </p>
                         <p>
-                            Another important thing is that Option contains lots of functions in List, so it can work like a list in most of time.
+                            Another important thing is that Option contains lots of functions in List, so it can be used like a list most of time.
                         </p>
                         <p>
                             Goodbye NullException.
@@ -1227,10 +1227,10 @@ version.minorVersion.foreach(println _)
                     <div class="span4">
                         <h2>Lazy Initialization</h2>
                         <p>
-                            Lazy can lazy initial value.The fields with lazy keyword can initial when it first access.
+                            Lazy can lazily initialize value.A field with the lazy keyword is only initialized when it is first accessed.
                         </p>
                         <p>
-                            This example is to get the Scala Version Code from Github. It takes time because of network latency. So we can get it with lazy to avoid unnecessary IO blocking.
+                            This example is to get the Scala Version Code from Github. It takes a little time because of network latency. So we can get it with lazy to avoid unnecessary IO blocking.
                         </p>
                         <p>
                             Lazy is very suitable for the value takes lots of resources.
@@ -1793,7 +1793,7 @@ println(BeanUtils.describe(bean))
                             Scala can operate Java very easily. There have been lots of samples before.
                         </p>
                         <p>
-                            Java can also use Scala. This example show how to use @BeanProperty Annotation to create Java Style Bean.
+                            Java can also use Scala. This example shows how to use @BeanProperty Annotation to create Java Style Bean.
                         </p>
                         <p>
                             Try to change

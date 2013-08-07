@@ -248,10 +248,10 @@ println("Json: " + list.toString())
 
 ### Pattern Matching
 
-Pattern Matching is more flexible than switch-case; And it's simpler than if-else.
-This example shows Fibonacci function with pattern matching.
-The case keyword is to matching. The case _ means it can match anything.
-But the example has a bug. If the input is negative number, it would loop endless.
+Pattern Matching is more flexible than switch-case and simpler than if-else.
+This example shows a Fibonacci function implemented with pattern matching.
+The case keyword matches on a value. The case _ means it can match anything.
+But the example has a bug. If the input is a negative number, it will loop endlessly.
 Try to add if after case. Change case n: Int to case n: Int if (n > 1).
 Try to add case n: String => fibonacci(n.toInt) before case _ to match String type.
 Try to add println(fibonacci(-3))；println(fibonacci("3")) to test the program. 
@@ -274,7 +274,7 @@ Case classes are used to conveniently store and match on the contents of a class
 You can construct them without using new.
 It also has hashcode, equality and nice toString methods.
 Try to append println(Sum(1,2)) last.
-Because of the require(n >= 0), it would throw exception when input is negative.
+Because of the require(n >= 0), it will throw an exception when the input is negative.
 
 
 ```
@@ -298,8 +298,8 @@ println(value(FibonacciExpr(3)))
 
 ### The power of functional programing
 
-This example shows whether there is an odd in list.
-The code from the 1st line to the last but one is created by imperative programming.And the last line is created by functional programming.
+This example determines whether there is an odd number in the list.
+Every line of the code excluding the last line is created using imperative programming.The last line is created using functional programming.
 Treating function expression as function arguments can simplify code effectively.The _ % 2 == 1 is the syntactic sugar of (x: Int) => x % 2 == 1.
 Ruby's power is from magic, but Scala's power is from science.
 
@@ -321,11 +321,11 @@ println("list containsOdd by funtional:" + list.exists(_ % 2 == 1))
 
 ### The true power of functional programming
 
-Besides simplifying code, the functional programming more take care of Input & Output without side-effect.
+Besides simplifying code, functional programming is more concerned with Input & Output without side-effects.
 Like the Unix pipeline, simple commands can be combined together.
 The filter method in List can accept a filter function to return a new List.
-If you do like the Unix pipeline style, functional programming can be your favorite.
-This example is to use Scala code to simulate the function of "cat file | grep 'warn' | grep '2013' | wc."
+If you like the way Unix pipelines commands, you may also like functional programming
+This example uses Scala code to simulate the Unix command line "cat file | grep 'warn' | grep '2013' | wc."
 
 ```
 val file = List("warn 2013 msg", "warn 2012 msg", "error 2013 msg", "warn 2013 msg")

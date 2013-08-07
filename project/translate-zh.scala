@@ -168,13 +168,13 @@ object translate {
                 "### 模式匹配")
   translate += (">Pattern Matching<" -> 
                 ">模式匹配<")
-  translate += ("Pattern Matching is more flexible than switch-case; And it's simpler than if-else." -> 
+  translate += ("Pattern Matching is more flexible than switch-case and simpler than if-else." ->
                 "模式匹配是类似switch-case特性，但更加灵活；也类似if-else，但更加简约。")
-  translate += ("This example shows Fibonacci function with pattern matching." -> 
+  translate += ("This example shows a Fibonacci function implemented with pattern matching." ->
                 "这个例子展示的使用用模式匹配实现斐波那契。")
-  translate += ("The case keyword is to matching. The case _ means it can match anything." -> 
+  translate += ("The case keyword matches on a value. The case _ means it can match anything." ->
                 "使用case来匹配参数，如果case _，则可以匹配任何参数。") 
-  translate += ("But the example has a bug. If the input is negative number, it would loop endless." -> 
+  translate += ("But the example has a bug. If the input is a negative number, it will loop endlessly." ->
                 "这个例子有所不足，当输入负数时，会无限循环。") 
   translate += ("Try to add if after case. Change case n: Int to case n: Int if (n > 1)." -> 
                 "可以在case后添加if语句判断，将case n: Int 修改为 case n: Int if (n > 1)即可。") 
@@ -201,9 +201,9 @@ translate += ("to match String type." ->
                 "还添加了hashcode,equals和toString等方法。") 
   translate += ("Try to append println(Sum(1,2)) last." -> 
                 "试试最后添加  println(Sum(1,2)) 。") 
-  translate += ("Because of the require(n >= 0), it would throw exception when input is negative." -> 
+  translate += ("Because of the require(n >= 0), it will throw an exception when the input is negative." ->
                 "由于使用了require(n >= 0)来检验参数，尝试使用负数，会抛出异常。") 
-  translate += ("Because of the require(n &gt;= 0), it would throw exception when input is negative." -> 
+  translate += ("Because of the require(n &gt;= 0), it will throw an exception when the input is negative." ->
                 "由于使用了require(n &gt;= 0)来检验参数，如果使用负数计算，将会抛出异常。") 
 
 
@@ -211,14 +211,14 @@ translate += ("to match String type." ->
                 "### 函数式的威力") 
   translate += (">Function Power<" -> 
                 ">函数式的威力<") 
-  translate += ("This example shows whether there is an odd in list." -> 
+  translate += ("This example determines whether there is an odd number in the list." ->
                 "这个例子是判断一个List中是否含有奇数。") 
-    translate += ("This example shows whether there is an odd in list by imperative programming." -> 
+    translate += ("This example determines whether there is an odd number in the list using imperative programming." ->
                 "这个例子是用指令式编程判断一个List中是否含有奇数。") 
 
-  translate += ("The code from the 1st line to the last but one is created by imperative programming." -> 
+  translate += ("Every line of the code excluding the last line is created using imperative programming." ->
                 "第一行到倒数第二行是使用for循环的指令式编程解决。") 
-  translate += ("And the last line is created by functional programming." -> 
+  translate += ("The last line is created using functional programming." ->
                 "最后一行是通过函数式编程解决。") 
   translate += ("Treating function expression as function arguments can simplify code effectively." -> 
                 "通过将函数作为参数，可以使程序极为简洁。")
@@ -233,9 +233,9 @@ translate += ("to match String type." ->
                 "### 函数式真正的威力")
   translate += (">Function True Power<" -> 
                 ">函数式真正的威力<")
-  translate += ("Besides simplifying code, the functional programming more take care of Input & Output without side-effect." -> 
+  translate += ("Besides simplifying code, functional programming is more concerned with Input & Output without side-effects." ->
                 "函数式除了能简化代码外，更重要的是他关注的是Input和Output，函数本身没有副作用。")
-  translate += ("Besides simplifying code, the functional programming more take care of <span class=\"important\">Input & Output without side-effect</span>." -> 
+  translate += ("Besides simplifying code, functional programming is more concerned with <span class=\"important\">Input & Output without side-effects</span>." ->
                 "函数式除了能简化代码外，更重要的是他关注的是<span class=\"important\">Input</span>和<span class=\"important\">Output</span>，函数本身没有副作用。")
 
   translate += ("Like the Unix pipeline, simple commands can be combined together." -> 
@@ -246,13 +246,13 @@ translate += ("to match String type." ->
 
   translate += ("The filter method in List can accept a filter function to return a new List." -> 
                 "List的filter方法接受一个过滤函数，返回一个新的List。")
-  translate += ("If you do like the Unix pipeline style, functional programming can be your favorite." -> 
+  translate += ("If you like the way Unix pipelines commands, you may also like functional programming" ->
                 "如果你喜欢Unix pipeline的方式，你一定也会喜欢函数式编程。")
-  translate += ("This example is to use Scala code to simulate the function of \"cat file | grep 'warn' | grep '2013' | wc.\"" -> 
+  translate += ("This example uses Scala code to simulate the Unix command line \"cat file | grep 'warn' | grep '2013' | wc.\"" ->
                 "这个例子是用函数式的代码模拟“cat file | grep 'warn' | grep '2013' | wc”的行为。")
- translate += ("This example is to use Scala code to simulate the function of " -> 
+ translate += ("This example uses Scala code to simulate the function of " ->
                 "这个例子是用函数式的代码模拟")
- translate += ("The filter function in List can accept a filter function, return a new List as the input of the next function." -> 
+ translate += ("The first filter function in List accepts a function as an argument, returning a new filtered List as the input to the next function." ->
                 "List的filter方法接受一个过滤函数，返回一个新的List，作为下一个方法的输入。")
 
 

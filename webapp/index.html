@@ -769,10 +769,10 @@ println(fibonacci(3))
                     <div class="span4">
                         <h2>Pattern Matching</h2>
                         <p>
-                            Pattern Matching is more flexible than switch-case; And it's simpler than if-else.
+                            Pattern Matching is more flexible than switch-case and simpler than if-else.
                         </p>
                         <p>
-                            This example shows Fibonacci function with pattern matching. The case keyword is to matching. The case _ means it can match anything.
+                            This example shows a Fibonacci function implemented with pattern matching. The case keyword matches on a value. The case _ means it can match anything.
                         </p>
                         <p>
                             Try to change
@@ -847,7 +847,7 @@ println(value(FibonacciExpr(3)))
                             You can construct them without using new. It also has hashcode, equality and nice toString methods.
                         </p>
                         <p>
-                            Because of the require(n &gt;= 0), it would throw exception when input is negative.
+                            Because of the require(n &gt;= 0), it will throw an exception when the input is negative.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -890,7 +890,7 @@ println("list contains Odd ? " + containsOdd(list))
                     <div class="span4">
                         <h2>Function Power</h2>
                         <p>
-                            This example shows whether there is an odd in list by imperative programming.
+                            This example determines whether there is an odd number in the list using imperative programming.
                         </p>
                         <p>
                             Try to change
@@ -905,7 +905,7 @@ containsOdd(list)
 list.exists((x: Int) =&gt; x % 2 ==1)
 </pre>
                         <p>
-                            Through treating function as arguments, programing can be more simple. It can be even changed to 
+                            Through treating function as arguments, programing can be more simple. It can be even changed to
                         </p>
                         <pre>
 list.exists(_ % 2 == 1)
@@ -950,22 +950,22 @@ println("cat file | grep 'warn' | grep '2013' | wc : "
                     <div class="span4">
                         <h2>Function True Power</h2>
                         <p>
-                            Besides simplifying code, the functional programming more take care of <span class="important">Input & Output without side-effect</span>.
+                            Besides simplifying code, functional programming is more concerned with <span class="important">Input & Output without side-effects</span>.
                         </p>
                         <p>
                             Like the Unix pipeline, simple commands can be combined together.
                         </p>
                         <p>
-                            If you do like the Unix pipeline style, functional programming can be your favorite.
+                            If you like the way Unix pipelines commands, you may also like functional programming
                         </p>
                         <p>
-                            This example is to use Scala code to simulate the function of 
+                            This example uses Scala code to simulate the function of
                         </p>
                         <pre>
 cat file | grep 'warn' | grep '2013' | wc
 </pre>
                         <p>
-                            The filter function in List can accept a filter function, return a new List as the input of the next function.
+                            The first filter function in List accepts a function as an argument, returning a new filtered List as the input to the next function.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/funtional-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>

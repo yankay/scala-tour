@@ -1319,10 +1319,10 @@ system.shutdown
                     <div class="span4">
                         <h2>Using Actor</h2>
                         <p>
-                            Actors are one of Scala's concurrent model.Users of Scala earlier than version 2.10 should use  <a href="http://akka.io/" target="_blank">Akka</a>.
+                            Actors are one of Scala's concurrent models. Users of Scala earlier than version 2.10 must install <a href="http://akka.io/" target="_blank">Akka</a>.
                         </p>
                         <p>
-                            Actor is a like thread instance with a mailbox. It can be created by <span class="important">system.actorOf</span>, and using <span class="important">receive</span> to get message, <span class="important">!</span> to send message.
+                            An Actor is a like a thread instance with a mailbox. It can be created with <span class="important">system.actorOf</span>, and using <span class="important">receive</span> to get message, <span class="important">!</span> to send message.
                         </p>
                         <p>
                             This example is an EchoServer which can receive message then print them.
@@ -1368,7 +1368,7 @@ system.shutdown
                     <div class="span4">
                         <h2>Simplify Actor</h2>
                         <p>
-                            There is a simpler way to define Actor.
+                            There is a simpler way to define an Actor.
                         </p>
                         <p>
                             There is a the actor function in 
@@ -1377,7 +1377,7 @@ system.shutdown
 akka.actor.ActorDSL
 </pre>
                         <p>
-                            .This function can accept a constructor, and return a started Actor.
+                            This function accepts an Actor instance, and returns a started Actor.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>

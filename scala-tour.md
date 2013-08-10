@@ -450,9 +450,9 @@ version.minorVersion.foreach(println _)
 
 ### Using Actor
 
-Actors are one of Scala's concurrent model.Users of Scala earlier than version 2.10 should use [http://akka.io/](Akka).
-Actor is a like thread instance with a mailbox.
-It can be created by system.actorOf, and using receive to get message, ! to send message.
+Actors are one of Scala's concurrent models.Users of Scala earlier than version 2.10 must install [http://akka.io/](Akka).
+An Actor is a like a thread instance with a mailbox.
+It can be created with system.actorOf, and using receive to get message, ! to send message.
 This example is an EchoServer which can receive message then print them.
 
 ```
@@ -474,9 +474,9 @@ system.shutdown
 
 ### Simplify Actor
 
-There is a simpler way to define Actor.
+There is a simpler way to define an Actor.
 Import the actor function from akka.actor.ActorDSL.
-This function can accept a constructor, and return a started Actor.
+This function accepts an Actor instance, and returns a started Actor.
 
 
 ```

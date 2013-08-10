@@ -452,8 +452,8 @@ version.minorVersion.foreach(println _)
 
 Actors are one of Scala's concurrent models.Users of Scala earlier than version 2.10 must install [http://akka.io/](Akka).
 An Actor is a like a thread instance with a mailbox.
-It can be created with system.actorOf, and using receive to get message, ! to send message.
-This example is an EchoServer which can receive message then print them.
+It can be created with system.actorOf: use receive to get a message and ! to send a message.
+This example is an EchoServer which can receive messages then print them.
 
 ```
 import akka.actor.{ Actor, ActorSystem, Props }
@@ -526,7 +526,7 @@ system.shutdown
 
 ### Synchronized Return
 
-Actors are very suitable for long-running operations, like getting resources from a network.
+Actors are very suitable for long-running operations, like getting resources over a network.
 This example creates a Future with the ask function.
 In the actor we use 'sender !' to return the value.
 Like Option, Future has lots of functions. The result can be printed with a foreach.
@@ -557,7 +557,7 @@ system.shutdown
 ### Asynchronous Return
 
 Asynchronous operations can provide better performance. A Future in Scala is very powerful, it can execute asynchronously.
-Future would call the 'onComplete' function when is finished.
+The Future will call the 'onComplete' function when it is finished.
 It can also set a TIMEOUT when specified.
 
 ```
@@ -607,8 +607,8 @@ println("time: " + (System.currentTimeMillis - s) + "ms")
 
 ### Concurrentwordcount
 Concurrent Collection support most functions in normal ones.
-There is word count example before, we can use parallel collection to improve it.
-It can use the power of multi core without increase the complexity.
+Here is the word count example from earlier, improved using a parallel collection.
+It can use the power of multiple cores without increasing the complexity.
 
 ```
 val file = List("warn 2013 msg", "warn 2012 msg", "error 2013 msg", "warn 2013 msg")
@@ -621,10 +621,10 @@ println("wordcount:" + num)
 ```
 
 ### Remote Actor
-Actor is concurrent model, it can be also used for distribute computing.
-This example is to build an EchoServer with Actor.
-Then it creates a client with Akka URL to route.
-The usage method is the same with normal actor.
+Actor is not only a concurrency model, it can also be used for distributed computing.
+This example builds an EchoServer using an Actor.
+Then it creates a client to access the Akka URL.
+The usage is the same as with a normal Actor.
 
 ```
 import akka.actor.{ Actor, ActorSystem, Props }

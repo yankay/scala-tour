@@ -412,14 +412,14 @@ translate += ("to match String type." ->
 
   translate += ("An Actor is a like a thread instance with a mailbox." ->
                 "Actor是类似线程的实体，有一个邮箱。")
-  translate += ("It can be created with system.actorOf, and using receive to get message, ! to send message." ->
+  translate += ("It can be created with system.actorOf: use receive to get a message and ! to send a message." ->
                 "可以通过system.actorOf来创建,receive获取邮箱消息，！向邮箱发送消息。")
 
-  translate += ("It can be created with <span class=\"important\">system.actorOf</span>, and using <span class=\"important\">receive</span> to get message, <span class=\"important\">!</span> to send message." ->
+  translate += ("It can be created with <span class=\"important\">system.actorOf</span>: use <span class=\"important\">receive</span> to get a message, and <span class=\"important\">!</span> to send a message." ->
                 "Actor可以通过<span class=\"important\">system.actorOf</span>来创建,<span class=\"important\">receive</span>获取邮箱消息，<span class=\"important\">！</span>向邮箱发送消息。")
 
 
-  translate += ("This example is an EchoServer which can receive message then print them." -> 
+  translate += ("This example is an EchoServer which can receive messages then print them." ->
                 "这个例子是一个EchoServer，接受信息并打印。")
   translate += ("### Simplify Actor" -> 
                 "### Actor更简化的用法")
@@ -427,6 +427,9 @@ translate += ("to match String type." ->
                 ">Actor更简化的用法<")
   translate += ("There is a simpler way to define an Actor." ->
                 "可以通过更简化的办法声明Actor。")
+  // Needed Chinese Translation below
+  translate += ("There is the actor function in" ->
+                "There is the actor function in")
   translate += ("Import the actor function from akka.actor.ActorDSL." -> 
                 "导入akka.actor.ActorDSL中的actor函数。")
   translate += ("This function accepts an Actor instance, and returns a started Actor." ->
@@ -463,7 +466,7 @@ translate += ("to match String type." ->
                 "### 同步返回")
   translate += (">Synchronized Return<" -> 
                 ">同步返回<")
-  translate += ("Actors are very suitable for long-running operations, like getting resources from a network." ->
+  translate += ("Actors are very suitable for long-running operations, like getting resources over a network." ->
                 "Actor非常适合于较耗时的操作。比如获取网络资源。")
   translate += ("This example creates a Future with the ask function." ->
                 "这个例子通过调用ask函数来获取一个Future。")
@@ -477,7 +480,7 @@ translate += ("to match String type." ->
                 ">异步返回<")
   translate += ("Asynchronous operations can provide better performance. A Future in Scala is very powerful, it can execute asynchronously." ->
                 "异步操作可以最大发挥效能。Scala的Futrue很强大，可以异步返回。")
-  translate += ("Future would call the 'onComplete' function when is finished." -> 
+  translate += ("The Future will call the 'onComplete' function when it is finished." ->
                 "可以实现Futrue的onComplete方法。当Futrue结束的时候就会回调。")
 
   translate += ("It can also set a TIMEOUT when specified." ->
@@ -510,27 +513,27 @@ translate += ("to match String type." ->
     translate += ("Parallel Collection support most functions in normal collection." -> 
                 "并行集合支持大部分集合的功能。")
 
-  translate += ("There is word count example before, we can use concurrent collection to improve it." -> 
+  translate += ("Here is the word count example from earlier, improved using a concurrent collection." ->
                 "在前面有一个word count例子，也可以用并发集合加以实现。")
-  translate += ("There is word count example before, we can use parallel collection to improve it." -> 
+  translate += ("Here is the word count example from earlier, improved using a parallel collection." ->
                 "在前面有一个word count例子，也可以用并行集合加以实现。")
-  translate += ("It can use the power of multi core without increase the complexity." -> 
+  translate += ("It can use the power of multiple cores without increasing the complexity." ->
                 "不增加程序复杂性，却能大幅提高程序利用多核的能力。")
-  translate += ("It can leverage the power of multi core without increase the complexity." -> 
+  translate += ("It can leverage the power of multiple cores without increasing the complexity." ->
                 "不增加程序复杂性，却能大幅提高利用多核的能力。")
 
   translate += ("### Remote Actor" -> 
                 "### 远程Actor")
   translate += (">Remote Actor<" -> 
                 ">远程Actor<")
-  translate += ("Actor is concurrent model, it can be also used for distribute computing." -> 
+  translate += ("Actor is not only a concurrency model, it can also be used for distributed computing." ->
                 "Actor是并发模型，也使用于分布式。")
-  translate += ("This example is to build an EchoServer with Actor." -> 
+  translate += ("This example builds an EchoServer using an Actor." ->
                 "这个例子创建一个Echo服务器，通过actorOf来注册自己。")
 
-  translate += ("Then it creates a client with Akka URL to route." ->
+  translate += ("Then it creates a client to access the Akka URL." ->
                 "然后再创建一个client，通过Akka url来寻址。")
-  translate += ("The usage method is the same with normal actor." -> 
+  translate += ("The usage is the same as with a normal Actor." ->
                 "除了是通过url创建的，其他使用的方法和普通Actor一样。")
   translate += ("## Practice" -> 
                 "## 实践")

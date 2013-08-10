@@ -493,12 +493,12 @@ val echoServer = actor(new Act {
 echoServer ! "hi"
 system.shutdown
 ```
-### Actor Implement
-Actor is more light weight than thread. Millions of actors can be generated in Scala. The secret is that Actor can reuse thread.
-The mapping relationship between Actor and Thread is decided by Dispatcher.
-This example create 4 Actors, and it would print its thread when it invoked.
-You can find that there are no fix mapping relationship between Actor and Thread. 
-A Actor can use multi threads. And a thread can be used by multi Actors.
+### Actor Implementation
+An Actor is more lightweight than a thread. Millions of actors can be generated in Scala. The secret is that an Actor can reuse a thread.
+The mapping relationship between an Actor and a Thread is decided by a Dispatcher.
+This example creates 4 Actors, and prints its thread name when invoked.
+You will find there is no fixed mapping relationship between Actors and Threads.
+An Actor can use many threads. And a thread can be used by many Actors.
 
 ```
 import akka.actor.{ Actor, Props, ActorSystem }
@@ -526,10 +526,10 @@ system.shutdown
 
 ### Synchronized Return
 
-Actor is very suitable for operation need time, for example getting resource from network.
-This example is to get a Future from ask function.
-In the actor we can use 'sender !' to return value.
-Like Option, Future has lots of functions. The result can be read by foreach function.
+Actors are very suitable for long-running operations, like getting resources from a network.
+This example creates a Future with the ask function.
+In the actor we use 'sender !' to return the value.
+Like Option, Future has lots of functions. The result can be printed with a foreach.
 
 
 ```
@@ -556,9 +556,9 @@ system.shutdown
 
 ### Asynchronous Return
 
-Asynchronous operation can provide better performance. Future in Scala is very powerful, it can be returned asynchronously.
+Asynchronous operations can provide better performance. A Future in Scala is very powerful, it can execute asynchronously.
 Future would call the 'onComplete' function when is finished.
-It can also set TIMEOUT when we use ask.
+It can also set a TIMEOUT when specified.
 
 ```
 import akka.actor.ActorDSL._
@@ -583,10 +583,10 @@ version onComplete {
 ```
 ### Concurrent Collection
 
-This example is to access several URLs, can recode the time it needs. 
+This example prints the time needed to access several URLs.
 If we access them concurrently, the performance can be better.
-Try to change the 'urls.map' to 'urls.par.map'.So the functions in map can run concurrently.
-It's exciting to combine functional programming and concurrent. 
+Try to change the 'urls.map' to 'urls.par.map'.Now, the functions in map will run concurrently.
+It's exciting to combine functional and concurrent programming!
 
 ```
 import scala.io.Codec

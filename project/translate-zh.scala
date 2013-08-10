@@ -543,18 +543,18 @@ translate += ("to match String type." ->
                 "### 使用Java")
   translate += (">Using Java<" -> 
                 ">使用Java<")
-  translate += ("Scala can operate Java very easily. There have been lots of samples before." -> 
+  translate += ("Scala can execute Java code very easily. There have already been many examples of this." ->
                 "Scala和Java可以非常方便的互操作，前面已经有大量Scala直接使用Java的例子。")
   translate += ("Java can also use Scala. " -> 
                 "同样Java也可以使用Scala。")
-  translate += ("This example shows how to use @BeanProperty Annotation to create Java Style Bean." ->
+  translate += ("This example shows how to use the @BeanProperty Annotation to create a Java Style Bean." ->
                 "这个例子演示使用@BeanProperty注解来生成Java Style的Bean。")
-  translate += ("Try to add @BeanProperty before var name. So that the bean contains getter/setter." -> 
-                "尝试将在var name前加上@BeanProperty。这样就给bean添加了getter/setter")
+  translate += ("Try to add @BeanProperty before var name." ->
+                "尝试将在var name前加上@BeanProperty。")
+  translate += ("Now the bean contains getter/setter functions." ->
+                "这样就给bean添加了getter/setter。")
   translate += ("And the Apache BeanUtils can work correctly." -> 
                 "Apache BeanUtils就可以正常工作。")
-  translate += ("So the bean contains getter/setter functions now." -> 
-                "这样就给bean添加了getter/setter。")
 
   translate += ("### Equality" -> 
                 "### 相等性")
@@ -566,91 +566,95 @@ translate += ("to match String type." ->
                 "在Scala中<span class=\"important\">==等效于equals</span>，这一点和Java不同。更自然一些。")
                             
 
-  translate += ("This example define a equals function, and verify it." -> 
+  translate += ("This example defines a equals function, and prints the result." ->
                 "这个例子定义了一个equals函数，并验证。")
 
-  translate += ("Write a correctly equal function is not a easy work. This example also has a issue when it has subclass." -> 
+  translate += ("Correctly writing an equals function is difficult. This example has an issue with subclasses." ->
                 "写一个完全正确的equal函数并不容易，这个例子也有子类会不对称的Bug。")
 
                          
   translate += ("Try to change 'class' to 'case class', and delete the equals function." -> 
                 "尝试将class修改为case class并删除equals函数。")
-  translate += ("Case Class can generate correctly equal function for us." -> 
+  translate += ("Case Class correctly generates the equals function for us." ->
                 "case类会自动生成正确的equals函数。")
   translate += ("### Extractor" -> 
                 "### 抽取器")
   translate += (">Extractor<" -> 
                 ">抽取器<")
-  translate += ("Extractor can help pattern match to extract." -> 
+  translate += ("Extractor objects can deconstruct pattern matches." ->
                 "抽取器可以帮助pattern match进行解构。")
-  translate += ("This example is to build an Email Extractor, implement the 'unapply function' is enough." -> 
+  translate += ("This example builds an Email Extractor, only the 'unapply function' is needed." ->
                 "这个例子是构建一个Email抽取器，只要实现unapply函数就可以了。")
-  translate += ("The regex in Scala contains extractor, it can extract a List. " -> 
+  translate += ("Scala's Regex contains an extractor, which extracts a List. " ->
                 "Scala的正则表达式会自带抽取器，可以抽取出一个List。")
-  translate += ("The elements in List is the expression in ()." -> 
+  translate += ("The List elements sequentially match expressions captured in ()." ->
                 "List的元素是匹配()里的表达式。")
   translate += ("Extractor is very useful. There are 2 cases in this example." -> 
                 "抽取器很有用，短短的例子里就有两处使用抽取器：")
-  translate += ("case user :: domain :: Nil is to extract a List. case Email(user, domain) is to extract an Email." -> 
-                "case user :: domain :: Nil解构List；case Email(user, domain) 解构Email。")
+  translate += ("extracts a List." ->
+                "解构List。")
+  translate += ("extracts an Email object." ->
+                "解构Email。")
   translate += ("### Memory Pattern" -> 
                 "### 记忆模式")
   translate += (">Memory Pattern<" -> 
                 ">记忆模式<")
-  translate += ("Memory Pattern can be used to simplify the code of using cache." -> 
+  translate += ("Memory Pattern can be used to simplify caching." ->
                 "记忆模式可以解决手动编写存取cache代码的麻烦。")
-  translate += ("In this example, the 'memo function' can wrapper a function without cache ability to be a function with cache ability." -> 
+  translate += ("In this example, the 'memo function' wraps a function without caching to add the simple cache capability." ->
                 "这个例子中，memo可以将一个不含cache函数，包装成一个含有cache功能的。")
-  translate += ("It's the example for Fibonacci, cache can improve its performance." -> 
+  translate += ("In this Fibonacci example, a cache improves performance after the first call." ->
                 "还是斐波那契的例子，通过cache可以使性能提高。")
   translate += ("Try to change fibonacci_(n - 1) + fibonacci_(n - 2) to memo(fibonacci_)(n - 1) + memo(fibonacci_)(n - 2), it can improve more." -> 
                 "尝试将fibonacci_(n - 1) + fibonacci_(n - 2)修改memo(fibonacci_)(n - 1) + memo(fibonacci_)(n - 2)，可以提高更多。")
+  // Missing Chinese Translation, translated using Google Translate. Please verify.
+  translate += ("This improves performance of the first call" ->
+                "这提高了性能的第一次调用")
   translate += ("Implicit Conversion" -> 
                 "### 隐式转换")
    translate += (">Implicit Conversion<" -> 
-                ">隐式转换<") 
-  translate += ("Implicit can be used to define a Conversion function. Type can automatically  translate with it." -> 
-                "implicit可以定义一个转换函数，可以在下面的使用到的时候自动转换。")
-  translate += ("Implicit can be used to define a Conversion function. Type can be automatically converted  with it when it needs." -> 
+                ">隐式转换<")
+  translate += ("Implicit can be used to define a Conversion function. Types are automatically implicitly converted when needed." ->
                 "implicit可以定义一个转换函数，可以在使用相应类型的时候自动转换。")
 
-  translate += ("This example can converte String to Data automatically. Implicit is the most important feature to implement DSL." -> 
-
+  translate += ("This example converts String to Date automatically. Implicit is the most important feature when implementing a DSL." ->
                 "这个例子可以将String自动转换为Date类型。隐式转换时实现DSL的重要工具。")
-  translate += ("DSL is most powerful tool in Scala. With it Scala can let some code more-descriptive." -> 
+  translate += ("DSL is the most powerful tool in Scala. With it Scala code can become more descriptive." ->
                 "DSL是Scala最强大武器，Scala可以使一些描述性代码变得极为简单。")
-  translate += ("DSL is most powerful tool in Scala. With it some code can be more descriptive." -> 
+  // TODO: Above and below are same in English. Choose best Chinese translation and remove one of these lines.
+  translate += ("DSL is the most powerful tool in Scala. With it Scala code can become more descriptive." ->
                 "DSL是Scala最强大武器，可以使一些描述性代码变得极为简单。")
 
 
-  translate += ("This example is to generate Json with DSL. Some of the features look like native features are created by DSL." -> 
+  translate += ("This example generates Json with a DSL. Some of the features look like native features but are created by a DSL." ->
                 "这个例子是使用DSL生成JSON。Scala很多看似是语言级的特性也是用DSL做到的。")
-  translate += ("It complex to write your own DSL. But it's very to use." -> 
+  translate += ("It's complex to write your own DSL. But it's very easy to use." ->
                 "自己编写DSL有点复杂，但使用方便灵活的。")
-  translate += ("It's complex to write your own DSL. But it's very to use." -> 
+  // TODO: Above and below are same in English. Choose best Chinese translation and remove one of these lines.
+  translate += ("It's complex to write your own DSL. But it's very easy to use." ->
                 "自己编写DSL有点复杂，但使用起来非常方便。")         
   translate += ("### Testing" -> 
                 "### 测试")
   translate += (">Testing<" -> 
                 ">测试<")
-  translate += ("Scala can use Spec2, ScalaTest to test, and DSL can make testing more easier." -> 
+  translate += ("Scala can use Spec2 or ScalaTest to test, and a DSL can make testing even easier." ->
                 "Scala可以使用Spec2，ScalaTest来测试， DSL可以使测试更方便。")
-  translate += ("Scala DSL can make testing more easier." -> 
+  translate += ("Scala DSL can make testing even easier." ->
                 "Scala DSL可以使测试更方便。")
-  translate += ("This example is to test a Factorial function. It create test case with should/in." -> 
+  translate += ("This example tests a Factorial function. It creates a test case with should/in." ->
                 "这个例子是测试一个阶乘函数。使用should/in来建立测试用例。")
-  translate += ("Test cases can be runned concurrently in default." -> 
+  translate += ("Test cases run concurrently by default." ->
                 "测试是默认并发执行的。")
   translate += ("With its help, " -> 
                 "在他的帮助下，")
-  translate += ("you can develop Scala even <span class=\"important\">without installing anything</span> except JRE." -> 
+  translate += ("you can begin developing Scala <span class=\"important\">without installing anything</span> except the JRE." ->
                 "你甚至<span class=\"important\">不需要安装</span>除JRE外的任何东西，来开发Scala。")
-  translate += ("If you want to run this Scala Tour in your computer, follow the code left." -> 
+  translate += ("If you want to run this Scala Tour in your computer, follow the steps to the left." ->
                 "例如你想在自己的机器上执行这个Scala-Tour,可以执行左边的命令")
 
-  translate += ("SBT is more popular build tool for Scala. " -> 
+  translate += ("SBT is a very popular build tool for Scala. " ->
                 "SBT是Scala的最佳编译工具。")
-  translate += ("With it's help, you can develop Scala even without installing anything except JRE." -> 
+  translate += ("With it's help, you can begin developing Scala after only installing the JRE." ->
                 "在他的帮助下，你甚至不需要安装除JRE外的任何东西，来开发Scala。")
   translate += ("This example is to run this Scala Tour in your computer." -> 
                 "例如你想在自己的机器上执行这个Scala-Tour。")
@@ -690,7 +694,7 @@ translate += ("to match String type." ->
                 "本指南是用来介绍Scala强大的功能。同时你可以亲身实践他们。")
   translate += ("The tour is interactive. Click the <b>Run</b> button now to compile and run the program on a remote server. The result is displayed below the code. You can edit it and run your own code. (It may be a little slow when you first run, but it would faster next)" -> 
                 "点击左边的<b>Run</b>按钮试试。左边的运行框可以在远程编译和运行任何Scala代码。运行的结果将展示在下面对文本框中。你也可以试着编辑这些代码，重新运行。(初次运行可能会有些慢，不过第二次就很快了)")
-  translate += ("Use a space bar or arrow keys to navigate" ->
+  translate += ("Use the space bar or arrow keys to navigate" ->
                 "使用方向键或者空格来翻页")
   translate += (">Start<" -> 
                 ">开始<")

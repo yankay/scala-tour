@@ -652,9 +652,9 @@ system.shutdown
 
 ### Using Java
 
-Scala can operate Java very easily. There have been lots of samples before.
-Java can also use Scala. This example shows how to use @BeanProperty Annotation to create Java Style Bean.
-Try to add @BeanProperty before var name. So that the bean contains getter/setter.
+Scala can execute Java code very easily. There have already been many examples of this.
+Java can also use Scala. This example shows how to use the @BeanProperty Annotation to create a Java Style Bean.
+Try to add @BeanProperty before var name. Now the bean contains getter/setter functions.
 And the Apache BeanUtils can work correctly.
 
 ```
@@ -671,10 +671,10 @@ println(BeanUtils.describe(bean))
 
 ### Equality
 In Scala == is the same as equals function. It's not the same as Java, but it's more reasonable.
-This example define a equals function, and verify it.
-Write a correctly equal function is not a easy work. This example also has a issue when it has subclass.
+This example defines a equals function, and prints the result.
+Correctly writing an equals function is difficult. This example has an issue with subclasses.
 Try to change 'class' to 'case class', and delete the equals function.
-Case Class can generate correctly equal function for us.
+Case Class correctly generates the equals function for us.
 
 ```
 class Person(val name: String) {
@@ -689,11 +689,11 @@ println(new Person("Black") == new Person("Black"))
 
 
 ### Extractor
-Extractor can help pattern match to extract.
-This example is to build an Email Extractor, implement the 'unapply function' is enough.
-The regex in Scala contains extractor, it can extract a List. The elements in List is the expression in ().
+Extractor objects can deconstruct pattern matches.
+This example builds an Email Extractor, only the 'unapply function' is needed.
+Scala's Regex contains an extractor, which extracts a List. The List elements sequentially match expressions captured in ().
 Extractor is very useful. There are 2 cases in this example.
-case user :: domain :: Nil is to extract a List. case Email(user, domain) is to extract an Email.
+case user :: domain :: Nil extracts a List. case Email(user, domain) extracts an Email.
 
 ```
 object Email {
@@ -711,9 +711,9 @@ object Email {
 ```
 
 ### Memory Pattern
-Memory Pattern can be used to simplify the code of using cache.
-In this example, the 'memo function' can wrapper a function without cache ability to be a function with cache ability.
-It's the example for Fibonacci, cache can improve its performance.
+Memory Pattern can be used to simplify caching.
+In this example, the 'memo function' wraps a function without caching to add the simple cache capability.
+In this Fibonacci example, a cache improves performance after the first call.
 Try to change fibonacci_(n - 1) + fibonacci_(n - 2) to memo(fibonacci_)(n - 1) + memo(fibonacci_)(n - 2), it can improve more.
 
 ```
@@ -739,8 +739,8 @@ println(fibonacci(40))
 println("it takes " + (System.currentTimeMillis() - t2) + "ms")
 ```
 Implicit Conversion
-Implicit can be used to define a Conversion function. Type can automatically  translate with it.
-This example can converte String to Data automatically. Implicit is the most important feature to implement DSL.
+Implicit can be used to define a Conversion function. Types are automatically implicitly converted when needed.
+This example converts String to Date automatically. Implicit is the most important feature when implementing a DSL.
 
 ```
   implicit def strToDate(str: String) = new SimpleDateFormat("yyyy-MM-dd").parse(str)
@@ -749,9 +749,9 @@ This example can converte String to Data automatically. Implicit is the most imp
 ```
 
 ### DSL
-DSL is most powerful tool in Scala. With it Scala can let some code more-descriptive.
-This example is to generate Json with DSL. Some of the features look like native features are created by DSL.
-It complex to write your own DSL. But it's very to use.
+DSL is the most powerful tool in Scala. With it Scala code can become more descriptive.
+This example generates Json with a DSL. Some of the features look like native features but are created by a DSL.
+It's complex to write your own DSL. But it's very easy to use.
 
 ```
 import org.json4s._
@@ -773,9 +773,9 @@ println(pretty(render(json)))
 ```
 
 ### Testing
-Scala DSL can make testing more easier.
-This example is to test a Factorial function. It create test case with should/in.
-Test cases can be runned concurrently in default.
+Scala DSL can make testing even easier.
+This example tests a Factorial function. It creates a test case with should/in.
+Test cases run concurrently by default.
 
 ```
 import org.specs2.mutable._
@@ -799,7 +799,7 @@ specs2.run(new FactorialSpec)
 
 
 ### Simple Build Tool
-SBT is more popular build tool for Scala. 
+SBT is a very popular build tool for Scala.
 With its help, you can develop Scala even without installing anything except JRE.
 This example is to run this Scala Tour in your computer.
 

@@ -1259,7 +1259,7 @@ version.minorVersion.foreach(println _)
                             <a href="#/simplify-actor">Simplify Actor</a>
                         </li>
                         <li>
-                            <a href="#/actor-principle">Actor Implement</a>
+                            <a href="#/actor-principle">Actor Implementation</a>
                         </li>
                         <li>
                             <a href="#/return-sync">Synchronized Return</a>
@@ -1319,13 +1319,13 @@ system.shutdown
                     <div class="span4">
                         <h2>Using Actor</h2>
                         <p>
-                            Actors are one of Scala's concurrent model.Users of Scala earlier than version 2.10 should use  <a href="http://akka.io/" target="_blank">Akka</a>.
+                            Actors are one of Scala's concurrent models. Users of Scala earlier than version 2.10 must install <a href="http://akka.io/" target="_blank">Akka</a>.
                         </p>
                         <p>
-                            Actor is a like thread instance with a mailbox. It can be created by <span class="important">system.actorOf</span>, and using <span class="important">receive</span> to get message, <span class="important">!</span> to send message.
+                            An Actor is a like a thread instance with a mailbox. It can be created with <span class="important">system.actorOf</span>: use <span class="important">receive</span> to get a message, and <span class="important">!</span> to send a message.
                         </p>
                         <p>
-                            This example is an EchoServer which can receive message then print them.
+                            This example is an EchoServer which can receive messages then print them.
                         </p>
                         <div class="step-nav">
                             <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1368,16 +1368,16 @@ system.shutdown
                     <div class="span4">
                         <h2>Simplify Actor</h2>
                         <p>
-                            There is a simpler way to define Actor.
+                            There is a simpler way to define an Actor.
                         </p>
                         <p>
-                            There is a the actor function in 
+                            There is the actor function in
                         </p>
                         <pre>
 akka.actor.ActorDSL
 </pre>
                         <p>
-                            .This function can accept a constructor, and return a started Actor.
+                            This function accepts an Actor instance, and returns a started Actor.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1425,18 +1425,18 @@ system.shutdown
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>Actor Implement</h2>
+                        <h2>Actor Implementation</h2>
                         <p>
-                            Actor is more light weight than thread. Millions of actors can be generated in Scala, the secret is that Actor can <span class="important">reuse thread</span>.
+                            An Actor is more lightweight than a thread. Millions of actors can be generated in Scala, the secret is that an Actor can <span class="important">reuse a thread</span>.
                         </p>
                         <p>
-                            The mapping relationship between Actor and Thread is decided by Dispatcher.
+                            The mapping relationship between an Actor and a Thread is decided by a Dispatcher.
                         </p>
                         <p>
-                            This example create 4 Actors, and it would print its thread name when it invoked.
+                            This example creates 4 Actors, and prints its thread name when invoked.
                         </p>
                         <p>
-                            You can find that there are no fix mapping relationship between Actor and Thread. A Actor can use multi threads. And a thread can be used by multi Actors.
+                            You will find there is no fixed mapping relationship between Actors and Threads. An Actor can use many threads. And a thread can be used by many Actors.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1486,16 +1486,16 @@ system.shutdown
                     <div class="span4">
                         <h2>Synchronized Return</h2>
                         <p>
-                            Actor is very suitable for operation need time, for example getting resource from network.
+                            Actors are very suitable for long-running operations, like getting resources over a network.
                         </p>
                         <p>
-                            This example is to get a Future from ask function.
+                            This example creates a Future with the ask function.
                         </p>
                         <p>
-                            In the actor we can use 'sender !' to return value.
+                            In the actor we use 'sender !' to return the value.
                         </p>
                         <p>
-                            Like Option, Future has lots of functions. The result can be read by foreach function.
+                            Like Option, Future has lots of functions. The result can be printed with a foreach.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1545,13 +1545,13 @@ version onComplete {
                     <div class="span4">
                         <h2>Asynchronous Return</h2>
                         <p>
-                            Asynchronous operation can provide better performance. Future in Scala is very powerful, it can be returned asynchronously.
+                            Asynchronous operations can provide better performance. A Future in Scala is very powerful, it can execute asynchronously.
                         </p>
                         <p>
-                            Future would call the 'onComplete' function when is finished.
+                            The Future will call the 'onComplete' function when it is finished.
                         </p>
                         <p>
-                            It can also set TIMEOUT when we use ask.
+                            It can also set a TIMEOUT when specified.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1591,7 +1591,7 @@ println("time: " + (System.currentTimeMillis - t) + "ms")
                     <div class="span4">
                         <h2>Parallel Collection</h2>
                         <p>
-                            This example is to access several URLs, can recode the time it needs. If we access them in parallel, the performance can be better.
+                            This example prints the time needed to access several URLs. If we access them in parallel, the performance can be better.
                         </p>
                         <p>
                             Try to change
@@ -1606,10 +1606,10 @@ urls.map
 urls.par.map
 </pre>
                         <p>
-                            So the functions in map can run in parallel.
+                            Now, the functions in map will run in parallel.
                         </p>
                         <p>
-                            It's exciting to combine functional programming and concurrent. 
+                            It's exciting to combine functional and concurrent programming!
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1648,10 +1648,10 @@ println("wordcount:" + num)
                     <div class="span4">
                         <h2>Parallel Word Count</h2>
                         <p>
-                            There is word count example before, we can use parallel collection to improve it.
+                            Here is the word count example from earlier, improved using a parallel collection.
                         </p>
                         <p>
-                            It can leverage the power of multi core without increase the complexity.
+                            It can leverage the power of multiple cores without increasing the complexity.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1700,16 +1700,16 @@ system.shutdown
                     <div class="span4">
                         <h2>Remote Actor</h2>
                         <p>
-                            Actor is concurrent model, it can be also used for distribute computing.
+                            Actor is not only a concurrency model, it can also be used for distributed computing.
                         </p>
                         <p>
-                            This example is to build an EchoServer with Actor.
+                            This example builds an EchoServer using an Actor.
                         </p>
                         <p>
-                            Then it creates a client with Akka URL to route.
+                            Then it creates a client to access the Akka URL.
                         </p>
                         <p>
-                            The usage method is the same with normal actor.
+                            The usage is the same as with a normal Actor.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a><a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>

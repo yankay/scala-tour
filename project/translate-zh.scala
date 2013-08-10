@@ -435,69 +435,69 @@ translate += ("to match String type." ->
 
 
 
-  translate += ("### Actor Implement" -> 
+  translate += ("### Actor Implementation" ->
                 "### Actor原理")
-  translate += (">Actor Implement<" -> 
+  translate += (">Actor Implementation<" ->
                 ">Actor原理<")
-  translate += ("Actor is more light weight than thread. " -> 
+  translate += ("An Actor is more lightweight than a thread. " ->
                 "Actor比线程轻量。")
-  translate += ("Millions of actors can be generated in Scala. The secret is that Actor can reuse thread." -> 
+  translate += ("Millions of actors can be generated in Scala. The secret is that an Actor can reuse a thread." ->
                 "在Scala中可以创建数以百万级的Actor。奥秘在于Actor可以复用线程。")
-  translate += ("Millions of actors can be generated in Scala, the secret is that Actor can <span class=\"important\">reuse thread</span>." -> 
+  translate += ("Millions of actors can be generated in Scala, the secret is that an Actor can <span class=\"important\">reuse a thread</span>." ->
                 "在Scala中可以创建数以百万级的Actor。奥秘在于Actor直接可以<span class=\"important\">复用线程</span>。")
 
-  translate += ("The mapping relationship between Actor and Thread is decided by Dispatcher." -> 
+  translate += ("The mapping relationship between an Actor and a Thread is decided by a Dispatcher." ->
                 "Actor和线程是不同的抽象，他们的对应关系是由Dispatcher决定的。")
-  translate += ("This example create 4 Actors, and it would print its thread when it invoked." -> 
+  translate += ("This example creates 4 Actors, and prints its thread name when invoked." ->
                 "这个例子创建4个Actor，每次调用的时候打印自身线程。")
-  translate += ("This example create 4 Actors, and it would print its thread name when it invoked." -> 
+  translate += ("This example creates 4 Actors, and prints its thread name when invoked." ->
                 "这个例子创建4个Actor，每次调用的时候打印自身线程名称。")
 
 
 
-  translate += ("You can find that there are no fix mapping relationship between Actor and Thread. " -> 
+  translate += ("You will find there is no fixed mapping relationship between Actors and Threads. " ->
                 "可以发现Actor和线程之间没有一对一的对应关系。")
-  translate += ("A Actor can use multi threads. And a thread can be used by multi Actors." -> 
+  translate += ("An Actor can use many threads. And a thread can be used by many Actors." ->
                 "一个Actor可以使用多个线程，一个线程也会被多个Actor复用。")
   translate += ("### Synchronized Return" -> 
                 "### 同步返回")
   translate += (">Synchronized Return<" -> 
                 ">同步返回<")
-  translate += ("Actor is very suitable for operation need time, for example getting resource from network." -> 
+  translate += ("Actors are very suitable for long-running operations, like getting resources from a network." ->
                 "Actor非常适合于较耗时的操作。比如获取网络资源。")
-  translate += ("This example is to get a Future from ask function." -> 
+  translate += ("This example creates a Future with the ask function." ->
                 "这个例子通过调用ask函数来获取一个Future。")
-  translate += ("In the actor we can use 'sender !' to return value." -> 
+  translate += ("In the actor we use 'sender !' to return the value." ->
                 "在Actor内部通过 sender ! 传递结果。")
-  translate += ("Like Option, Future has lots of functions. The result can be read by foreach function." -> 
+  translate += ("Like Option, Future has lots of functions. The result can be printed with a foreach." ->
                 "Future像Option一样有很多高阶方法，可以使用foreach查看结果。")
   translate += ("### Asynchronous Return" ->
                 "### 异步返回 ")
   translate += (">Asynchronous Return<" ->
                 ">异步返回<")
-  translate += ("Asynchronous operation can provide better performance. Future in Scala is very powerful, it can be returned asynchronously." -> 
+  translate += ("Asynchronous operations can provide better performance. A Future in Scala is very powerful, it can execute asynchronously." ->
                 "异步操作可以最大发挥效能。Scala的Futrue很强大，可以异步返回。")
   translate += ("Future would call the 'onComplete' function when is finished." -> 
                 "可以实现Futrue的onComplete方法。当Futrue结束的时候就会回调。")
 
-  translate += ("It can also set TIMEOUT when we use ask." -> 
+  translate += ("It can also set a TIMEOUT when specified." ->
                 "在调用ask的时候，可以设定超时。")
   translate += ("### Concurrent Collection" -> 
                 "### 并发集合")
   translate += (">Parallel Collection<" -> 
                 ">并行集合<")
-  translate += ("This example is to access several URLs, can recode the time it needs. " -> 
+  translate += ("This example prints the time needed to access several URLs. " ->
                 "这个例子是访问若干URL，并记录时间。")
   translate += ("If we access them concurrently, the performance can be better." -> 
                 "如果能并发访问，就可以大幅提高性能。")
   translate += ("If we access them in parallel, the performance can be better." -> 
                 "如果能并行访问，就可以大幅提高性能。")
 
-  translate += ("Try to change the 'urls.map' to 'urls.par.map'.So the functions in map can run concurrently." -> 
+  translate += ("Try to change the 'urls.map' to 'urls.par.map'.Now, the functions in map will run concurrently." ->
                 "尝试将urls.map修改为urls.par.map。这样每个map中的函数都可以并发执行。")
-  translate += ("So the functions in map can run in parallel." -> 
+  translate += ("Now, the functions in map will run in parallel." ->
                 "这样每个map中的函数都可以并发执行。")
-  translate += ("It's exciting to combine functional programming and concurrent. " -> 
+  translate += ("It's exciting to combine functional and concurrent programming! " ->
                 "当函数式和并发结合，就会这样让人兴奋。")
 
 

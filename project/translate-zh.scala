@@ -401,21 +401,21 @@ translate += ("to match String type." ->
                 "### 使用Actor")
   translate += (">Using Actor<" -> 
                 ">使用Actor<")
-  translate += ("Actors are one of Scala's concurrent model." ->
+  translate += ("Actors are one of Scala's concurrent models." ->
                 "Actor是Scala的并发模型。")
-  translate += ("Users of Scala earlier than version 2.10 should use [http://akka.io/](Akka)." ->
+  translate += ("Users of Scala earlier than version 2.10 must install [http://akka.io/](Akka)." ->
                 "在2.10之后的版本中，使用[http://akka.io/](Akka)作为其推荐Actor实现。")
-  translate += ("Users of Scala earlier than version 2.10 should use  <a href=\"http://akka.io/\" target=\"_blank\">Akka</a>." ->
+  translate += ("Users of Scala earlier than version 2.10 must install <a href=\"http://akka.io/\" target=\"_blank\">Akka</a>." ->
                 "在2.10之后的版本中，使用<a href=\"http://akka.io/\" target=\"_blank\">Akka</a>作为其推荐Actor实现。")
 
 
 
-  translate += ("Actor is a like thread instance with a mailbox." -> 
+  translate += ("An Actor is a like a thread instance with a mailbox." ->
                 "Actor是类似线程的实体，有一个邮箱。")
-  translate += ("It can be created by system.actorOf, and using receive to get message, ! to send message." -> 
+  translate += ("It can be created with system.actorOf, and using receive to get message, ! to send message." ->
                 "可以通过system.actorOf来创建,receive获取邮箱消息，！向邮箱发送消息。")
 
-  translate += ("It can be created by <span class=\"important\">system.actorOf</span>, and using <span class=\"important\">receive</span> to get message, <span class=\"important\">!</span> to send message." -> 
+  translate += ("It can be created with <span class=\"important\">system.actorOf</span>, and using <span class=\"important\">receive</span> to get message, <span class=\"important\">!</span> to send message." ->
                 "Actor可以通过<span class=\"important\">system.actorOf</span>来创建,<span class=\"important\">receive</span>获取邮箱消息，<span class=\"important\">！</span>向邮箱发送消息。")
 
 
@@ -425,11 +425,11 @@ translate += ("to match String type." ->
                 "### Actor更简化的用法")
   translate += (">Simplify Actor<" -> 
                 ">Actor更简化的用法<")
-  translate += ("There is a simpler way to define Actor." -> 
+  translate += ("There is a simpler way to define an Actor." ->
                 "可以通过更简化的办法声明Actor。")
   translate += ("Import the actor function from akka.actor.ActorDSL." -> 
                 "导入akka.actor.ActorDSL中的actor函数。")
-  translate += ("This function can accept a constructor, and return a started Actor." ->
+  translate += ("This function accepts an Actor instance, and returns a started Actor." ->
                 "这个函数可以接受一个Actor的构造器Act，启动并返回Actor。")
 
 

@@ -45,6 +45,8 @@ object ScalaScriptCompiler {
     command.settings.feature.value = true
     command.settings.language.appendToValue("reflectiveCalls")
     command.settings.language.appendToValue("implicitConversions")
+    command.settings.nospecialization.value = true
+    command.settings.nouescape.value = true
     command.settings;
   }
 

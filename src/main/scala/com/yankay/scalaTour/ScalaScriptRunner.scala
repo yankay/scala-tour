@@ -52,7 +52,7 @@ object ScalaScriptCompiler {
     val scriptFile = File.makeTemp("scala-script", ".scala")
     // save the command to the file
    
-    val illegalCodePattern = """.*import .*""".r
+    val illegalCodePattern = """.*(\.sys\.).*""".r
 
     val strippedScript = {
       if (illegalCodePattern.findAllIn(script).toList.isEmpty) script

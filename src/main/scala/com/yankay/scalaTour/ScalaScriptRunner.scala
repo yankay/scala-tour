@@ -45,14 +45,16 @@ object ScalaScriptCompiler {
     command.settings.feature.value = true
     command.settings.language.appendToValue("reflectiveCalls")
     command.settings.language.appendToValue("implicitConversions")
+    command.settings.nospecialization.value = true
+    command.settings.nouescape.value = true
     command.settings;
   }
 
   def compile(script: String, err: OutputStream): Option[File] = {
     val scriptFile = File.makeTemp("scala-script", ".scala")
     // save the command to the file
-   
-    val illegalCodePattern = """.*import .*""".r
+
+    val illegalCodePattern = """.*(\.sys\.).*""".r
 
     val strippedScript = {
       if (illegalCodePattern.findAllIn(script).toList.isEmpty) script
@@ -121,9 +123,9 @@ object ScalaScriptProcess {
   }
 
   def create(compiledLocation: File, out: OutputStream, err: OutputStream): Option[ScalaScriptProcess] = {
-
-    val CP = Properties.propOrEmpty("java.class.path") + Properties.propOrEmpty("path.separator") + compiledLocation
-    var args = List("-cp", CP, "Main")
+    val policy = new java.io.File("policy")
+    val CP = Properties.propOrEmpty("java.class.path") + Properties.propOrEmpty("path.separator") + compiledLocation + Properties.propOrEmpty("path.separator") + "."
+    var args = List("-Djava.security.manager", "-Djava.security.policy=" + policy.getAbsolutePath ,"-cp", CP, "Main")
     if (Path(javaf()).exists) {
       val outp = new PrintStream(out, true);
       val errp = new PrintStream(err, true);
@@ -138,6 +140,7 @@ object ScalaScriptProcess {
 
 class ScalaScriptProcess(val builder: ProcessBuilder, val logger: ProcessLogger) {
   def run(): Process = {
+    // println(builder.toString)
     builder.run(logger);
   }
 }

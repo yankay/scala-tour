@@ -6,6 +6,8 @@ grant {
   permission java.io.FilePermission "${user.home}/.ivy2/cache/com.typesafe/-", "read";
   permission java.io.FilePermission "${user.home}/.ivy2/cache/com.typesafe.akka", "read";
   permission java.io.FilePermission "${user.home}/.ivy2/cache/com.typesafe.akka/-", "read";
+  permission java.io.FilePermission "./target/specs2-reports", "read, write";
+  permission java.io.FilePermission "./target/specs2-reports/-", "read, write";
 
   permission java.io.FilePermission "/tmp", "read";
 

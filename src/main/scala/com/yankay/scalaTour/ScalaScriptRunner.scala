@@ -140,7 +140,7 @@ object ScalaScriptProcess {
 
 class ScalaScriptProcess(val builder: ProcessBuilder, val logger: ProcessLogger) {
   def run(): Process = {
-    println(builder.toString)
+    // println(builder.toString)
     builder.run(logger);
   }
 }

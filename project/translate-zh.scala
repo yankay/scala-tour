@@ -619,17 +619,11 @@ translate += ("to match String type." ->
   translate += ("This example converts String to Date automatically. Implicit is the most important feature when implementing a DSL." ->
                 "这个例子可以将String自动转换为Date类型。隐式转换时实现DSL的重要工具。")
   translate += ("DSL is the most powerful tool in Scala. With it Scala code can become more descriptive." ->
-                "DSL是Scala最强大武器，Scala可以使一些描述性代码变得极为简单。")
-  // TODO: Above and below are same in English. Choose best Chinese translation and remove one of these lines.
-  translate += ("DSL is the most powerful tool in Scala. With it Scala code can become more descriptive." ->
                 "DSL是Scala最强大武器，可以使一些描述性代码变得极为简单。")
 
 
   translate += ("This example generates Json with a DSL. Some of the features look like native features but are created by a DSL." ->
                 "这个例子是使用DSL生成JSON。Scala很多看似是语言级的特性也是用DSL做到的。")
-  translate += ("It's complex to write your own DSL. But it's very easy to use." ->
-                "自己编写DSL有点复杂，但使用方便灵活的。")
-  // TODO: Above and below are same in English. Choose best Chinese translation and remove one of these lines.
   translate += ("It's complex to write your own DSL. But it's very easy to use." ->
                 "自己编写DSL有点复杂，但使用起来非常方便。")         
   translate += ("### Testing" -> 

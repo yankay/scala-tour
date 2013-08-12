@@ -427,9 +427,8 @@ translate += ("to match String type." ->
                 ">Actor更简化的用法<")
   translate += ("There is a simpler way to define an Actor." ->
                 "可以通过更简化的办法声明Actor。")
-  // Needed Chinese Translation below
   translate += ("There is the actor function in" ->
-                "There is the actor function in")
+                "在actor的函数中有")
   translate += ("Import the actor function from akka.actor.ActorDSL." -> 
                 "导入akka.actor.ActorDSL中的actor函数。")
   translate += ("This function accepts an Actor instance, and returns a started Actor." ->

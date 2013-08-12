@@ -606,9 +606,8 @@ translate += ("to match String type." ->
                 "还是斐波那契的例子，通过cache可以使性能提高。")
   translate += ("Try to change fibonacci_(n - 1) + fibonacci_(n - 2) to memo(fibonacci_)(n - 1) + memo(fibonacci_)(n - 2), it can improve more." -> 
                 "尝试将fibonacci_(n - 1) + fibonacci_(n - 2)修改memo(fibonacci_)(n - 1) + memo(fibonacci_)(n - 2)，可以提高更多。")
-  // Missing Chinese Translation, translated using Google Translate. Please verify.
   translate += ("This improves performance of the first call" ->
-                "这提高了性能的第一次调用")
+                "为了提高性能，要先调用")
   translate += ("Implicit Conversion" -> 
                 "### 隐式转换")
    translate += (">Implicit Conversion<" -> 

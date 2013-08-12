@@ -450,10 +450,10 @@ version.minorVersion.foreach(println _)
 
 ### Using Actor
 
-Actors are one of Scala's concurrent model.Users of Scala earlier than version 2.10 should use [http://akka.io/](Akka).
-Actor is a like thread instance with a mailbox.
-It can be created by system.actorOf, and using receive to get message, ! to send message.
-This example is an EchoServer which can receive message then print them.
+Actors are one of Scala's concurrent models.Users of Scala earlier than version 2.10 must install [http://akka.io/](Akka).
+An Actor is a like a thread instance with a mailbox.
+It can be created with system.actorOf: use receive to get a message and ! to send a message.
+This example is an EchoServer which can receive messages then print them.
 
 ```
 import akka.actor.{ Actor, ActorSystem, Props }
@@ -474,9 +474,9 @@ system.shutdown
 
 ### Simplify Actor
 
-There is a simpler way to define Actor.
+There is a simpler way to define an Actor.
 Import the actor function from akka.actor.ActorDSL.
-This function can accept a constructor, and return a started Actor.
+This function accepts an Actor instance, and returns a started Actor.
 
 
 ```
@@ -493,12 +493,12 @@ val echoServer = actor(new Act {
 echoServer ! "hi"
 system.shutdown
 ```
-### Actor Implement
-Actor is more light weight than thread. Millions of actors can be generated in Scala. The secret is that Actor can reuse thread.
-The mapping relationship between Actor and Thread is decided by Dispatcher.
-This example create 4 Actors, and it would print its thread when it invoked.
-You can find that there are no fix mapping relationship between Actor and Thread. 
-A Actor can use multi threads. And a thread can be used by multi Actors.
+### Actor Implementation
+An Actor is more lightweight than a thread. Millions of actors can be generated in Scala. The secret is that an Actor can reuse a thread.
+The mapping relationship between an Actor and a Thread is decided by a Dispatcher.
+This example creates 4 Actors, and prints its thread name when invoked.
+You will find there is no fixed mapping relationship between Actors and Threads.
+An Actor can use many threads. And a thread can be used by many Actors.
 
 ```
 import akka.actor.{ Actor, Props, ActorSystem }
@@ -526,10 +526,10 @@ system.shutdown
 
 ### Synchronized Return
 
-Actor is very suitable for operation need time, for example getting resource from network.
-This example is to get a Future from ask function.
-In the actor we can use 'sender !' to return value.
-Like Option, Future has lots of functions. The result can be read by foreach function.
+Actors are very suitable for long-running operations, like getting resources over a network.
+This example creates a Future with the ask function.
+In the actor we use 'sender !' to return the value.
+Like Option, Future has lots of functions. The result can be printed with a foreach.
 
 
 ```
@@ -556,9 +556,9 @@ system.shutdown
 
 ### Asynchronous Return
 
-Asynchronous operation can provide better performance. Future in Scala is very powerful, it can be returned asynchronously.
-Future would call the 'onComplete' function when is finished.
-It can also set TIMEOUT when we use ask.
+Asynchronous operations can provide better performance. A Future in Scala is very powerful, it can execute asynchronously.
+The Future will call the 'onComplete' function when it is finished.
+It can also set a TIMEOUT when specified.
 
 ```
 import akka.actor.ActorDSL._
@@ -583,10 +583,10 @@ version onComplete {
 ```
 ### Concurrent Collection
 
-This example is to access several URLs, can recode the time it needs. 
+This example prints the time needed to access several URLs.
 If we access them concurrently, the performance can be better.
-Try to change the 'urls.map' to 'urls.par.map'.So the functions in map can run concurrently.
-It's exciting to combine functional programming and concurrent. 
+Try to change the 'urls.map' to 'urls.par.map'.Now, the functions in map will run concurrently.
+It's exciting to combine functional and concurrent programming!
 
 ```
 import scala.io.Codec
@@ -607,8 +607,8 @@ println("time: " + (System.currentTimeMillis - s) + "ms")
 
 ### Concurrentwordcount
 Concurrent Collection support most functions in normal ones.
-There is word count example before, we can use parallel collection to improve it.
-It can use the power of multi core without increase the complexity.
+Here is the word count example from earlier, improved using a parallel collection.
+It can use the power of multiple cores without increasing the complexity.
 
 ```
 val file = List("warn 2013 msg", "warn 2012 msg", "error 2013 msg", "warn 2013 msg")
@@ -621,10 +621,10 @@ println("wordcount:" + num)
 ```
 
 ### Remote Actor
-Actor is concurrent model, it can be also used for distribute computing.
-This example is to build an EchoServer with Actor.
-Then it creates a client with Akka URL to route.
-The usage method is the same with normal actor.
+Actor is not only a concurrency model, it can also be used for distributed computing.
+This example builds an EchoServer using an Actor.
+Then it creates a client to access the Akka URL.
+The usage is the same as with a normal Actor.
 
 ```
 import akka.actor.{ Actor, ActorSystem, Props }

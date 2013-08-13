@@ -7,7 +7,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <title>
             Scala Tour
-        </title>object Email {
+        </title>
         <meta name="description" content="Scala Tour-Start your Wonderful Scala Tour">
         <meta name="author" content="Kay Yan">
         <link href="css/impress-demo.css" rel="stylesheet">
@@ -1351,7 +1351,7 @@ implicit val system = ActorSystem()
 
 val echoServer = actor(new Act {
   become {
-    case msg => println("echo " + msg)
+    case msg =&gt; println("echo " + msg)
   }
 })
 echoServer ! "hi"
@@ -1881,13 +1881,13 @@ object Email {
   def unapply(str: String): Option[(String,String)] = 
     new Regex("""(.*)@(.*)""")
       .unapplySeq(str).get match {
-      case user :: domain :: Nil => Some(user, domain)
-      case _ => None
+      case user :: domain :: Nil =&gt; Some(user, domain)
+      case _ =&gt; None
     }
 }
 
 "user@domain.com" match {
-  case Email(user, domain) => println(user + "@" + domain)
+  case Email(user, domain) =&gt; println(user + "@" + domain)
 }
 </textarea>
                                     </form>
@@ -1944,7 +1944,7 @@ case Email(user, domain)
 import scala.collection.mutable.WeakHashMap
 
 val cache = new WeakHashMap[Int, Int]
-def memo(f: Int => Int) = (x: Int) => cache.getOrElseUpdate(x, f(x))
+def memo(f: Int =&gt; Int) = (x: Int) =&gt; cache.getOrElseUpdate(x, f(x))
 
 def fibonacci_(in: Int): Int = in match {
   case 0 =&gt; 0;
@@ -2063,7 +2063,7 @@ var twitters = Twitter(1, "hello scala", Some(new Date())) ::
 
 var json = ("twitters"
   -> twitters.map(
-    t => ("id" -> t.id)
+    t =&gt; ("id" -> t.id)
       ~ ("text" -> t.text)
       ~ ("published_at" -> t.publishedAt.toString())))
 

@@ -7,7 +7,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <title>
             Scala Tour
-        </title>
+        </title>object Email {
         <meta name="description" content="Scala Tour-Start your Wonderful Scala Tour">
         <meta name="author" content="Kay Yan">
         <link href="css/impress-demo.css" rel="stylesheet">
@@ -1878,15 +1878,16 @@ println(new Person("Black") == new Person("Black"))
 import scala.util.matching.Regex
 
 object Email {
-  def unapply(str: String) = new Regex("""(.*)@(.*)""")
-    .unapplySeq(str).get match {
-    case user :: domain :: Nil =&gt; Some(user, domain)
-    case _ =&gt; None
-  }
+  def unapply(str: String): Option[(String,String)] = 
+    new Regex("""(.*)@(.*)""")
+      .unapplySeq(str).get match {
+      case user :: domain :: Nil => Some(user, domain)
+      case _ => None
+    }
 }
 
 "user@domain.com" match {
-  case Email(user, domain) =&gt; println(user + "@" + domain)
+  case Email(user, domain) => println(user + "@" + domain)
 }
 </textarea>
                                     </form>
@@ -2051,9 +2052,8 @@ println("2013-01-01 unix time: " + "2013-01-01".getTime()/1000l)
                                 <div class="workspace-editor">
                                     <form>
                                         <textarea class="editor" spellcheck="false">
-import org.json4s._
 import org.json4s.JsonDSL._
-import org.json4s.jackson.JsonMethods._
+import org.json4s.jackson.JsonMethods.{pretty,render}
 import java.util.Date
 
 case class Twitter(id: Long, text: String, publishedAt: Option[java.util.Date])
@@ -2062,10 +2062,10 @@ var twitters = Twitter(1, "hello scala", Some(new Date())) ::
   Twitter(2, "I like scala tour", None) :: Nil
 
 var json = ("twitters"
-  -&gt; twitters.map(
-    t =&gt; ("id" -&gt; t.id)
-      ~ ("text" -&gt; t.text)
-      ~ ("published_at" -&gt; t.publishedAt.toString())))
+  -> twitters.map(
+    t => ("id" -> t.id)
+      ~ ("text" -> t.text)
+      ~ ("published_at" -> t.publishedAt.toString())))
 
 println(pretty(render(json)))
 </textarea>

@@ -124,7 +124,8 @@ object ScalaScriptProcess {
 
   def create(compiledLocation: File, out: OutputStream, err: OutputStream): Option[ScalaScriptProcess] = {
     val policy = new java.io.File("policy")
-    val CP = Properties.propOrEmpty("java.class.path") + Properties.propOrEmpty("path.separator") + compiledLocation + Properties.propOrEmpty("path.separator") + "."
+    val sep = Properties.propOrEmpty("path.separator")
+    val CP = Properties.propOrEmpty("java.class.path") + sep + compiledLocation + sep + "./bin" + sep + "."
     var args = List("-Djava.security.manager", "-Djava.security.policy=" + policy.getAbsolutePath ,"-cp", CP, "Main")
     if (Path(javaf()).exists) {
       val outp = new PrintStream(out, true);

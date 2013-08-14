@@ -450,10 +450,10 @@ version.minorVersion.foreach(println _)
 
 ### Using Actor
 
-Actors are one of Scala's concurrent model.Users of Scala earlier than version 2.10 should use [http://akka.io/](Akka).
-Actor is a like thread instance with a mailbox.
-It can be created by system.actorOf, and using receive to get message, ! to send message.
-This example is an EchoServer which can receive message then print them.
+Actors are one of Scala's concurrent models.Users of Scala earlier than version 2.10 must install [http://akka.io/](Akka).
+An Actor is a like a thread instance with a mailbox.
+It can be created with system.actorOf: use receive to get a message and ! to send a message.
+This example is an EchoServer which can receive messages then print them.
 
 ```
 import akka.actor.{ Actor, ActorSystem, Props }
@@ -474,9 +474,9 @@ system.shutdown
 
 ### Simplify Actor
 
-There is a simpler way to define Actor.
+There is a simpler way to define an Actor.
 Import the actor function from akka.actor.ActorDSL.
-This function can accept a constructor, and return a started Actor.
+This function accepts an Actor instance, and returns a started Actor.
 
 
 ```
@@ -493,12 +493,12 @@ val echoServer = actor(new Act {
 echoServer ! "hi"
 system.shutdown
 ```
-### Actor Implement
-Actor is more light weight than thread. Millions of actors can be generated in Scala. The secret is that Actor can reuse thread.
-The mapping relationship between Actor and Thread is decided by Dispatcher.
-This example create 4 Actors, and it would print its thread when it invoked.
-You can find that there are no fix mapping relationship between Actor and Thread. 
-A Actor can use multi threads. And a thread can be used by multi Actors.
+### Actor Implementation
+An Actor is more lightweight than a thread. Millions of actors can be generated in Scala. The secret is that an Actor can reuse a thread.
+The mapping relationship between an Actor and a Thread is decided by a Dispatcher.
+This example creates 4 Actors, and prints its thread name when invoked.
+You will find there is no fixed mapping relationship between Actors and Threads.
+An Actor can use many threads. And a thread can be used by many Actors.
 
 ```
 import akka.actor.{ Actor, Props, ActorSystem }
@@ -526,10 +526,10 @@ system.shutdown
 
 ### Synchronized Return
 
-Actor is very suitable for operation need time, for example getting resource from network.
-This example is to get a Future from ask function.
-In the actor we can use 'sender !' to return value.
-Like Option, Future has lots of functions. The result can be read by foreach function.
+Actors are very suitable for long-running operations, like getting resources over a network.
+This example creates a Future with the ask function.
+In the actor we use 'sender !' to return the value.
+Like Option, Future has lots of functions. The result can be printed with a foreach.
 
 
 ```
@@ -556,9 +556,9 @@ system.shutdown
 
 ### Asynchronous Return
 
-Asynchronous operation can provide better performance. Future in Scala is very powerful, it can be returned asynchronously.
-Future would call the 'onComplete' function when is finished.
-It can also set TIMEOUT when we use ask.
+Asynchronous operations can provide better performance. A Future in Scala is very powerful, it can execute asynchronously.
+The Future will call the 'onComplete' function when it is finished.
+It can also set a TIMEOUT when specified.
 
 ```
 import akka.actor.ActorDSL._
@@ -583,10 +583,10 @@ version onComplete {
 ```
 ### Concurrent Collection
 
-This example is to access several URLs, can recode the time it needs. 
+This example prints the time needed to access several URLs.
 If we access them concurrently, the performance can be better.
-Try to change the 'urls.map' to 'urls.par.map'.So the functions in map can run concurrently.
-It's exciting to combine functional programming and concurrent. 
+Try to change the 'urls.map' to 'urls.par.map'.Now, the functions in map will run concurrently.
+It's exciting to combine functional and concurrent programming!
 
 ```
 import scala.io.Codec
@@ -607,8 +607,8 @@ println("time: " + (System.currentTimeMillis - s) + "ms")
 
 ### Concurrentwordcount
 Concurrent Collection support most functions in normal ones.
-There is word count example before, we can use parallel collection to improve it.
-It can use the power of multi core without increase the complexity.
+Here is the word count example from earlier, improved using a parallel collection.
+It can use the power of multiple cores without increasing the complexity.
 
 ```
 val file = List("warn 2013 msg", "warn 2012 msg", "error 2013 msg", "warn 2013 msg")
@@ -621,10 +621,10 @@ println("wordcount:" + num)
 ```
 
 ### Remote Actor
-Actor is concurrent model, it can be also used for distribute computing.
-This example is to build an EchoServer with Actor.
-Then it creates a client with Akka URL to route.
-The usage method is the same with normal actor.
+Actor is not only a concurrency model, it can also be used for distributed computing.
+This example builds an EchoServer using an Actor.
+Then it creates a client to access the Akka URL.
+The usage is the same as with a normal Actor.
 
 ```
 import akka.actor.{ Actor, ActorSystem, Props }
@@ -652,9 +652,9 @@ system.shutdown
 
 ### Using Java
 
-Scala can operate Java very easily. There have been lots of samples before.
-Java can also use Scala. This example shows how to use @BeanProperty Annotation to create Java Style Bean.
-Try to add @BeanProperty before var name. So that the bean contains getter/setter.
+Scala can execute Java code very easily. There have already been many examples of this.
+Java can also use Scala. This example shows how to use the @BeanProperty Annotation to create a Java Style Bean.
+Try to add @BeanProperty before var name. Now the bean contains getter/setter functions.
 And the Apache BeanUtils can work correctly.
 
 ```
@@ -671,10 +671,10 @@ println(BeanUtils.describe(bean))
 
 ### Equality
 In Scala == is the same as equals function. It's not the same as Java, but it's more reasonable.
-This example define a equals function, and verify it.
-Write a correctly equal function is not a easy work. This example also has a issue when it has subclass.
+This example defines a equals function, and prints the result.
+Correctly writing an equals function is difficult. This example has an issue with subclasses.
 Try to change 'class' to 'case class', and delete the equals function.
-Case Class can generate correctly equal function for us.
+Case Class correctly generates the equals function for us.
 
 ```
 class Person(val name: String) {
@@ -689,11 +689,11 @@ println(new Person("Black") == new Person("Black"))
 
 
 ### Extractor
-Extractor can help pattern match to extract.
-This example is to build an Email Extractor, implement the 'unapply function' is enough.
-The regex in Scala contains extractor, it can extract a List. The elements in List is the expression in ().
+Extractor objects can deconstruct pattern matches.
+This example builds an Email Extractor, only the 'unapply function' is needed.
+Scala's Regex contains an extractor, which extracts a List. The List elements sequentially match expressions captured in ().
 Extractor is very useful. There are 2 cases in this example.
-case user :: domain :: Nil is to extract a List. case Email(user, domain) is to extract an Email.
+case user :: domain :: Nil extracts a List. case Email(user, domain) extracts an Email.
 
 ```
 object Email {
@@ -711,9 +711,9 @@ object Email {
 ```
 
 ### Memory Pattern
-Memory Pattern can be used to simplify the code of using cache.
-In this example, the 'memo function' can wrapper a function without cache ability to be a function with cache ability.
-It's the example for Fibonacci, cache can improve its performance.
+Memory Pattern can be used to simplify caching.
+In this example, the 'memo function' wraps a function without caching to add the simple cache capability.
+In this Fibonacci example, a cache improves performance after the first call.
 Try to change fibonacci_(n - 1) + fibonacci_(n - 2) to memo(fibonacci_)(n - 1) + memo(fibonacci_)(n - 2), it can improve more.
 
 ```
@@ -739,8 +739,8 @@ println(fibonacci(40))
 println("it takes " + (System.currentTimeMillis() - t2) + "ms")
 ```
 Implicit Conversion
-Implicit can be used to define a Conversion function. Type can automatically  translate with it.
-This example can converte String to Data automatically. Implicit is the most important feature to implement DSL.
+Implicit can be used to define a Conversion function. Types are automatically implicitly converted when needed.
+This example converts String to Date automatically. Implicit is the most important feature when implementing a DSL.
 
 ```
   implicit def strToDate(str: String) = new SimpleDateFormat("yyyy-MM-dd").parse(str)
@@ -749,9 +749,9 @@ This example can converte String to Data automatically. Implicit is the most imp
 ```
 
 ### DSL
-DSL is most powerful tool in Scala. With it Scala can let some code more-descriptive.
-This example is to generate Json with DSL. Some of the features look like native features are created by DSL.
-It complex to write your own DSL. But it's very to use.
+DSL is the most powerful tool in Scala. With it Scala code can become more descriptive.
+This example generates Json with a DSL. Some of the features look like native features but are created by a DSL.
+It's complex to write your own DSL. But it's very easy to use.
 
 ```
 import org.json4s._
@@ -773,9 +773,9 @@ println(pretty(render(json)))
 ```
 
 ### Testing
-Scala DSL can make testing more easier.
-This example is to test a Factorial function. It create test case with should/in.
-Test cases can be runned concurrently in default.
+Scala DSL can make testing even easier.
+This example tests a Factorial function. It creates a test case with should/in.
+Test cases run concurrently by default.
 
 ```
 import org.specs2.mutable._
@@ -799,7 +799,7 @@ specs2.run(new FactorialSpec)
 
 
 ### Simple Build Tool
-SBT is more popular build tool for Scala. 
+SBT is a very popular build tool for Scala.
 With its help, you can develop Scala even without installing anything except JRE.
 This example is to run this Scala Tour in your computer.
 

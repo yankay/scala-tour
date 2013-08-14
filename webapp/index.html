@@ -93,7 +93,7 @@ println("hello world")
                             The tour is interactive. Click the <b>Run</b> button now to compile and run the program on a remote server. The result is displayed below the code. You can edit it and run your own code. (It may be a little slow when you first run, but it would faster next)
                         </p>
                         <p>
-                            Use a space bar or arrow keys to navigate
+                            Use the space bar or arrow keys to navigate
                         </p>
                         <div class="step-nav">
                             <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1259,7 +1259,7 @@ version.minorVersion.foreach(println _)
                             <a href="#/simplify-actor">Simplify Actor</a>
                         </li>
                         <li>
-                            <a href="#/actor-principle">Actor Implement</a>
+                            <a href="#/actor-principle">Actor Implementation</a>
                         </li>
                         <li>
                             <a href="#/return-sync">Synchronized Return</a>
@@ -1319,13 +1319,13 @@ system.shutdown
                     <div class="span4">
                         <h2>Using Actor</h2>
                         <p>
-                            Actors are one of Scala's concurrent model.Users of Scala earlier than version 2.10 should use  <a href="http://akka.io/" target="_blank">Akka</a>.
+                            Actors are one of Scala's concurrent models. Users of Scala earlier than version 2.10 must install <a href="http://akka.io/" target="_blank">Akka</a>.
                         </p>
                         <p>
-                            Actor is a like thread instance with a mailbox. It can be created by <span class="important">system.actorOf</span>, and using <span class="important">receive</span> to get message, <span class="important">!</span> to send message.
+                            An Actor is a like a thread instance with a mailbox. It can be created with <span class="important">system.actorOf</span>: use <span class="important">receive</span> to get a message, and <span class="important">!</span> to send a message.
                         </p>
                         <p>
-                            This example is an EchoServer which can receive message then print them.
+                            This example is an EchoServer which can receive messages then print them.
                         </p>
                         <div class="step-nav">
                             <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1351,7 +1351,7 @@ implicit val system = ActorSystem()
 
 val echoServer = actor(new Act {
   become {
-    case msg => println("echo " + msg)
+    case msg =&gt; println("echo " + msg)
   }
 })
 echoServer ! "hi"
@@ -1368,16 +1368,16 @@ system.shutdown
                     <div class="span4">
                         <h2>Simplify Actor</h2>
                         <p>
-                            There is a simpler way to define Actor.
+                            There is a simpler way to define an Actor.
                         </p>
                         <p>
-                            There is a the actor function in 
+                            There is the actor function in
                         </p>
                         <pre>
 akka.actor.ActorDSL
 </pre>
                         <p>
-                            .This function can accept a constructor, and return a started Actor.
+                            This function accepts an Actor instance, and returns a started Actor.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1425,18 +1425,18 @@ system.shutdown
                         </div>
                     </div>
                     <div class="span4">
-                        <h2>Actor Implement</h2>
+                        <h2>Actor Implementation</h2>
                         <p>
-                            Actor is more light weight than thread. Millions of actors can be generated in Scala, the secret is that Actor can <span class="important">reuse thread</span>.
+                            An Actor is more lightweight than a thread. Millions of actors can be generated in Scala, the secret is that an Actor can <span class="important">reuse a thread</span>.
                         </p>
                         <p>
-                            The mapping relationship between Actor and Thread is decided by Dispatcher.
+                            The mapping relationship between an Actor and a Thread is decided by a Dispatcher.
                         </p>
                         <p>
-                            This example create 4 Actors, and it would print its thread name when it invoked.
+                            This example creates 4 Actors, and prints its thread name when invoked.
                         </p>
                         <p>
-                            You can find that there are no fix mapping relationship between Actor and Thread. A Actor can use multi threads. And a thread can be used by multi Actors.
+                            You will find there is no fixed mapping relationship between Actors and Threads. An Actor can use many threads. And a thread can be used by many Actors.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1486,16 +1486,16 @@ system.shutdown
                     <div class="span4">
                         <h2>Synchronized Return</h2>
                         <p>
-                            Actor is very suitable for operation need time, for example getting resource from network.
+                            Actors are very suitable for long-running operations, like getting resources over a network.
                         </p>
                         <p>
-                            This example is to get a Future from ask function.
+                            This example creates a Future with the ask function.
                         </p>
                         <p>
-                            In the actor we can use 'sender !' to return value.
+                            In the actor we use 'sender !' to return the value.
                         </p>
                         <p>
-                            Like Option, Future has lots of functions. The result can be read by foreach function.
+                            Like Option, Future has lots of functions. The result can be printed with a foreach.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1545,13 +1545,13 @@ version onComplete {
                     <div class="span4">
                         <h2>Asynchronous Return</h2>
                         <p>
-                            Asynchronous operation can provide better performance. Future in Scala is very powerful, it can be returned asynchronously.
+                            Asynchronous operations can provide better performance. A Future in Scala is very powerful, it can execute asynchronously.
                         </p>
                         <p>
-                            Future would call the 'onComplete' function when is finished.
+                            The Future will call the 'onComplete' function when it is finished.
                         </p>
                         <p>
-                            It can also set TIMEOUT when we use ask.
+                            It can also set a TIMEOUT when specified.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1591,7 +1591,7 @@ println("time: " + (System.currentTimeMillis - t) + "ms")
                     <div class="span4">
                         <h2>Parallel Collection</h2>
                         <p>
-                            This example is to access several URLs, can recode the time it needs. If we access them in parallel, the performance can be better.
+                            This example prints the time needed to access several URLs. If we access them in parallel, the performance can be better.
                         </p>
                         <p>
                             Try to change
@@ -1606,10 +1606,10 @@ urls.map
 urls.par.map
 </pre>
                         <p>
-                            So the functions in map can run in parallel.
+                            Now, the functions in map will run in parallel.
                         </p>
                         <p>
-                            It's exciting to combine functional programming and concurrent. 
+                            It's exciting to combine functional and concurrent programming!
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1648,10 +1648,10 @@ println("wordcount:" + num)
                     <div class="span4">
                         <h2>Parallel Word Count</h2>
                         <p>
-                            There is word count example before, we can use parallel collection to improve it.
+                            Here is the word count example from earlier, improved using a parallel collection.
                         </p>
                         <p>
-                            It can leverage the power of multi core without increase the complexity.
+                            It can leverage the power of multiple cores without increasing the complexity.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1700,16 +1700,16 @@ system.shutdown
                     <div class="span4">
                         <h2>Remote Actor</h2>
                         <p>
-                            Actor is concurrent model, it can be also used for distribute computing.
+                            Actor is not only a concurrency model, it can also be used for distributed computing.
                         </p>
                         <p>
-                            This example is to build an EchoServer with Actor.
+                            This example builds an EchoServer using an Actor.
                         </p>
                         <p>
-                            Then it creates a client with Akka URL to route.
+                            Then it creates a client to access the Akka URL.
                         </p>
                         <p>
-                            The usage method is the same with normal actor.
+                            The usage is the same as with a normal Actor.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/concurrency-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a><a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1790,10 +1790,10 @@ println(BeanUtils.describe(bean))
                     <div class="span4">
                         <h2>Using Java</h2>
                         <p>
-                            Scala can operate Java very easily. There have been lots of samples before.
+                            Scala can execute Java code very easily. There have already been many examples of this.
                         </p>
                         <p>
-                            Java can also use Scala. This example shows how to use @BeanProperty Annotation to create Java Style Bean.
+                            Java can also use Scala. This example shows how to use the @BeanProperty Annotation to create a Java Style Bean.
                         </p>
                         <p>
                             Try to change
@@ -1808,7 +1808,7 @@ var name: String
 @BeanProperty var name: String
 </pre>
                         <p>
-                            So the bean contains getter/setter functions now. And the Apache BeanUtils can work correctly.
+                            Now the bean contains getter/setter functions. And the Apache BeanUtils can work correctly.
                         </p>
                         <div class="step-nav">
                             <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1850,13 +1850,13 @@ println(new Person("Black") == new Person("Black"))
                             In Scala <span class="important">== is the same as equals function</span>. It's not the same as Java, but it's more reasonable.
                         </p>
                         <p>
-                            Write a correctly equal function is not a easy work. This example also has a issue when it has subclass.
+                            Correctly writing an equals function is difficult. This example has an issue with subclasses.
                         </p>
                         <p>
                             Try to change 'class' to 'case class', and delete the equals function.
                         </p>
                         <p>
-                            Case Class can generate correctly equal function for us.
+                            Case Class correctly generates the equals function for us.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1878,11 +1878,12 @@ println(new Person("Black") == new Person("Black"))
 import scala.util.matching.Regex
 
 object Email {
-  def unapply(str: String) = new Regex("""(.*)@(.*)""")
-    .unapplySeq(str).get match {
-    case user :: domain :: Nil =&gt; Some(user, domain)
-    case _ =&gt; None
-  }
+  def unapply(str: String): Option[(String,String)] = 
+    new Regex("""(.*)@(.*)""")
+      .unapplySeq(str).get match {
+      case user :: domain :: Nil =&gt; Some(user, domain)
+      case _ =&gt; None
+    }
 }
 
 "user@domain.com" match {
@@ -1900,13 +1901,13 @@ object Email {
                     <div class="span4">
                         <h2>Extractor</h2>
                         <p>
-                            Extractor can help pattern match to extract.
+                            Extractor objects can deconstruct pattern matches.
                         </p>
                         <p>
-                            This example is to build an Email Extractor, implement the 'unapply function' is enough.
+                            This example builds an Email Extractor, only the 'unapply function' is needed.
                         </p>
                         <p>
-                            The regex in Scala contains extractor, it can extract a List. The elements in List is the expression in ().。
+                            Scala's Regex contains an extractor, which extracts a List. The List elements sequentially match expressions captured in ().
                         </p>
                         <p>
                             Extractor is very useful. There are 2 cases in this example.
@@ -1915,13 +1916,13 @@ object Email {
 case user :: domain :: Nil
 </pre>
                         <p>
-                            can be used to extract List.
+                            extracts a List.
                         </p>
                         <pre>
 case Email(user, domain)
 </pre>
                         <p>
-                            can be used to extract Email。
+                            extracts an Email object.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -1943,7 +1944,7 @@ case Email(user, domain)
 import scala.collection.mutable.WeakHashMap
 
 val cache = new WeakHashMap[Int, Int]
-def memo(f: Int => Int) = (x: Int) => cache.getOrElseUpdate(x, f(x))
+def memo(f: Int =&gt; Int) = (x: Int) =&gt; cache.getOrElseUpdate(x, f(x))
 
 def fibonacci_(in: Int): Int = in match {
   case 0 =&gt; 0;
@@ -1971,13 +1972,13 @@ println("it takes " + (System.currentTimeMillis() - t2) + "ms")
                     <div class="span4">
                         <h2>Memory Pattern</h2>
                         <p>
-                            Memory Pattern can be used to simplify the code of using cache.
+                            Memory Pattern can be used to simplify caching.
                         </p>
                         <p>
-                            In this example, the 'memo function' can wrapper a function without cache ability to be a function with cache ability.
+                            In this example, the 'memo function' wraps a function without caching to add the simple cache capability.
                         </p>
                         <p>
-                            It's the example for Fibonacci, cache can improve its performance.
+                            In this Fibonacci example, a cache improves performance after the first call.
                         </p>
                         <p>
                             Try to change
@@ -1992,7 +1993,7 @@ fibonacci_(n - 1) + fibonacci_(n - 2)
 memo(fibonacci_)(n - 1) + memo(fibonacci_)(n - 2)
 </pre>
                         <p>
-                            It can improve performance more.
+                            This improves performance of the first call.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -2029,10 +2030,10 @@ println("2013-01-01 unix time: " + "2013-01-01".getTime()/1000l)
                     <div class="span4">
                         <h2>Implicit Conversion</h2>
                         <p>
-                            Implicit can be used to define a Conversion function. Type can be automatically converted  with it when it needs.
+                            Implicit can be used to define a Conversion function. Types are automatically implicitly converted when needed.
                         </p>
                         <p>
-                            This example can converte String to Data automatically. Implicit is the most important feature to implement DSL.
+                            This example converts String to Date automatically. Implicit is the most important feature when implementing a DSL.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -2051,9 +2052,8 @@ println("2013-01-01 unix time: " + "2013-01-01".getTime()/1000l)
                                 <div class="workspace-editor">
                                     <form>
                                         <textarea class="editor" spellcheck="false">
-import org.json4s._
 import org.json4s.JsonDSL._
-import org.json4s.jackson.JsonMethods._
+import org.json4s.jackson.JsonMethods.{pretty,render}
 import java.util.Date
 
 case class Twitter(id: Long, text: String, publishedAt: Option[java.util.Date])
@@ -2062,10 +2062,10 @@ var twitters = Twitter(1, "hello scala", Some(new Date())) ::
   Twitter(2, "I like scala tour", None) :: Nil
 
 var json = ("twitters"
-  -&gt; twitters.map(
-    t =&gt; ("id" -&gt; t.id)
-      ~ ("text" -&gt; t.text)
-      ~ ("published_at" -&gt; t.publishedAt.toString())))
+  -> twitters.map(
+    t =&gt; ("id" -> t.id)
+      ~ ("text" -> t.text)
+      ~ ("published_at" -> t.publishedAt.toString())))
 
 println(pretty(render(json)))
 </textarea>
@@ -2082,13 +2082,13 @@ println(pretty(render(json)))
                             DSL
                         </h2>
                         <p>
-                            DSL is most powerful tool in Scala. With it some code can be more descriptive.
+                            DSL is the most powerful tool in Scala. With it Scala code can become more descriptive.
                         </p>
                         <p>
-                            This example is to generate Json with DSL. Some of the features look like native features are created by DSL.
+                            This example generates Json with a DSL. Some of the features look like native features but are created by a DSL.
                         </p>
                         <p>
-                            It's complex to write your own DSL. But it's very to use.
+                            It's complex to write your own DSL. But it's very easy to use.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -2136,13 +2136,13 @@ specs2.run(new FactorialSpec)
                     <div class="span4">
                         <h2>Testing</h2>
                         <p>
-                            Scala can use Spec2, ScalaTest to test, and DSL can make testing more easier.
+                            Scala can use Spec2 or ScalaTest to test, and a DSL can make testing even easier.
                         </p>
                         <p>
-                            This example is to test a Factorial function. It create test case with should/in.
+                            This example tests a Factorial function. It creates a test case with should/in.
                         </p>
                         <p>
-                            Test cases can be runned concurrently in default.
+                            Test cases run concurrently by default.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a> <a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>
@@ -2182,13 +2182,13 @@ sbt\sbt stage
                             Simple Build Tool
                         </h2>
                         <p>
-                            SBT is more popular build tool for Scala. 
+                            SBT is a very popular build tool for Scala.
                         </p>
                         <p>
-                            With its help, you can develop Scala even <span class="important">without installing anything</span> except JRE.
+                            With its help, you can begin developing Scala <span class="important">without installing anything</span> except the JRE.
                         </p>
                         <p>
-                            If you want to run this Scala Tour in your computer, follow the code left.
+                            If you want to run this Scala Tour in your computer, follow the steps to the left.
                         </p>
                         <div class="step-nav">
                             <a class="btn pre-step" type="button"><i class="icon-arrow-left">&nbsp;</i>Prev Page</a> <a class="btn" type="button" href="#/practice-contents"><i class="icon-arrow-up">&nbsp;</i>Content</a><a class="btn next-step" type="button"><i class="icon-arrow-right">&nbsp;</i>Next Page</a>

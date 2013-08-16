@@ -1,0 +1,43 @@
+/* AUTOMATICALLY GENERATED ON Sat Aug 10 20:31:30 PDT 2013*/
+/* DO NOT EDIT */
+
+grant {
+  permission java.io.FilePermission "${user.home}/.ivy2/cache/com.typesafe", "read";
+  permission java.io.FilePermission "${user.home}/.ivy2/cache/com.typesafe/-", "read";
+  permission java.io.FilePermission "${user.home}/.ivy2/cache/com.typesafe.akka", "read";
+  permission java.io.FilePermission "${user.home}/.ivy2/cache/com.typesafe.akka/-", "read";
+  permission java.io.FilePermission "./target/specs2-reports", "read, write";
+  permission java.io.FilePermission "./target/specs2-reports/-", "read, write";
+
+  permission java.io.FilePermission "/tmp", "read";
+
+  permission java.io.FilePermission "./bin/application.conf", "read";
+  permission java.io.FilePermission "/usr/lib/jvm/java-*/-", "read";
+  permission java.io.FilePermission "/usr/lib/jvm/java-*/jre/-", "read";
+  permission java.io.FilePermission "/usr/java/packages/lib/ext/-", "read";
+  permission java.io.FilePermission "/usr/java/packages/lib/ext", "read";
+  permission java.io.FilePermission "/usr/share/java/-", "read";
+
+  permission java.util.PropertyPermission "java.version", "read";
+  permission java.util.PropertyPermission "java.vendor", "read";
+  permission java.util.PropertyPermission "os.name", "read";
+  permission java.util.PropertyPermission "os.version", "read";
+  permission java.util.PropertyPermission "os.arch", "read";
+
+  permission java.io.FilePermission "/proc/self/stat", "read";
+
+  permission java.net.SocketPermission "github.com:443", "connect, resolve";
+  permission java.net.SocketPermission "raw.github.com:443", "connect, resolve";
+  permission java.net.SocketPermission "scala-lang.org:80", "connect, resolve";
+  permission java.net.SocketPermission "127.0.0.1:2552", "connect, resolve, listen, accept";
+
+  permission java.lang.RuntimePermission "getenv.AKKA_HOME", "read";
+  permission java.util.PropertyPermission "akka.home", "read";
+  permission java.util.PropertyPermission "*", "read, write";
+  permission java.lang.RuntimePermission "setContextClassLoader";
+  permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+  permission java.lang.RuntimePermission "accessClassInPackage.sun.misc";
+  permission java.lang.RuntimePermission "accessDeclaredMembers";
+  permission java.lang.RuntimePermission "modifyThread";
+};
+

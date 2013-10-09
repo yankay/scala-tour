@@ -700,7 +700,7 @@ translate += ("to match String type." ->
                 "试着将")
   translate += (">to<" -> 
                 ">简化为<")
-    translate += ("The Scala Tour is create by the love of Scala and the desire that more people would love it." -> 
+    translate += ("The Scala Tour is created by the love of Scala and the desire that more people would love it." -> 
                 "这个指南源自于作者对Scala的热爱和对传播Scala的愿望")
   translate += ("Other Resources:" -> 
                 "其他资料:")

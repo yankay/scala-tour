@@ -6,7 +6,7 @@
 
 ### Expressions and Values
 
-In Scala, almost everything is an expression.println("hello wolrd")is an expression, "hello"+" world"
+In Scala, almost everything is an expression.println("hello world")is an expression, "hello"+" world"
 is also an expression.
 
 Constants can be created with val, and variables can be created with var. More constants are better.

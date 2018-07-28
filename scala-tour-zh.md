@@ -1,6 +1,6 @@
 # Scala 指南
 
-[http://zh.scala-修改为ur.com/](http://zh.scala-修改为ur.com/) 
+[http://zh.scala-tour.com/](http://zh.scala-tour.com/) 
 
 ## 基本
 
@@ -117,7 +117,7 @@ class Person(val firstName: String, val lastName: String) {
 
 	def fullName() = firstName + " " + lastName
 
-	override def 修改为String() = fullName()
+	override def toString() = fullName()
 }
 
 val obama: Person = new Person("Barack", "Obama")
@@ -219,20 +219,20 @@ println(msg)
 
 Traits就像是有函数体的Interface。使用with关键字来混入。
 这个例子是给java.util.ArrayList添加了foreach的功能。
-试着再在后面加上with JsonAble，给list添加修改为Json的能力
+试着再在后面加上with JsonAble，给list添加toJson的能力
 
 ```
 trait ForEachAble[A] {
-	def itera修改为r: java.util.Itera修改为r[A]
+	def iterator: java.util.Iterator[A]
 	def foreach(f: A => Unit) = {
-		val iter = itera修改为r
+		val iter = iterator
 		while (iter.hasNext)
 			f(iter.next)
 	}
 }
 
 trait JsonAble {
-	override def 修改为String() =
+	override def toString() =
 		scala.util.parsing.json.JSONFormat.defaultFormatter(this)
 }
 
@@ -240,7 +240,7 @@ val list = new java.util.ArrayList[Int]() with ForEachAble[Int]
 list.add(1); list.add(2)
 
 list.foreach(x => println(x))
-println("Json: " + list.修改为String())
+println("Json: " + list.toString())
 ```
 
 
@@ -253,7 +253,7 @@ println("Json: " + list.修改为String())
 使用case来匹配参数，如果case _，则可以匹配任何参数。
 这个例子有所不足，当输入负数时，会无限循环。
 可以在case后添加if语句判断，将case n: Int 修改为 case n: Int if (n > 1)即可。
-Try 修改为 add case n: String => fibonacci(n.修改为Int) before case _ 这样就可以匹配String类型
+Try to add case n: String => fibonacci(n.toInt) before case _ 这样就可以匹配String类型
 在最后添加 println(fibonacci(-3))；println(fibonacci("3"))；来检查刚刚修改的效果。
 
 
@@ -272,7 +272,7 @@ println(fibonacci(3))
 
 case class 顾名思义就是为case语句专门设计的类。
 在普通类的基础上添加了和类名一致的工厂方法，
-还添加了hashcode,equals和修改为String等方法。
+还添加了hashcode,equals和toString等方法。
 试试最后添加  println(Sum(1,2)) 。
 由于使用了require(n >= 0)来检验参数，尝试使用负数，会抛出异常。
 
@@ -434,7 +434,7 @@ Lazy可以延迟初始化。加上lazy的字段会在第一次访问的时候初
 class ScalaCurrentVersion(val url: String) {
   lazy val source= {
     println("fetching from url...")
-    scala.io.Source.fromURL(url).getLines().修改为List
+    scala.io.Source.fromURL(url).getLines().toList
   }
   lazy val majorVersion = source.find(_.contains("version.major"))
   lazy val minorVersion = source.find(_.contains("version.minor"))
@@ -448,44 +448,44 @@ version.minorVersion.foreach(println _)
 
 ## 并发
 
-### 使用Ac修改为r
+### 使用Actor
 
-Ac修改为r是Scala的并发模型。在2.10之后的版本中，使用[http://akka.io/](Akka)作为其推荐Ac修改为r实现。
-Ac修改为r是类似线程的实体，有一个邮箱。
-可以通过system.ac修改为rOf来创建,receive获取邮箱消息，！向邮箱发送消息。
+Actor是Scala的并发模型。在2.10之后的版本中，使用[http://akka.io/](Akka)作为其推荐Actor实现。
+Actor是类似线程的实体，有一个邮箱。
+可以通过system.actorOf来创建,receive获取邮箱消息，！向邮箱发送消息。
 这个例子是一个EchoServer，接受信息并打印。
 
 ```
-import akka.ac修改为r.{ Ac修改为r, Ac修改为rSystem, Props }
+import akka.actor.{ Actor, ActorSystem, Props }
 
-val system = Ac修改为rSystem()
+val system = ActorSystem()
 
-class EchoServer extends Ac修改为r {
+class EchoServer extends Actor {
   def receive = {
     case msg: String => println("echo " + msg)
   }
 }
 
-val echoServer = system.ac修改为rOf(Props[EchoServer])
+val echoServer = system.actorOf(Props[EchoServer])
 echoServer ! "hi"
 
 system.shutdown
 ```
 
-### Ac修改为r更简化的用法
+### Actor更简化的用法
 
-可以通过更简化的办法声明Ac修改为r。
-导入akka.ac修改为r.Ac修改为rDSL中的ac修改为r函数。
-这个函数可以接受一个Ac修改为r的构造器Act，启动并返回Ac修改为r。
+可以通过更简化的办法声明Actor。
+导入akka.actor.ActorDSL中的actor函数。
+这个函数可以接受一个Actor的构造器Act，启动并返回Actor。
 
 
 ```
-import akka.ac修改为r.Ac修改为rDSL._
-import akka.ac修改为r.Ac修改为rSystem
+import akka.actor.ActorDSL._
+import akka.actor.ActorSystem
 
-implicit val system = Ac修改为rSystem()
+implicit val system = ActorSystem()
 
-val echoServer = ac修改为r(new Act {
+val echoServer = actor(new Act {
   become {
     case msg => println("echo " + msg)
   }
@@ -493,31 +493,31 @@ val echoServer = ac修改为r(new Act {
 echoServer ! "hi"
 system.shutdown
 ```
-### Ac修改为r原理
-Ac修改为r比线程轻量。在Scala中可以创建数以百万级的Ac修改为r。奥秘在于Ac修改为r可以复用线程。
-Ac修改为r和线程是不同的抽象，他们的对应关系是由Dispatcher决定的。
-这个例子创建4个Ac修改为r，每次调用的时候打印自身线程。
-可以发现Ac修改为r和线程之间没有一对一的对应关系。
-一个Ac修改为r可以使用多个线程，一个线程也会被多个Ac修改为r复用。
+### Actor原理
+Actor比线程轻量。在Scala中可以创建数以百万级的Actor。奥秘在于Actor可以复用线程。
+Actor和线程是不同的抽象，他们的对应关系是由Dispatcher决定的。
+这个例子创建4个Actor，每次调用的时候打印自身线程。
+可以发现Actor和线程之间没有一对一的对应关系。
+一个Actor可以使用多个线程，一个线程也会被多个Actor复用。
 
 ```
-import akka.ac修改为r.{ Ac修改为r, Props, Ac修改为rSystem }
+import akka.actor.{ Actor, Props, ActorSystem }
 import akka.testkit.CallingThreadDispatcher
 
-implicit val system = Ac修改为rSystem()
+implicit val system = ActorSystem()
 
-class EchoServer(name: String) extends Ac修改为r {
+class EchoServer(name: String) extends Actor {
   def receive = {
     case msg => println("server" + name + " echo " + msg +
       " by " + Thread.currentThread().getName())
   }
 }
 
-val echoServers = (1 修改为 10).map(x =>
-  system.ac修改为rOf(Props(new EchoServer(x.修改为String))
+val echoServers = (1 to 10).map(x =>
+  system.actorOf(Props(new EchoServer(x.toString))
     .withDispatcher(CallingThreadDispatcher.Id)))
-(1 修改为 10).foreach(msg =>
-  echoServers(scala.util.Random.nextInt(10)) ! msg.修改为String)
+(1 to 10).foreach(msg =>
+  echoServers(scala.util.Random.nextInt(10)) ! msg.toString)
 
 system.shutdown
 ```
@@ -526,22 +526,22 @@ system.shutdown
 
 ### 同步返回
 
-Ac修改为r非常适合于较耗时的操作。比如获取网络资源。
+Actor非常适合于较耗时的操作。比如获取网络资源。
 这个例子通过调用ask函数来获取一个Future。
-在Ac修改为r内部通过 sender ! 传递结果。
+在Actor内部通过 sender ! 传递结果。
 Future像Option一样有很多高阶方法，可以使用foreach查看结果。
 
 
 ```
-import akka.ac修改为r.Ac修改为rDSL._
+import akka.actor.ActorDSL._
 import akka.pattern.ask
 
 implicit val ec = scala.concurrent.ExecutionContext.Implicits.global
-implicit val system = akka.ac修改为r.Ac修改为rSystem()
+implicit val system = akka.actor.ActorSystem()
 
 val versionUrl = "https://raw.github.com/scala/scala/master/starr.number"
 
-val fromURL = ac修改为r(new Act {
+val fromURL = actor(new Act {
   become {
     case url: String => sender ! scala.io.Source.fromURL(url)
       .getLines().mkString("\n")
@@ -561,15 +561,15 @@ system.shutdown
 在调用ask的时候，可以设定超时。
 
 ```
-import akka.ac修改为r.Ac修改为rDSL._
+import akka.actor.ActorDSL._
 import akka.pattern.ask
 
 implicit val ec = scala.concurrent.ExecutionContext.Implicits.global
-implicit val system = akka.ac修改为r.Ac修改为rSystem()
+implicit val system = akka.actor.ActorSystem()
 
 val versionUrl = "https://raw.github.com/scala/scala/master/starr.number"
 
-val fromURL = ac修改为r(new Act {
+val fromURL = actor(new Act {
   become {
     case url: String => sender ! scala.io.Source.fromURL(url)
       .getLines().mkString("\n")
@@ -596,7 +596,7 @@ implicit val codec = Codec("UTF-8")
 codec.onMalformedInput(CodingErrorAction.REPLACE)
 codec.onUnmappableCharacter(CodingErrorAction.REPLACE)
 
-val urls = "http://scala-lang.org" :: "https://github.com/yankay/scala-修改为ur" :: Nil
+val urls = "http://scala-lang.org" :: "https://github.com/yankay/scala-tour" :: Nil
 
 def fromURL(url: String) = scala.io.Source.fromURL(url).getLines().mkString("\n")
 
@@ -620,28 +620,28 @@ val num = file.par.map(wordcount).par.reduceLeft(_ + _)
 println("wordcount:" + num)
 ```
 
-### 远程Ac修改为r
-Ac修改为r是并发模型，也使用于分布式。
-这个例子创建一个Echo服务器，通过ac修改为rOf来注册自己。
+### 远程Actor
+Actor是并发模型，也使用于分布式。
+这个例子创建一个Echo服务器，通过actorOf来注册自己。
 然后再创建一个client，通过Akka url来寻址。
-除了是通过url创建的，其他使用的方法和普通Ac修改为r一样。
+除了是通过url创建的，其他使用的方法和普通Actor一样。
 
 ```
-import akka.ac修改为r.{ Ac修改为r, Ac修改为rSystem, Props }
-import com.typesafe.config.ConfigFac修改为ry
+import akka.actor.{ Actor, ActorSystem, Props }
+import com.typesafe.config.ConfigFactory
 
-implicit val system = akka.ac修改为r.Ac修改为rSystem("RemoteSystem",
-  ConfigFac修改为ry.load.getConfig("remote"))
-class EchoServer extends Ac修改为r {
+implicit val system = akka.actor.ActorSystem("RemoteSystem",
+  ConfigFactory.load.getConfig("remote"))
+class EchoServer extends Actor {
   def receive = {
     case msg: String => println("echo " + msg)
   }
 }
 
-val server = system.ac修改为rOf(Props[EchoServer], name = "echoServer")
+val server = system.actorOf(Props[EchoServer], name = "echoServer")
 
 val echoClient = system
-  .ac修改为rFor("akka://RemoteSystem@127.0.0.1:2552/user/echoServer")
+  .actorFor("akka://RemoteSystem@127.0.0.1:2552/user/echoServer")
 echoClient ! "Hi Remote"
 
 system.shutdown
@@ -761,13 +761,13 @@ import org.json4s.jackson.JsonMethods._
 
 case class Twitter(id: Long, text: String, publishedAt: Option[java.util.Date])
 
-var twitters = Twitter(1, "hello scala", Some(new Date())) :: Twitter(2, "I like scala 修改为ur", None) :: Nil
+var twitters = Twitter(1, "hello scala", Some(new Date())) :: Twitter(2, "I like scala tour", None) :: Nil
 
 var json = ("twitters"
   -> twitters.map(
     t => ("id" -> t.id)
       ~ ("text" -> t.text)
-      ~ ("published_at" -> t.publishedAt.修改为String())))
+      ~ ("published_at" -> t.publishedAt.toString())))
 
 println(pretty(render(json)))
 ```
@@ -780,38 +780,38 @@ Scala DSL可以使测试更方便。
 ```
 import org.specs2.mutable._
 
-class Fac修改为rialSpec extends Specification {
+class FactorialSpec extends Specification {
   args.report(color = false)
 
-  def fac修改为rial(n: Int) = (1 修改为 n).reduce(_ * _)
+  def factorial(n: Int) = (1 to n).reduce(_ * _)
 
   "The 'Hello world' string" should {
-    "fac修改为rial 3 must be 6" in {
-      fac修改为rial(3) mustEqual 6
+    "factorial 3 must be 6" in {
+      factorial(3) mustEqual 6
     }
-    "fac修改为rial 4 must be 6" in {
-      fac修改为rial(4) must greaterThan(6)
+    "factorial 4 must be 6" in {
+      factorial(4) must greaterThan(6)
     } 
   }
 }
-specs2.run(new Fac修改为rialSpec)
+specs2.run(new FactorialSpec)
 ```
 
 
 ### Simple Build Tool
 SBT是Scala的最佳编译工具。
 在他的帮助下，you can develop Scala even without installing anything except JRE.
-This example is 修改为 run this Scala 指南 in your computer.
+This example is to run this Scala 指南 in your computer.
 
 ```
 #Linux/Mac(compile & run):
-git clone https://github.com/yankay/scala-修改为ur-zh.git
-cd scala-修改为ur-zh
+git clone https://github.com/yankay/scala-tour-zh.git
+cd scala-tour-zh
 ./sbt/sbt stage
 ./target/start
 
 #Windows(can only compile):
-git clone https://github.com/yankay/scala-修改为ur-zh.git
-cd scala-修改为ur-zh
+git clone https://github.com/yankay/scala-tour-zh.git
+cd scala-tour-zh
 sbt\sbt stage
 ```
